@@ -83,9 +83,20 @@ official bug reporter — on Steam Deck the game leaves that one out. On Xbox an
 PlayStation there are no logs or console commands to collect, and a plain
 description is still genuinely useful.
 
-!!! note "Where to send it — not settled yet"
-    This page will name the place once the mods are published. Nothing is on a
-    store yet, so there is no comment thread to point you at.
+**Two places, and which one you want depends on what you have.**
+
+- **The mod's own page, in the comments.** This is the main route and the one we
+  read first. It needs no account beyond the one you already use to install mods,
+  and it works on every platform. *(No link yet — nothing is published.)*
+- **The project's issue tracker, if you have a save file or a log to attach.**
+  Comment sections cannot carry files, and a save where the bug reliably happens
+  is worth more than any description of it:
+  [github.com/catt144/SMR-CommunityFixPack/issues](https://github.com/catt144/SMR-CommunityFixPack/issues).
+  It needs a free GitHub account. One tracker covers both mods — say which one
+  you were running and we will sort it out from there.
+
+On Xbox and PlayStation there is nothing to attach in the first place, so the mod
+page is the whole route, and a plain description is genuinely useful.
 
 ---
 

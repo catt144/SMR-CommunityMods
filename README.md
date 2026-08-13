@@ -9,9 +9,10 @@ and GitHub Pages is not enabled on this repo. The five pages in `content/` are
 **written and ready to read**, and they replaced the original layout specimens on
 2026-08-13 — but nothing on them is published until the owner turns Pages on.
 
-⚠️ **Two things on them are deliberately unfinished, and both are marked in
-place:** there are no store links (neither mod has been uploaded), and the
-"where do I send a bug report" answer names no destination for the same reason.
+⚠️ **One thing on them is deliberately unfinished, and it is marked in place:**
+there are no store links, because neither mod has been uploaded. Bug reports are
+routed as of 2026-08-13 — mod-page comments first, this project's issue tracker
+for reports carrying a save or a log.
 
 ## The mods this site documents
 
