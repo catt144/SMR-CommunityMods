@@ -61,6 +61,7 @@ saw, what was wrong underneath, and what happens now.
     resumes. **Colonies already stuck in that state are put right the moment you
     load them.**
 
+
 ??? success "One meteor storm jammed and no storm ever came again"
     **What you saw:** meteor storms simply stopped happening on that save.
 
@@ -79,16 +80,17 @@ saw, what was wrong underneath, and what happens now.
     running — or even during another disaster's warning — that rain type was
     written off for the rest of the game rather than being tried again later.
 
-    **After the fix:** it simply tries again a few sols later.
+    **After the fix:** it tries again a few sols later instead. **A save whose
+    rain has already been written off has it started up again when you load.**
 
 ??? success "Cave-ins happened in a game started with No Disasters"
     **What you saw:** an underground cave-in on a map created with the "No
     Disasters" rule.
 
-    **What was wrong:** the underground marsquake schedule did not check the
-    map's disaster setting.
+    **What was wrong:** the underground marsquake schedule never checked the
+    game's own "No Disasters" rule.
 
-    **After the fix:** it checks. A no-disasters map stays a no-disasters map.
+    **After the fix:** it checks. A no-disasters game stays a no-disasters game.
 
 ??? question "Dust devil waves were smaller than the map setting asked for — *judgment call*"
     **What you saw:** on maps set for frequent dust devils, waves that were
@@ -254,7 +256,9 @@ saw, what was wrong underneath, and what happens now.
     code that applies the trait's dome-wide bonus used two different names for
     the same thing, so the bonus was applied to a group nobody was in.
 
-    **After the fix:** the blessing lands on the dome's colonists.
+    **After the fix:** the blessing lands on the dome's colonists, in existing
+    saves as well as new ones — the wrong filing was written into the dome, so
+    loading an affected save re-does it.
 
 ??? success "The Astrogeologist bonus skipped two of your extractors"
     **What you saw:** a commander profile promising "Extractor production
@@ -263,14 +267,16 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** the profile lists its bonus building by building, and two
     ordinary buildable extractors were left off the list.
 
-    **After the fix:** all of them get the bonus the profile's own text promises.
+    **After the fix:** all of them get the bonus the profile's own text promises,
+    including on a colony you started before installing the pack.
 
 ??? success "Dust Sickness always did the same flat damage"
     **What you saw:** every sick colonist losing an identical amount of Health
     every sol.
 
     **What was wrong:** the code rolls a random amount, throws the roll away, and
-    applies the maximum to everybody.
+    charges everybody a flat ten Health instead. The spread it meant to use runs
+    from five to fourteen.
 
     **After the fix:** the roll it makes is the damage it deals.
 
@@ -317,12 +323,15 @@ saw, what was wrong underneath, and what happens now.
 ??? question "Colonists on asteroids stood in vacuum until they died — *judgment call*"
     **What you saw:** asteroid colonists idling outdoors and bleeding Health
     with nothing telling them to go inside — and a brief power or air
-    interruption throwing every resident out of a habitat for good.
+    interruption turning every resident of a habitat out of their home for as
+    long as it lasted.
 
-    **What was wrong:** the game has no reflex for this. A colonist with nothing
-    to do in vacuum simply stays there.
+    **What was wrong:** two things. A habitat counts as unsuitable housing the
+    instant its life support dips, so its residents are un-homed; and the game
+    has no reflex for a colonist with nowhere to be, so they simply stand there.
 
-    **After the fix:** a colonist idling in vacuum heads home before their oxygen
+    **After the fix:** a habitat with a momentary life-support gap keeps its
+    residents, and a colonist idling in vacuum heads home before their oxygen
     runs out.
 
     **⚠️ Worth knowing:** this is a judgment call. We added a behaviour the game
@@ -358,8 +367,9 @@ saw, what was wrong underneath, and what happens now.
     already walking towards a job was kicked back to Idle. A brownout, a
     malfunction, a repair, or you toggling it yourself all did it.
 
-    **After the fix:** the rebuild is bundled into a single short pass, and the
-    fleet keeps working.
+    **After the fix:** the flapping is bundled into a single short pass, so a
+    flickering extender costs the fleet one interruption instead of one per
+    flicker in each direction.
 
 ??? success "Drones could not finish a delivery to a landed automatic rocket"
     **What you saw:** deliveries to a landed automatic rocket that never
@@ -371,19 +381,9 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the orders stand, and the drones arrive.
 
-??? success "A rocket that had long since left was still holding your drones back"
-    **What you saw:** drone work quietly restricted with no rocket in sight.
-
-    **What was wrong:** a rocket that uses anything other than plain Fuel left an
-    entry behind in the hub's list of restrictions, and nothing ever cleared it —
-    so a rocket that had launched, left or been destroyed went on restricting
-    drone work forever.
-
-    **After the fix:** the entry is cleared with the others.
-
 ??? success "Drones kept a wrong list of the places they could not reach"
-    **What you saw:** drones passing over work they should have taken, and hubs
-    that thought they had nothing to do.
+    **What you saw:** most likely nothing directly. This one is about the state
+    left behind rather than a symptom we can pin on it.
 
     **What was wrong:** every change to the map's walkable routes — a building
     finished, terrain reshaped, a route opened — rebuilt each drone's
@@ -397,12 +397,14 @@ saw, what was wrong underneath, and what happens now.
     **What you saw:** the RC Constructor that placed a lake, and any drones
     working the site, reading as dead.
 
-    **What was wrong:** the sweep that clears units off a construction site
+    **What was wrong:** the pass that clears units off a construction site
     deliberately exempts the rover doing the building — and it runs *before* the
     basin is dug, so anything standing there (including units that had been moved
     and wandered back) was sealed under the new terrain and ran out of power.
 
-    **After the fix:** the ground is cleared of units before it drops.
+    **After the fix:** the moment the basin exists, anything standing in it is
+    sent out using the game's own escape behaviour — so the rover walks out
+    instead of being sealed in.
 
 ??? success "Small landscaping jobs never got done"
     **What you saw:** a small clear, paint or levelling area sitting unworked,
@@ -419,7 +421,7 @@ saw, what was wrong underneath, and what happens now.
     stepping into — sometimes more than once — when you started a landscaping job
     nearby.
 
-    **What was wrong:** the sweep that clears units off a new landscaping area
+    **What was wrong:** the pass that clears units off a new landscaping area
     builds an exclusion for units that are mid-boarding, and then does not use
     it.
 
@@ -472,7 +474,7 @@ saw, what was wrong underneath, and what happens now.
 
     **What was wrong:** the calculation behind that warning could only ever
     produce a value outside the range that triggers it, so for those resources it
-    had never fired since the remaster.
+    could never fire at all.
 
     **After the fix:** the warning fires.
 
@@ -483,7 +485,9 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** the effect attached to the tech and the number the tech
     declares disagree.
 
-    **After the fix:** the discount matches the number.
+    **After the fix:** the discount matches the number — and if you researched it
+    before installing the pack, the discount already stored in your save is
+    corrected when you load it.
 
 ??? success "Large Wind Turbines never got their Frictionless Composites bonus"
     **What you saw:** a colony that researched Frictionless Composites and saw
@@ -516,7 +520,9 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** the salvage path could take the whole track with the
     piece. Curved sections and short tracks were the worst of it.
 
-    **After the fix:** salvaging a piece salvages that piece.
+    **After the fix:** salvaging a piece salvages that piece. Loading a save also
+    clears out the wreckage of the old behaviour — orphaned track pieces and
+    invisible leftovers that could not be removed by hand.
 
 ??? success "Meteor-damaged track could not be salvaged at all"
     **What you saw:** clicking Salvage on damaged track and nothing happening —
@@ -547,7 +553,10 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** unloading ignored the station's resource switches
     completely.
 
-    **After the fix:** unloading respects them.
+    **After the fix:** unloading respects them — as long as somewhere else on
+    that train's route will take the resource. If no station on the route accepts
+    it the train still unloads rather than carrying it about for the rest of the
+    game, and a train on its way to be stored always empties itself.
 
 ??? success "Demolishing a station permanently deleted its trains"
     **What you saw:** your colony's train count silently shrinking, until no
@@ -605,12 +614,13 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** one of the game's own migration passes for saves from an
     earlier version was written in a way that made it do nothing at all.
 
-    **After the fix:** the pass is run properly, once, when you load. It only
-    touches tracks it can walk from end to end, and skips anything under repair.
+    **After the fix:** the pass is run properly, once, when you load.
 
     **⚠️ Worth knowing:** we cannot tell you this fixes a symptom you have. It
     puts your save into the state the game's own migration intended, and on our
-    test save it corrected several tracks and stayed corrected.
+    test save it corrected several tracks and stayed corrected. It runs over
+    every track you have; if one of them refuses to be walked, that track is left
+    exactly as the game restored it and the rest carry on.
 
 ---
 
@@ -631,7 +641,9 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** the launch decision did not require anything to have been
     loaded.
 
-    **After the fix:** they wait for cargo, as intended.
+    **After the fix:** they wait for cargo. The game's own one-sol departure
+    timer still applies, so a rocket that has waited that long and been given
+    nothing still goes — empty trips become the exception rather than the cycle.
 
 ??? success "An automatic rocket loaded cargo and then unloaded it again"
     **What you saw:** drones carrying the same resources up and down the ramp all
@@ -692,6 +704,10 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** loading such a save delivers the prefabs and re-offers the
     message to read.
 
+    **⚠️ Worth knowing:** if you already opened the dead notification and got
+    nothing, that game is past the point where this can help — the message is
+    gone and there is nothing left to re-offer.
+
 ??? success "RC Transports could be ordered onto trade and refugee rockets"
     **What you saw:** transports accepting an order to interact with rockets they
     have no business at.
@@ -722,7 +738,7 @@ saw, what was wrong underneath, and what happens now.
 ## Story & mysteries
 
 ??? success "The Philosopher's Stone mystery hung one step from the end"
-    **What you saw:** Mystery 10 stuck at its finale, forever, with nothing left
+    **What you saw:** the mystery stuck at its finale, forever, with nothing left
     to click.
 
     **What was wrong:** the crystal announces its departure exactly one sol after
@@ -740,6 +756,15 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** the reward was computed in the wrong unit.
 
     **After the fix:** it pays what the mystery describes.
+
+??? success "Destroying trapped wisps paid twice what the message promised"
+    **What you saw:** the other St. Elmo's Fire ending handing out double
+    research — the notification says one amount per wisp and the payout was two.
+
+    **What was wrong:** the reward was granted twice over, once per wisp and once
+    for the batch.
+
+    **After the fix:** it pays the amount the message names.
 
 ??? success "A meteor could destroy the St. Elmo's Fire sinkhole"
     **What you saw:** the mystery's set-piece simply gone after a large meteor
@@ -791,10 +816,14 @@ saw, what was wrong underneath, and what happens now.
     **What you saw:** eleven rows of the Command Center resource panel rendering
     as blank space.
 
-    **What was wrong:** the numbers were being drawn, but not where you could see
-    them.
+    **What was wrong:** each of those rows asks the game for one specific
+    number, and eleven of the eleven answers had gone missing — the remaster
+    replaced them with a single general-purpose one and converted every other
+    part of the game to it, but not this panel. A missing answer prints as
+    nothing at all.
 
-    **After the fix:** the rows show their numbers.
+    **After the fix:** the eleven missing answers are supplied, and the rows show
+    their numbers.
 
 ??? success "The Domes Overview stopped marking domes in trouble"
     **What you saw:** no red highlight on a dome whose colonists' stats had
@@ -823,15 +852,6 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** it lists what is applied. The penalty for *low* Comfort is
     real, and is still listed.
 
-??? success "A technology's description named a completely different building"
-    **What you saw:** the Underground Medium Dome technology describing something
-    else entirely.
-
-    **What was wrong:** the description names the wrong building.
-
-    **After the fix:** it names the one it unlocks. Only visible in saves from
-    before the 1.0.6 underground rework.
-
 ??? success "Completing the last milestone crashed the game"
     **What you saw:** the end-of-game milestone popup never arriving, in games
     created with No Terraforming or No Politics.
@@ -846,9 +866,17 @@ saw, what was wrong underneath, and what happens now.
 
 ## Under the hood
 
-These three repair things you cannot see today. They are here because they are
+These four repair things you cannot see today. They are here because they are
 real defects in the game's code, and because other mods, later game updates or a
 future DLC can walk straight into them.
+
+??? success "A rocket that had left could have gone on restricting your drones"
+    A rocket whose fuel is anything other than plain Fuel leaves an entry behind
+    in its hub's list of work restrictions, and nothing ever clears it — so a
+    rocket that had launched, left or been destroyed would restrict drone work
+    forever. Every rocket the game currently ships uses plain Fuel, so this has
+    never happened to anyone; one new rocket type in a patch or a DLC is all it
+    would take.
 
 ??? success "Rate modifiers on batteries and tanks never reached the grid"
     A modifier that changes a battery's or tank's charge or discharge *rate* was
@@ -856,11 +884,11 @@ future DLC can walk straight into them.
     uses it. Capacity and efficiency were passed correctly. Nothing in the
     shipped game sets those rate modifiers — a mod or an update easily could.
 
-??? success "Two scripting-system helpers did not do what their own descriptions say"
-    One returns every object where it was asked for a percentage of them; the
-    other mishandles the objects it was given. Both are used by shipped story
-    content today, and both stay harmless only because of the exact values that
-    content happens to pass.
+??? success "Two story-scripting defects that the shipped numbers happen to hide"
+    One helper returns every object where it was asked for a percentage of them.
+    The other is a swap of two timing values written so that both ends up holding
+    the larger one — harmless only because the values the game ships with are
+    already in the right order. Both run in ordinary play, in a shipped mystery.
 
 ??? success "Pre-set building layouts ignored your research"
     A layout-construction preset placed buildings without checking that you had
@@ -878,5 +906,6 @@ would be worth nothing to you.
 
 **Things we merely disagree with.** Preferences, quality-of-life changes and
 behaviour the game clearly intends live in a separate mod, *Community Fix Pack:
-Opt-In Modules*, which you do not need to install and which ships with everything
-switched off.
+Opt-In Modules*, which you do not need to install. Seven of its eight modules
+ship switched off; the eighth is a pair of drone dials that sit at the game's own
+values, where they do nothing at all until you move them.
