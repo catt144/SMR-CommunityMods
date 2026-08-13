@@ -1,0 +1,84 @@
+# Community Mods docs site — MkDocs + Material.
+#
+# ⭐ THIS REPO IS THE SITE, AND NOTHING ELSE. Moved out of the fix pack repo on
+#    2026-08-13 by owner ruling (fix pack `PLAYTEST_CHECKLIST.md` item 21). It
+#    holds no mod code, no agent corpus and no playtest notes — everything here
+#    is written for players and is meant to be read by them.
+#
+# ⛔⛔ THE EXPOSURE GATE IS STILL THIS ONE LINE: `docs_dir: content`.
+#     The build reads ONLY `content/`. The rule it enforces was written when the
+#     site lived inside the fix pack repo alongside that repo's `docs/` folder —
+#     the agent corpus and the owner's playtest checklist — and the separation is
+#     now structural rather than configured. ⛔ **Keep the line and the CI check
+#     anyway.** They cost nothing, and the day someone adds a submodule or a
+#     symlink pointing back at a mod repo, they are what refuses.
+#
+#     Player-facing content is WRITTEN for players, here. It is never generated
+#     from a mod repo's `docs/`. Do not add a second docs_dir, do not symlink out
+#     of this repo, do not "just include" one agent file.
+#
+# ⚠️ The mod repos being public is a FEATURE, not a leak — they are the receipts
+#    behind every claim these pages make. The reason this site is separate is
+#    AUDIENCE and JOB: a player searching "is my bug fixed" must not land in
+#    working notes, and working notes carry superseded numbers and in-progress
+#    wrong answers. Fine as receipts, bad as something people quote back at you.
+#
+# LOCAL PREVIEW (optional, needs one install):
+#     python -m pip install mkdocs-material
+#     python -m mkdocs serve
+#   then open http://127.0.0.1:8000 . The GitHub Actions build needs none of
+#   this — it installs its own copy.
+
+site_name: Community Mods for Surviving Mars
+site_description: Bug fixes and optional modules for Surviving Mars: Relaunched.
+docs_dir: content
+
+theme:
+  name: material
+  language: en
+  palette:
+    # dark first, matching the game and the peer sites players already read
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  features:
+    - navigation.instant      # no full page reload between pages
+    - navigation.tracking
+    - navigation.sections     # the left tree, like the peer site's sidebar
+    - navigation.top
+    - toc.follow              # the right-hand "on this page" rail
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition                # the coloured Note/Warning callouts
+  - attr_list                 # the .md-button links on the landing page
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details          # `???` collapsible entries (the fix list)
+  - pymdownx.superfences
+  - pymdownx.keys             # ++ctrl+k++ renders as key caps, not literal text
+  - pymdownx.tabbed:          # the `=== "Tab"` blocks on the landing page
+      alternate_style: true
+  - tables
+
+nav:
+  - Start here: index.md
+  - Installing: install.md
+  - Is my bug fixed?: fix-list.md
+  - Questions: faq.md
+
+# No analytics, no trackers, no external fonts beyond the theme's own.

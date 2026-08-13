@@ -1,0 +1,83 @@
+# Build and publish this repo to GitHub Pages.
+#
+# ⛔ DELIBERATELY MANUAL. The trigger is `workflow_dispatch` ONLY, so this never
+#    fires on a push and nothing reaches the public web until a human runs it
+#    from the Actions tab. Publishing is an owner act (public-docs chain rule 5).
+#
+#    To make it automatic later, uncomment the `push` block below. Do that only
+#    after the site's content is real — the pages in content/ are currently
+#    LAYOUT SPECIMENS and say so on their face.
+#
+# ⛔ BEFORE THE FIRST RUN, the owner must enable Pages:
+#      repo Settings -> Pages -> Build and deployment -> Source: GitHub Actions
+#    Without that, the deploy step fails with a permissions error. Nothing else
+#    is needed; there is no cost for a public repo.
+#
+# ⛔⛔ EXPOSURE GATE. This workflow builds `mkdocs.yml`, whose `docs_dir` is
+#     `content`. This repo deliberately contains no mod code and no agent
+#     corpus, so the gate is now structural — but the check below stays, and
+#     FAILS THE BUILD if the config is ever pointed elsewhere or a path escapes
+#     this repo. It is what refuses the day someone adds a submodule or a
+#     symlink back into a mod repo's docs/.
+
+name: Publish docs site
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+  #   paths: ['content/**', 'mkdocs.yml', '.github/workflows/publish-site.yml']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Exposure gate — the build may only read content/
+        run: |
+          set -e
+          grep -qx 'docs_dir: content' mkdocs.yml \
+            || { echo "REFUSING: mkdocs.yml no longer declares 'docs_dir: content'."; exit 1; }
+          if grep -rn -- '\.\./' mkdocs.yml content; then
+            echo "REFUSING: a path escapes this repo — the site must not read a mod repo's docs/."
+            exit 1
+          fi
+          if [ -e .gitmodules ]; then
+            echo "REFUSING: a submodule was added; this repo is content-only."
+            exit 1
+          fi
+          echo "exposure gate OK: build input is content/ only"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - run: python -m pip install --upgrade mkdocs-material
+
+      - run: python -m mkdocs build --strict
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

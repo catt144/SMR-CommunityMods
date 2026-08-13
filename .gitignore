@@ -1,0 +1,9 @@
+# MkDocs build output (the site is built in CI; the artifact is never committed)
+site/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Agent tooling — never part of a docs-only repo
+.claude/
