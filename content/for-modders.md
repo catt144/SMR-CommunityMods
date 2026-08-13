@@ -14,11 +14,11 @@ shape it expects is not there, that fix reports itself inactive and does nothing
 rather than running against code it no longer recognises. The pack is built
 against game version **1.0.7.396349**.
 
-!!! note "The honest limit of a self-check"
-    It notices the *shape* of the code changing. It cannot notice a function of
-    the same name whose body was quietly edited — so an official patch that fixes
-    a bug by rewriting the insides of the same function will not, on its own,
-    stand our version down.
+!!! note "The honest limit of that check"
+    It notices the *shape* of the code changing — renamed, removed, restructured.
+    It cannot notice a function of the same name whose body was quietly edited, so
+    an official patch that fixes a bug by rewriting the insides of the same
+    function will not, on its own, stand our version down.
 
 ## Switching off an individual fix
 
@@ -71,8 +71,9 @@ If you have measured it, we would genuinely like to know.
 
 ### What the veto does and does not reach
 
-- **A veto set before we load is complete.** The fix is never applied, so there
-  is nothing of ours in the game.
+- **A veto set before we load is complete.** The fix is registered, marked
+  disabled and never applied, so nothing of ours is installed over the game's own
+  function.
 - **A veto set later is not, for most fixes.** Nearly every fix is installed once,
   at load, by replacing or wrapping a function; taking the identifier out of the
   table afterwards does not un-install it. A small number of fixes re-read the
@@ -94,7 +95,8 @@ identifier, status and title through the mod's logging path.
     you where to look. If you run it and it prints somewhere, tell us where.
 
 Fixes that stand themselves down over a game-code change are also reported in a
-dialog when that happens, listing which ones switched off.
+dialog naming them — raised once, at the main menu, the next time the game
+starts.
 
 ## Coexisting with other mods
 
@@ -122,6 +124,9 @@ documented in plain language on the [FAQ](faq.md#how-do-i-get-it-out) — an
 optional drone dial left off its base setting stores an ordinary bonus that
 survives uninstalling.
 
-If you are writing something that inspects savegames, our own bookkeeping fields
-are named after the mod that writes them, and the full enumeration lives in the
-development notes in the repositories above.
+⚠️ **One thing that will mislead you if nobody says it:** the optional mod's
+persisted fields carry the **fix pack's** prefix, not its own. They were kept
+byte-identical when the two mods were split so that existing savegames did not
+have to be migrated. If you are inspecting a save, do not attribute a field to a
+mod by its prefix alone. The full enumeration lives in the development notes in
+the repositories above.

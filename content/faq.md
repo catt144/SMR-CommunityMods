@@ -30,8 +30,9 @@ nothing.
   vacuum, and Edit Payload keeping a row you emptied. All five are marked
   *judgment call* in the [fix list](fix-list.md).
 - **Anything from the optional modules**, if you installed that second mod. Those
-  are changes to designed behaviour, they are all listed on its own page, and
-  every one of them can be switched off individually in *Options → Mod Options*.
+  are changes to designed behaviour, and each one can be undone where you turned
+  it on: *Options → Mod Options*. Seven are switches; the eighth is the pair of
+  drone dials, which you undo by putting them back to their base settings.
 
 **A notice that is not ours:** the first time you load a save that was made with
 any mod you have since removed, the game itself prints a notice saying the save
@@ -52,15 +53,17 @@ re-numbered.
     ordinary bonus, and it keeps boosting your drones after the mod is gone —
     permanently, with nothing left in the game to say where it came from.
 
-    **Set both dials back to base, press Apply, then save the game** — and then
-    uninstall. Setting them to base clears it from the colony you are playing;
-    saving is what clears it from the file.
+    **With your colony loaded**, set both dials back to base, press Apply, then
+    save the game — and then uninstall. Setting them to base clears the boost
+    from the colony you are playing; saving is what clears it from the file. Done
+    from the main menu it clears nothing, because there is no colony to clear.
 
 **You cannot switch off one individual fix from inside the game**, on any
 platform. The fix pack has no options page at all — every setting lives in the
-optional mod — and the developer console cannot help either: the fixes are
-installed before the game reaches a point where you could type anything. There
-*is* a route, but it is a modder's one: see [For modders](for-modders.md).
+optional mod — and the developer console cannot un-apply a fix, because the fixes
+are installed long before the game reaches a point where you could type anything.
+There *is* one route, and it is a modder's one, with a limit we are straight
+about: see [For modders](for-modders.md).
 
 ### Where do I tell you?
 
@@ -91,8 +94,10 @@ description is still genuinely useful.
 ### Can I add this to a save I have already played?
 
 Yes, including a long one. The fix pack writes almost nothing into your savegame,
-and what it writes means nothing to the game without it. It is built to be safe
-to add or remove at any time.
+and what it writes means nothing to the game without it — with one deliberate
+exception, which is [written out on the installing
+page](install.md#what-it-puts-in-your-save) along with everything else it stores.
+It is built to be safe to add or remove at any time.
 
 The general advice applies to any mod and it is not specific to this one: if a
 save matters to you, back it up before adding *any* mod to it for the first time.
@@ -184,10 +189,12 @@ Three usual reasons.
 ### How do I turn one fix off?
 
 Not from inside the game, on any platform. See
-[For modders](for-modders.md) for the one route that exists and its limits.
+[For modders](for-modders.md) for the one route that exists, its limits, and the
+part of it we cannot tell you how to do.
 
-The optional pack is the opposite: every module there has a switch in *Options →
-Mod Options*, on every platform, controller included.
+The optional pack is the opposite: everything in it is reachable in *Options →
+Mod Options*, on every platform, controller included — seven switches and a pair
+of dials.
 
 ### What happens when the game updates?
 
@@ -199,21 +206,21 @@ that fix down instead of fighting it.
 The pack is built against game version **1.0.7.396349**.
 
 !!! note "The honest limit of that"
-    A self-check notices the code changing *shape*. It cannot notice a function
-    of the same name whose insides were quietly edited. If an official patch
-    repairs a bug by rewriting the body of the same function, our repair may keep
-    running alongside theirs — which is why we watch patches and update rather
-    than promising the mod retires itself.
+    That check notices the code changing *shape* — a function renamed, removed or
+    restructured. It cannot notice a function of the same name whose insides were
+    quietly edited. If an official patch repairs a bug by rewriting the body of
+    the same function, our repair may keep running alongside theirs — which is
+    why we watch patches and update rather than promising the mod retires itself.
 
 ### Load order — does it matter?
 
 **We have not measured this, and we are not going to guess at it.**
 
 What we can say is what the pack does: it patches the smallest thing that fixes
-each bug, chains politely with other mods' hooks rather than replacing whole
-systems where it can avoid it, and checks the game's code before changing
-anything. That is what makes it coexist with other mods; it is not a load-order
-instruction.
+each bug, calls through to whatever another mod has already put in place rather
+than replacing whole systems where it can avoid it, and checks the game's code
+before changing anything. That is the effort we make to coexist; it is not a
+guarantee and it is not a load-order instruction.
 
 If you have a specific conflict, tell us what the other mod is and what you see —
 that is a far better use of your time than shuffling the list.
@@ -226,9 +233,10 @@ Two things.
   on Xbox, PlayStation or the Microsoft Store.** That is the game's own rule and
   it applies to every mod, not just ours. Steam and other PC versions are not
   affected.
-- **The optional mod's switches work everywhere**, from the main menu or in
-  game, with a controller. The modder-level route for switching off an
-  individual *fix* is PC-only, because it needs another mod.
+- **The optional mod's settings work everywhere**, from the main menu or in
+  game, with a controller. Switching off an individual *fix* is a different
+  matter: it takes a second mod written for the purpose, so it is a thing a
+  modder does rather than something you can do on any platform, console or PC.
 
 ---
 
@@ -243,18 +251,21 @@ defensible design: it refuses to let you permanently silence a warning about
 something that is still wrong, because a warning dismissed forever is how you
 lose a colony to a problem you forgot about.
 
-An earlier version of the game really did have a bug here — dismissal did nothing
-at all — and the developers have already fixed that. What you see now is the
-intended behaviour, which is why there is no fix for it in the pack.
+There really was a defect here once — the setting that makes dismissal work at
+all was missing from the game's own data, and the developers have since put it
+back. What you see now is the intended behaviour, which is why there is no fix
+for it in the pack.
 
 **Why it still drives you up the wall:** the design has no answer for a building
 that can *never* recover — one entombed by a landscaping lake, say. You have seen
-the warning, you can do nothing about it, and it will resurface every couple of
-minutes for the rest of the game, because the game cannot tell "unacknowledged
-problem" apart from "problem the player has understood and accepted". There is a
-second wrinkle: the quiet window silences the whole warning *category*, so for
-those couple of minutes a freshly broken building is kept quiet too — arguably
-the opposite of what you want.
+the warning, you can do nothing about it, and it will resurface every four game
+hours for the rest of the game, because the game cannot tell "unacknowledged
+problem" apart from "problem the player has understood and accepted". Four game
+hours is a couple of minutes at normal speed and a few seconds at high speed,
+which is why it feels relentless when you are running fast. There is a second
+wrinkle: the quiet window silences the whole warning *category*, so during it a
+freshly broken building is kept quiet too — arguably the opposite of what you
+want.
 
 The annoyance is real, so the **optional** mod carries a module for it:
 *Acknowledged warnings* changes dismissal to mean "I have seen these particular
@@ -267,8 +278,9 @@ immediately. It is off until you turn it on.
 Leave the Hotel on **"Tourists Only"**. Switched to "Any Colonist" a Hotel stops
 being tourist housing and becomes ordinary housing — so an arriving jobseeker
 gets a *room*, which means they are not homeless, which means the optional
-Nursery / Retirement Dome policy will not move them out. The policy moves
-colonists who have no home in that dome, and a hotel room is a home.
+Nursery / Retirement Dome policy will not move them out. That policy moves
+unemployed colonists who have no home in that dome — anyone working there stays,
+and a hotel room counts as a home.
 
 ### I switched on classic rocket refuelling and my parked rocket did nothing
 

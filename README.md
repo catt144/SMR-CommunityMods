@@ -4,10 +4,14 @@ The player-facing documentation site for the *Surviving Mars: Relaunched*
 community mods. **This repo is the site and nothing else** — no mod code, no
 development notes. Everything in `content/` is written for players.
 
-⛔ **Nothing is on the public web yet.** The build workflow is manual-trigger
-only and GitHub Pages is not enabled on this repo. The four pages currently in
-`content/` are **layout specimens** and say so on their own face — they exist so
-the site's feel can be judged before the real writing starts.
+⛔ **Nothing is on the public web yet.** The build workflow is manual-trigger only
+and GitHub Pages is not enabled on this repo. The five pages in `content/` are
+**written and ready to read**, and they replaced the original layout specimens on
+2026-08-13 — but nothing on them is published until the owner turns Pages on.
+
+⚠️ **Two things on them are deliberately unfinished, and both are marked in
+place:** there are no store links (neither mod has been uploaded), and the
+"where do I send a bug report" answer names no destination for the same reason.
 
 ## The mods this site documents
 
@@ -28,7 +32,13 @@ bad as something people quote back at you.
 ```
 mkdocs.yml                          MkDocs + Material config
 content/                            every page, written for players
-  index.md · install.md · fix-list.md · faq.md
+  index.md          the three questions people ask before installing
+  install.md        installing, the restart rule, what goes in your save
+  fix-list.md       every fix in the pack, folded, searchable
+  faq.md            questions — opens with "something is broken and you
+                    think it might be us"
+  for-modders.md    switching off an individual fix, and what we cannot
+                    tell you about load order
 .github/workflows/publish-site.yml  manual-trigger Pages build
 ```
 

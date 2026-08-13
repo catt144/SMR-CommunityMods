@@ -19,8 +19,9 @@ own setting, until you switch it on.
 ### Is it safe for a save I have already played?
 
 **Yes, including a long one.** The fix pack writes almost nothing into your
-savegame, and what it writes means nothing to the game without it. The full list
-of what it stores is written out by name rather than summarised — on the
+savegame, and what it writes means nothing to the game without it — apart from
+one item that is deliberately left working, and is said so plainly. The full list
+of what it stores is written out by name rather than summarised, on the
 [installing page](install.md#what-it-puts-in-your-save).
 
 It is built to be safe to add or remove at any time. There is one caveat, and it
@@ -66,7 +67,9 @@ fixed, install the fix pack and stop there.
 
     Eight optional modules — things the developers deliberately decided against,
     or that we merely disagree with. Seven ship switched off; the two drone dials
-    ship at the game's own values, where they do exactly nothing.
+    ship at the game's own values, where they do exactly nothing. (One of the
+    eight also carries a real repair, because lifting a limit the game set walks
+    you straight into a defect the game never had to handle.)
 
     You turn on what you want in *Options → Mod Options*, on any platform,
     controller included. Install it only if you want something from its list.

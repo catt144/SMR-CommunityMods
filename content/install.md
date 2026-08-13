@@ -59,13 +59,16 @@ and it is written out in the [FAQ](faq.md#how-do-i-get-it-out).
 
 ## The optional modules
 
-Everything in the optional mod is off until you switch it on. The switches live in
-**Options → Mod Options → Community Fix Pack: Opt-In Modules**, reachable from the
-main menu or in game, and they work with a controller.
+Seven of the optional mod's eight modules ship switched off. The eighth is a pair
+of drone dials, which ship at the game's own values, where they do nothing at all
+until you move them. Everything lives in **Options → Mod Options → Community Fix
+Pack: Opt-In Modules**, reachable from the main menu or in game, and it works with
+a controller.
 
-**Toggles take effect as soon as you press Apply, in both directions — no restart
-needed.** The two drone dials are dropdowns rather than switches, and they only
-change when you press Apply, which is the one thing to remember about them.
+**Changes take effect as soon as you press Apply, in both directions — no restart
+needed.** That goes for the switches and for the dials alike: nothing you choose
+on that page does anything until Apply, so a player who sets a dial and backs out
+of Options has changed nothing.
 
 !!! warning "That is a different question from the one above"
     Turning a **module** on or off is immediate. Turning the **mod itself** on or
@@ -82,8 +85,8 @@ change when you press Apply, which is the one thing to remember about them.
 
 We have not measured how this game decides load order, and we are not going to
 guess at it. What the pack does instead is patch the smallest thing that fixes
-each bug, chain politely with other mods' hooks, and check the game's code before
-changing anything.
+each bug, call through to whatever another mod has already put in place, and
+check the game's code before changing anything.
 
 If you hit a specific conflict, tell us what the other mod is and what you see.
 
@@ -99,8 +102,8 @@ The optional mod's switches work on every platform, controller included.
 ## Checking it is working
 
 The honest answer for a bug-fix mod is that you check by the bug not happening.
+The Mod Manager shows you that it is installed and enabled; after that, there is
+nothing on screen to look at, because a repaired bug looks like an ordinary game.
 
-Both mods carry a call that lists what they did this session, but we have not yet
-confirmed whether its output appears on screen or only in the game's log file, so
-this page will not send you looking for it until someone has looked. The details,
-such as they are, are on the [For modders](for-modders.md) page.
+If you want more than that, the [For modders](for-modders.md) page describes what
+each mod can report about itself, and what we have not yet confirmed about it.
