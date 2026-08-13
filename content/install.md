@@ -27,13 +27,26 @@
 The optional pack ships everything **off**. Turn on the ones you want in
 **Options → Mod Options**.
 
-!!! danger "⛔ UNRESOLVED — do not publish this line as written"
-    Whether a module toggle needs a game restart is **contradicted by two of our
-    own documents**: the frozen mod description says toggles take effect
-    immediately with no restart, and an earlier draft of this page said to
-    restart. Neither is confirmed against the opt-in pack's own code. This must
-    be re-derived before the page ships — it is exactly the kind of claim a
-    player checks in thirty seconds.
+Toggles take effect immediately — **no restart needed.** Turn a module on or off,
+press Apply, and the change is live.
+
+!!! note "Reviewer's note — resolved 2026-08-13, one check outstanding"
+    This line used to carry a "do not publish" banner because two of our own
+    documents contradicted each other on it. It has now been re-derived from the
+    optional pack's own code and the answer is settled: seven of the eight
+    modules re-check whether they are switched on every time they run, and the
+    eighth (the one that raises the Artificial Sun build limit) carries explicit
+    handlers that apply and undo the change live. All eight are re-read the
+    moment Apply is pressed.
+
+    ⚠️ Still **source-verified rather than observed in play**, which on this
+    project is a distinction that has bitten twice. One toggle flip during the
+    next capture session converts it, and that is already asked for. Remove this
+    note once it is.
+
+!!! warning "This is a different question from the one above"
+    Turning the **mod itself** on or off in the Mod Manager *does* need a full
+    restart. Only the per-module toggles are immediate.
 
 !!! note "The fix pack has no options page, and that is correct"
     Every setting moved to the optional pack when the two were split. If you have
