@@ -30,7 +30,7 @@
 #   this — it installs its own copy.
 
 site_name: Community Mods for Surviving Mars
-site_description: Bug fixes and optional modules for Surviving Mars: Relaunched.
+site_description: "Bug fixes and optional modules for Surviving Mars: Relaunched."
 docs_dir: content
 
 theme:
@@ -79,6 +79,7 @@ nav:
   - Start here: index.md
   - Installing: install.md
   - Is my bug fixed?: fix-list.md
-  - Questions: faq.md
+  - Questions & problems: faq.md
+  - For modders: for-modders.md
 
 # No analytics, no trackers, no external fonts beyond the theme's own.

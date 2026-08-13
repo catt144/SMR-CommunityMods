@@ -1,54 +1,106 @@
 # Installing
 
-!!! warning "LAYOUT SPECIMEN"
-    Placeholder structure. The real page needs the store links (which do not
-    exist until the mods are uploaded) and screenshots that do not exist yet.
+!!! note "No store links yet"
+    Neither mod has been published, so there is nothing to link to. This page
+    gets the links when they exist.
 
-## From Paradox Mods
+## Installing a mod
 
-1. Open the mod page and press **Add**.
+1. Open the mod's page and add it.
 2. Launch the game and enable it in the **Mod Manager**.
-3. Restart the game.
+3. **Restart the game.**
 
-!!! note "A restart is genuinely required"
-    Enabling or disabling a mod only takes effect on a full restart of the game —
-    not just returning to the main menu.
+!!! warning "The restart is not optional"
+    Enabling or disabling a mod in the Mod Manager only takes effect on a **full
+    restart of the game** — all the way out and back in, not a return to the main
+    menu. This catches people out constantly, including us: a mod you have just
+    switched off is still running until you restart, so anything you test before
+    that is testing the old state.
 
-## Load order
+Nothing is patched on disk. Both mods wrap the game's own code while it runs, and
+no game file is modified.
 
-*(To be written — needs a real answer rather than a guess.)*
+## Adding it to a save you have already played
 
-## Checking it is working
+That is what the fix pack is built for, and a long-running colony is exactly the
+case it was written against. Several of its repairs go looking for damage already
+sitting in your save and undo what they can positively identify, the first time
+you load.
 
-*(Screenshot to come: the Mod Manager entry, and the mod's own status readout.)*
+The general advice applies to any mod and is not specific to this one: **if a save
+matters to you, back it up before adding any mod to it for the first time.** On a
+console, where you cannot copy files about, make an extra named save first.
+
+## What it puts in your save
+
+The fix pack's bookkeeping, by name rather than as a summary:
+
+- a timestamp on a housing reservation;
+- a timestamp on a colonist who has just taken shelter;
+- a "the player has set this payload" flag on a rocket;
+- a handful of small stamps and flags that let a repair know it has already run,
+  or hold one decision for as long as a single weather event lasts.
+
+None of that means anything to the game without the pack. A couple of the stamps
+clear themselves the next time you save, and older ones left by earlier versions
+are deleted as they are found.
+
+**One item is deliberately not inert.** Where a repair put back a bonus that a
+broken patch migration dropped, that bonus is an ordinary one of the kind the game
+hands out itself, and it goes on working without us — which is the entire point of
+restoring it.
+
+The optional mod stores four things: a "you have seen this warning" mark on a
+building, a "closed to new residents" flag on a dome, a "move jobseekers out" flag
+on a dome, and — only if you move a drone dial off its base setting — an ordinary
+bonus of the kind the game hands out itself. The first three mean nothing to the
+unmodded game. **The fourth is the one caveat worth thirty seconds of your time**
+and it is written out in the [FAQ](faq.md#how-do-i-get-it-out).
 
 ## The optional modules
 
-The optional pack ships everything **off**. Turn on the ones you want in
-**Options → Mod Options**.
+Everything in the optional mod is off until you switch it on. The switches live in
+**Options → Mod Options → Community Fix Pack: Opt-In Modules**, reachable from the
+main menu or in game, and they work with a controller.
 
-Toggles take effect immediately — **no restart needed.** Turn a module on or off,
-press Apply, and the change is live.
+**Toggles take effect as soon as you press Apply, in both directions — no restart
+needed.** The two drone dials are dropdowns rather than switches, and they only
+change when you press Apply, which is the one thing to remember about them.
 
-!!! note "Reviewer's note — resolved 2026-08-13, one check outstanding"
-    This line used to carry a "do not publish" banner because two of our own
-    documents contradicted each other on it. It has now been re-derived from the
-    optional pack's own code and the answer is settled: seven of the eight
-    modules re-check whether they are switched on every time they run, and the
-    eighth (the one that raises the Artificial Sun build limit) carries explicit
-    handlers that apply and undo the change live. All eight are re-read the
-    moment Apply is pressed.
-
-    ⚠️ Still **source-verified rather than observed in play**, which on this
-    project is a distinction that has bitten twice. One toggle flip during the
-    next capture session converts it, and that is already asked for. Remove this
-    note once it is.
-
-!!! warning "This is a different question from the one above"
-    Turning the **mod itself** on or off in the Mod Manager *does* need a full
-    restart. Only the per-module toggles are immediate.
+!!! warning "That is a different question from the one above"
+    Turning a **module** on or off is immediate. Turning the **mod itself** on or
+    off in the Mod Manager needs a full game restart.
 
 !!! note "The fix pack has no options page, and that is correct"
-    Every setting moved to the optional pack when the two were split. If you have
-    only the fix pack installed, you will not find it in Mod Options — nothing is
-    missing.
+    Every setting moved to the optional mod when the two were split. If you have
+    only the fix pack installed you will not find it in Mod Options — nothing is
+    missing, and nothing is broken. There is no way to switch off an individual
+    *fix* from inside the game; see [For modders](for-modders.md) for the one
+    route that exists.
+
+## Load order
+
+We have not measured how this game decides load order, and we are not going to
+guess at it. What the pack does instead is patch the smallest thing that fixes
+each bug, chain politely with other mods' hooks, and check the game's code before
+changing anything.
+
+If you hit a specific conflict, tell us what the other mod is and what you see.
+
+## Console and gamepad players
+
+**While any mod is enabled, the game does not unlock achievements or trophies on
+Xbox, PlayStation or the Microsoft Store.** That is the game's own rule and it
+applies to every mod. Steam and other PC versions are not affected — achievements
+keep unlocking there with mods enabled.
+
+The optional mod's switches work on every platform, controller included.
+
+## Checking it is working
+
+The honest answer for a bug-fix mod is that you check by the bug not happening.
+
+Both mods carry a call that lists what they did this session, but we have not yet
+confirmed whether its output appears on screen or only in the game's log file, so
+this page will not send you looking for it until someone has looked. The details,
+such as they are, are on the [For modders](for-modders.md) page.

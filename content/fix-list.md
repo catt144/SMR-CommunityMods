@@ -3,11 +3,15 @@
 **Search rather than scroll** — press ++ctrl+k++ (or use the search box at the
 top) and type what went wrong in your game: *meteor*, *colonists suffocate*,
 *train*, *drones stuck*, *rocket*, *dome full*. Every entry on this page is
-written with the words you would use, not the words we would use.
+written with the words you would use, not the words we would use, and the search
+looks inside the folded entries as well as at their titles.
 
-This page lists every fix in the **Community Fix Pack**. Entries are folded up —
-click one to open it. Each says what you saw, what was wrong underneath, and what
-happens now.
+A search result drops you at the right **section** rather than at the entry
+itself, so the last step is yours: the entry titles are all visible while they are
+folded — click the one that matches.
+
+This page lists every fix in the **Community Fix Pack**. Each entry says what you
+saw, what was wrong underneath, and what happens now.
 
 !!! note "How to read an entry"
     Most entries are plain repairs: the game's code says one thing, does another,
