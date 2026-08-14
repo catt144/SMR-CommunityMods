@@ -4,9 +4,9 @@
 #    fires on a push and nothing reaches the public web until a human runs it
 #    from the Actions tab. Publishing is an owner act (public-docs chain rule 5).
 #
-#    To make it automatic later, uncomment the `push` block below. Do that only
-#    after the site's content is real — the pages in content/ are currently
-#    LAYOUT SPECIMENS and say so on their face.
+#    To make it automatic later, uncomment the `push` block below. The pages in
+#    content/ are real (built 2026-08-13, swept and audited); what still gates
+#    publishing is the owner's release sequencing, not the content.
 #
 # ⛔ BEFORE THE FIRST RUN, the owner must enable Pages:
 #      repo Settings -> Pages -> Build and deployment -> Source: GitHub Actions
