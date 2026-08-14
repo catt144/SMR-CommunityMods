@@ -34,11 +34,6 @@ nothing.
   it on: *Options → Mod Options*. Seven are switches; the eighth is the pair of
   drone dials, which you undo by putting them back to their base settings.
 
-**A notice that is not ours:** the first time you load a save that was made with
-any mod you have since removed, the game itself prints a notice saying the save
-refers to a mod that is not there. That is the game, not the mod, and it goes
-away as soon as you save again.
-
 ### How do I get it out?
 
 1. **Turn it off in the Mod Manager, or remove it from Paradox Mods.**
