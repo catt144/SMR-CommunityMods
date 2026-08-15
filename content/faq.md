@@ -25,10 +25,9 @@ nothing.
   the map settings were written for, and on some settings that is noticeably more
   than the game has ever actually delivered. This one is deliberate and it is
   described in the fix list.
-- **Five other judgment calls** — drones retrying a building they once could not
+- **Four other judgment calls** — drones retrying a building they once could not
   reach, Biorobots not catching Dust Sickness, colonists taking shelter in
-  vacuum, Edit Payload keeping a row you emptied, and the distress-call
-  confirmation now pausing the game like every other window. All six are marked
+  vacuum, and Edit Payload keeping a row you emptied. All five are marked
   *judgment call* in the [fix list](fix-list.md).
 - **Some buildings produce more under an Automation policy.** The Workshops,
   Security Stations and Posts, the Drone Assembler and the *Experiment 1: Big
@@ -187,10 +186,9 @@ Three honest notes:
 
 ### Which fixes are judgment calls?
 
-Six: drones writing a building off after one blocked approach · Biorobots and
+Five: drones writing a building off after one blocked approach · Biorobots and
 Dust Sickness · colonists sheltering in vacuum · Edit Payload remembering what
-you told it · dust devil wave sizes · the distress-call confirmation pausing the
-game like every other window. Each one is marked *judgment call* in the
+you told it · dust devil wave sizes. Each one is marked *judgment call* in the
 [fix list](fix-list.md), with our reasoning in the entry.
 
 ### Why isn't *X* fixed?

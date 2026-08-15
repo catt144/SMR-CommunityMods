@@ -837,27 +837,6 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** the conditions are evaluated, and the figure they read is
     the one they meant.
 
-??? question "The distress-call confirmation let the game keep running behind it — *judgment call*"
-    **What you saw:** every message window in the game pauses time while it is
-    open — except the confirmation for broadcasting a distress call to rival
-    colonies. Behind that one window, the clock kept running.
-
-    **What was wrong:** strictly, nothing — the game deliberately leaves time
-    running for that one dialog. But that made it the one window an automatic
-    save could land inside, and a message that arrives without you clicking
-    anything could quietly queue up behind it — a queue that is not written
-    into saves, so a save taken at that exact moment could leave part of the
-    game's story machinery permanently stuck after you load it.
-
-    **After the fix:** the distress-call confirmation pauses the game like
-    every other popup. With the pack installed, no save can be made while any
-    popup window is open.
-
-    **⚠️ Worth knowing:** this is a judgment call. The game's code is not wrong
-    — the developers chose non-pausing for this one dialog, and we overrode
-    that choice to close off the last way a save could land inside an open
-    popup window.
-
 ---
 
 ## The numbers on your screen
