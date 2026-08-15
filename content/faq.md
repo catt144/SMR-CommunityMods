@@ -25,10 +25,17 @@ nothing.
   the map settings were written for, and on some settings that is noticeably more
   than the game has ever actually delivered. This one is deliberate and it is
   described in the fix list.
-- **Four other judgment calls** — drones retrying a building they once could not
+- **Five other judgment calls** — drones retrying a building they once could not
   reach, Biorobots not catching Dust Sickness, colonists taking shelter in
-  vacuum, and Edit Payload keeping a row you emptied. All five are marked
+  vacuum, Edit Payload keeping a row you emptied, and the distress-call
+  confirmation now pausing the game like every other window. All six are marked
   *judgment call* in the [fix list](fix-list.md).
+- **Some buildings produce more under an Automation policy.** The Workshops,
+  Security Stations and Posts, the Drone Assembler and the *Experiment 1: Big
+  Drop* site were losing half their staff to those policies and receiving none
+  of the pay-back other buildings get; now they receive it, so their output
+  rises to where the policy was always meant to leave it. Deliberate, and
+  described in the fix list.
 - **Anything from the optional modules**, if you installed that second mod. Those
   are changes to designed behaviour, and each one can be undone where you turned
   it on: *Options → Mod Options*. Seven are switches; the eighth is the pair of
@@ -163,20 +170,27 @@ The fix pack repairs defects in the game's own code rather than rebalancing the
 game. Preferences and features are not in it; they live in the optional mod,
 which you do not need.
 
-Two honest exceptions:
+Three honest notes:
 
-- **Five fixes are judgment calls** rather than plain repairs, marked as such in
-  the [fix list](fix-list.md). In two of them the game's code is not wrong at all
-  and we made a call anyway.
+- **Six fixes are judgment calls** rather than plain repairs, marked as such in
+  the [fix list](fix-list.md). In three of them the game's code is not wrong at
+  all and we made a call anyway.
 - **One of them changes how the game feels** — dust devil wave sizes, which on
   some map settings means noticeably more dust devils than any version of the
   game has actually delivered.
+- **One plain repair moves numbers you will notice.** The Automation policies
+  take half the workers from every building they cover and are meant to pay the
+  output back; some buildings never received that pay-back and lost roughly half
+  their output. With the fix they receive it — so workshop comfort, security
+  coverage, drone production and research under those policies rise to where the
+  policy was always meant to leave them.
 
 ### Which fixes are judgment calls?
 
-Five: drones writing a building off after one blocked approach · Biorobots and
+Six: drones writing a building off after one blocked approach · Biorobots and
 Dust Sickness · colonists sheltering in vacuum · Edit Payload remembering what
-you told it · dust devil wave sizes. Each one is marked *judgment call* in the
+you told it · dust devil wave sizes · the distress-call confirmation pausing the
+game like every other window. Each one is marked *judgment call* in the
 [fix list](fix-list.md), with our reasoning in the entry.
 
 ### Why isn't *X* fixed?

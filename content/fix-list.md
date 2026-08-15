@@ -499,6 +499,35 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the bonus is restored when you load an affected save.
 
+??? success "An Automation policy halved some buildings' output instead of just their staff"
+    **What you saw:** with a Factory or Service Automation policy enacted, some
+    of the buildings it covers — the Workshops, the Security Stations and Posts,
+    the Drone Assembler, the *Experiment 1: Big Drop* site — ran at roughly half
+    their usual output, while diners, shops, factories and labs kept full output
+    with half the staff.
+
+    **What was wrong:** an Automation policy takes half the workers from every
+    building it covers, and a second piece of code raises output per worker so
+    that overall performance stays where it was — the game's own comment says
+    the two are meant to cancel out. But the cut and the pay-back use two
+    different ideas of which buildings the policy covers, and the buildings on
+    the wrong side of that line lost half their staff and were paid nothing
+    back.
+
+    **After the fix:** every building an Automation policy takes workers from
+    gets the same pay-back the rest always got — exactly the amount the game's
+    own arithmetic produces, no more. Repeal the policy and the pay-back stands
+    down with it.
+
+    **⚠️ Worth knowing:** this visibly raises what those buildings produce while
+    an Automation policy is active — workshop comfort, security coverage, drone
+    production, research. That is the policy's own trade finally working as
+    written, not a buff. Only one Automation policy can be active at a time, so
+    at most six of the eight affected building types are covered by it at once.
+    We measured one building type live in a colony — its output exactly doubled,
+    matching the game's own arithmetic — and the others follow the same verified
+    rule in the code.
+
 ---
 
 ## Trains
@@ -807,6 +836,27 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the conditions are evaluated, and the figure they read is
     the one they meant.
+
+??? question "The distress-call confirmation let the game keep running behind it — *judgment call*"
+    **What you saw:** every message window in the game pauses time while it is
+    open — except the confirmation for broadcasting a distress call to rival
+    colonies. Behind that one window, the clock kept running.
+
+    **What was wrong:** strictly, nothing — the game deliberately leaves time
+    running for that one dialog. But that made it the one window an automatic
+    save could land inside, and a message that arrives without you clicking
+    anything could quietly queue up behind it — a queue that is not written
+    into saves, so a save taken at that exact moment could leave part of the
+    game's story machinery permanently stuck after you load it.
+
+    **After the fix:** the distress-call confirmation pauses the game like
+    every other popup. With the pack installed, no save can be made while any
+    popup window is open.
+
+    **⚠️ Worth knowing:** this is a judgment call. The game's code is not wrong
+    — the developers chose non-pausing for this one dialog, and we overrode
+    that choice to close off the last way a save could land inside an open
+    popup window.
 
 ---
 
