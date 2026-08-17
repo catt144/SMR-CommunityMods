@@ -934,7 +934,5 @@ the pack and it is not on this list. A list of things we *think* might be wrong
 would be worth nothing to you.
 
 **Things we merely disagree with.** Preferences, quality-of-life changes and
-behaviour the game clearly intends live in a separate mod, *Community Fix Pack:
-Opt-In Modules*, which you do not need to install. Seven of its eight modules
-ship switched off; the eighth is a pair of drone dials that sit at the game's own
-values, where they do nothing at all until you move them.
+behaviour the game clearly intends are not bug fixes, and they are not in the
+pack.

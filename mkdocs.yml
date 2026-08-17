@@ -30,7 +30,7 @@
 #   this — it installs its own copy.
 
 site_name: Community Mods for Surviving Mars
-site_description: "Bug fixes and optional modules for Surviving Mars: Relaunched."
+site_description: "Bug fixes for Surviving Mars: Relaunched."
 docs_dir: content
 
 theme:

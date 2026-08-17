@@ -10,7 +10,7 @@ and GitHub Pages is not enabled on this repo. The five pages in `content/` are
 2026-08-13 — but nothing on them is published until the owner turns Pages on.
 
 ⚠️ **One thing on them is deliberately unfinished, and it is marked in place:**
-there are no store links, because neither mod has been uploaded. Bug reports are
+there are no store links, because the mod has not been uploaded. Bug reports are
 routed as of 2026-08-13 — mod-page comments first, this project's issue tracker
 for reports carrying a save or a log.
 
@@ -19,7 +19,6 @@ for reports carrying a save or a log.
 | mod | repo | what it is |
 |---|---|---|
 | **Community Fix Pack** | [`catt144/SMR-CommunityFixPack`](https://github.com/catt144/SMR-CommunityFixPack) | bug fixes only; every one repairs a defect verified in the game's own shipped code |
-| **Community Fix Pack: Opt-In Modules** | [`catt144/SMR-CommunityOptInPack`](https://github.com/catt144/SMR-CommunityOptInPack) | optional changes to how the game behaves, all off until you turn them on |
 
 ⭐ **Those repos being public is deliberate.** They are the receipts behind every
 claim these pages make, working notes and corrections included. This site is

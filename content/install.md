@@ -1,8 +1,8 @@
 # Installing
 
 !!! note "No store links yet"
-    Neither mod has been published, so there is nothing to link to. This page
-    gets the links when they exist.
+    The mod has not been published yet, so there is nothing to link to. This
+    page gets the link when it exists.
 
 ## Installing a mod
 
@@ -17,7 +17,7 @@
     switched off is still running until you restart, so anything you test before
     that is testing the old state.
 
-Nothing is patched on disk. Both mods wrap the game's own code while it runs, and
+Nothing is patched on disk. The mod wraps the game's own code while it runs, and
 no game file is modified.
 
 ## Adding it to a save you have already played
@@ -50,36 +50,11 @@ broken patch migration dropped, that bonus is an ordinary one of the kind the ga
 hands out itself, and it goes on working without us — which is the entire point of
 restoring it.
 
-The optional mod stores four things: a "you have seen this warning" mark on a
-building, a "closed to new residents" flag on a dome, a "move jobseekers out" flag
-on a dome, and — only if you move a drone dial off its base setting — an ordinary
-bonus of the kind the game hands out itself. The first three mean nothing to the
-unmodded game. **The fourth is the one caveat worth thirty seconds of your time**
-and it is written out in the [FAQ](faq.md#how-do-i-get-it-out).
-
-## The optional modules
-
-Seven of the optional mod's eight modules ship switched off. The eighth is a pair
-of drone dials, which ship at the game's own values, where they do nothing at all
-until you move them. Everything lives in **Options → Mod Options → Community Fix
-Pack: Opt-In Modules**, reachable from the main menu or in game, and it works with
-a controller.
-
-**Changes take effect as soon as you press Apply, in both directions — no restart
-needed.** That goes for the switches and for the dials alike: nothing you choose
-on that page does anything until Apply, so a player who sets a dial and backs out
-of Options has changed nothing.
-
-!!! warning "That is a different question from the one above"
-    Turning a **module** on or off is immediate. Turning the **mod itself** on or
-    off in the Mod Manager needs a full game restart.
-
 !!! note "The fix pack has no options page, and that is correct"
-    Every setting moved to the optional mod when the two were split. If you have
-    only the fix pack installed you will not find it in Mod Options — nothing is
-    missing, and nothing is broken. There is no way to switch off an individual
-    *fix* from inside the game; see [For modders](for-modders.md) for the one
-    route that exists.
+    There is nothing to configure, so you will not find it in Mod Options —
+    nothing is missing, and nothing is broken. There is no way to switch off an
+    individual *fix* from inside the game; see [For modders](for-modders.md) for
+    the one route that exists.
 
 ## Load order
 
@@ -97,8 +72,6 @@ Xbox, PlayStation or the Microsoft Store.** That is the game's own rule and it
 applies to every mod. Steam and other PC versions are not affected — achievements
 keep unlocking there with mods enabled.
 
-The optional mod's switches work on every platform, controller included.
-
 ## Checking it is working
 
 The honest answer for a bug-fix mod is that you check by the bug not happening.
@@ -106,4 +79,4 @@ The Mod Manager shows you that it is installed and enabled; after that, there is
 nothing on screen to look at, because a repaired bug looks like an ordinary game.
 
 If you want more than that, the [For modders](for-modders.md) page describes what
-each mod can report about itself, and what we have not yet confirmed about it.
+the mod can report about itself, and what we have not yet confirmed about it.

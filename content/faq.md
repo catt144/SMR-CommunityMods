@@ -35,10 +35,6 @@ nothing.
   of the pay-back other buildings get; now they receive it, so their output
   rises to where the policy was always meant to leave it. Deliberate, and
   described in the fix list.
-- **Anything from the optional modules**, if you installed that second mod. Those
-  are changes to designed behaviour, and each one can be undone where you turned
-  it on: *Options → Mod Options*. Seven are switches; the eighth is the pair of
-  drone dials, which you undo by putting them back to their base settings.
 
 ### How do I get it out?
 
@@ -49,19 +45,9 @@ The bugs it was holding back come back. Repairs it already made to your save sta
 made — a bonus it removed does not come back, a track it re-numbered stays
 re-numbered.
 
-!!! warning "If you used the optional pack's drone dials, do this first"
-    A drone dial left off its base setting is stored in your savegame as an
-    ordinary bonus, and it keeps boosting your drones after the mod is gone —
-    permanently, with nothing left in the game to say where it came from.
-
-    **With your colony loaded**, set both dials back to base, press Apply, then
-    save the game — and then uninstall. Setting them to base clears the boost
-    from the colony you are playing; saving is what clears it from the file. Done
-    from the main menu it clears nothing, because there is no colony to clear.
-
 **You cannot switch off one individual fix from inside the game**, on any
-platform. The fix pack has no options page at all — every setting lives in the
-optional mod — and the developer console cannot un-apply a fix, because the fixes
+platform. The fix pack has no options page at all, and the developer console
+cannot un-apply a fix, because the fixes
 are installed long before the game reaches a point where you could type anything.
 There *is* one route, and it is a modder's one, with a limit we are straight
 about: see [For modders](for-modders.md).
@@ -93,8 +79,7 @@ description is still genuinely useful.
   Comment sections cannot carry files, and a save where the bug reliably happens
   is worth more than any description of it:
   [github.com/catt144/SMR-CommunityFixPack/issues](https://github.com/catt144/SMR-CommunityFixPack/issues).
-  It needs a free GitHub account. One tracker covers both mods — say which one
-  you were running and we will sort it out from there.
+  It needs a free GitHub account.
 
 On Xbox and PlayStation there is nothing to attach in the first place, so the mod
 page is the whole route, and a plain description is genuinely useful.
@@ -118,23 +103,7 @@ extra named save first.
 
 ### Can I remove it later?
 
-Yes — see [How do I get it out?](#how-do-i-get-it-out) above, including the one
-drone-dial caveat if you use the optional pack.
-
-### Do I need both mods?
-
-No. The **Community Fix Pack** is bug fixes and works entirely on its own. The
-**Community Fix Pack: Opt-In Modules** is a separate mod of optional changes,
-also standing on its own. Neither needs the other, and they work together.
-
-If you only want your bugs fixed, install the fix pack and stop there.
-
-### Why did my toggles and dials reset?
-
-Because the optional modules moved into their own mod. A new mod is a new set of
-options as far as the game is concerned, so previous settings do not carry over.
-One visit to *Options → Mod Options* sets them again, and they stay set. Your
-savegames are not affected — this is only the mod's own settings.
+Yes — see [How do I get it out?](#how-do-i-get-it-out) above.
 
 ### Will it fix a save that is already broken?
 
@@ -166,8 +135,7 @@ replacement trains at any station for Metals and Electronics.
 ### Does this change game balance?
 
 The fix pack repairs defects in the game's own code rather than rebalancing the
-game. Preferences and features are not in it; they live in the optional mod,
-which you do not need.
+game. Preferences and features are not in it.
 
 Three honest notes:
 
@@ -198,8 +166,8 @@ Three usual reasons.
 - **We could not demonstrate it.** If we could not point at the defect in the
   game's own code, or could not reproduce what was reported, it does not ship. A
   list of things we merely suspect would be worth nothing to you.
-- **It is not a defect, it is a design we disagree with.** Those go in the
-  optional mod, off by default, or nowhere.
+- **It is not a defect, it is a design we disagree with.** Those are not bug
+  fixes, and they do not ship in the pack.
 - **The repair would be bigger than the bug.** Some fixes would mean replacing so
   much of the game's own code that the mod would break on the next official
   patch, which is a worse deal than the bug.
@@ -209,10 +177,6 @@ Three usual reasons.
 Not from inside the game, on any platform. See
 [For modders](for-modders.md) for the one route that exists, its limits, and the
 part of it we cannot tell you how to do.
-
-The optional pack is the opposite: everything in it is reachable in *Options →
-Mod Options*, on every platform, controller included — seven switches and a pair
-of dials.
 
 ### What happens when the game updates?
 
@@ -251,10 +215,9 @@ Two things.
   on Xbox, PlayStation or the Microsoft Store.** That is the game's own rule and
   it applies to every mod, not just ours. Steam and other PC versions are not
   affected.
-- **The optional mod's settings work everywhere**, from the main menu or in
-  game, with a controller. Switching off an individual *fix* is a different
-  matter: it takes a second mod written for the purpose, so it is a thing a
-  modder does rather than something you can do on any platform, console or PC.
+- **Switching off an individual *fix*** takes a second mod written for the
+  purpose, so it is a thing a modder does rather than something you can do from
+  inside the game, on any platform, console or PC.
 
 ---
 
@@ -284,32 +247,3 @@ which is why it feels relentless when you are running fast. There is a second
 wrinkle: the quiet window silences the whole warning *category*, so during it a
 freshly broken building is kept quiet too — arguably the opposite of what you
 want.
-
-The annoyance is real, so the **optional** mod carries a module for it:
-*Acknowledged warnings* changes dismissal to mean "I have seen these particular
-buildings". The ones you dismissed stay quiet until they actually recover, if one
-later breaks again you are told, and a newly broken building always warns
-immediately. It is off until you turn it on.
-
-### My Retirement Dome's hotel is filling up with jobseekers
-
-Leave the Hotel on **"Tourists Only"**. Switched to "Any Colonist" a Hotel stops
-being tourist housing and becomes ordinary housing — so an arriving jobseeker
-gets a *room*, which means they are not homeless, which means the optional
-Nursery / Retirement Dome policy will not move them out. That policy moves
-unemployed colonists who have no home in that dome — anyone working there stays,
-and a hotel room counts as a home.
-
-### I switched on classic rocket refuelling and my parked rocket did nothing
-
-That is deliberate. A rocket that is *already* sitting parked when you enable the
-module picks the behaviour up the next time it lands; rockets that land after you
-enable it fill immediately. The alternative was reaching into rockets mid-flight
-cycle, and we would rather leave a working system alone. If it bothers you, land
-the rocket once.
-
-### I put up a second Artificial Sun and my old solar panels ignore it
-
-Panels that were already standing keep ignoring a second sun until you save and
-load. Panels built after you switch the module on bind straight away, and a
-reload snaps the older ones into place.

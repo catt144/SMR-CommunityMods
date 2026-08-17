@@ -1,11 +1,11 @@
 # For modders
 
 This page is for people writing or debugging mods. If you are playing the game,
-you want the [FAQ](faq.md) instead — nothing here is needed to use either mod.
+you want the [FAQ](faq.md) instead — nothing here is needed to use the mod.
 
-## What these mods do to the game
+## What this mod does to the game
 
-Nothing on disk. Both mods patch the game's code **at runtime** — wrapping,
+Nothing on disk. The mod patches the game's code **at runtime** — wrapping,
 chaining and, where there is no alternative, replacing individual functions while
 the game runs. No game file is modified and no asset is overwritten.
 
@@ -33,13 +33,6 @@ SMRFixPack_Disabled = SMRFixPack_Disabled or {}
 SMRFixPack_Disabled["DustDevilSpawnGate"] = true
 ```
 
-The optional-modules mod has the same mechanism under its own name:
-
-```lua
-SMROptInPack_Disabled = SMROptInPack_Disabled or {}
-SMROptInPack_Disabled["NoHomeless"] = true
-```
-
 The pack picks up an existing table rather than replacing it, so it does not
 matter whether yours or ours is created first — only that the *values* are set
 before our code runs.
@@ -49,13 +42,11 @@ before our code runs.
 They are the names of the fix files in the pack's public repository, minus the
 `Fix_` prefix — `Code/Fix_DustDevilSpawnGate.lua` registers `DustDevilSpawnGate`.
 The one exception is the save-repair module, `Code/90_SaveSanitizer.lua`, which
-registers `SaveSanitizer`. The optional mod follows the same rule with its own
-`Opt_` prefix: `Code/Opt_NoHomeless.lua` registers `NoHomeless`.
+registers `SaveSanitizer`.
 
 - [Community Fix Pack repository](https://github.com/catt144/SMR-CommunityFixPack)
-- [Opt-In Modules repository](https://github.com/catt144/SMR-CommunityOptInPack)
 
-Those repositories are public on purpose. Every fix carries a header explaining
+That repository is public on purpose. Every fix carries a header explaining
 the defect, citing the game's own code by file and line, and the development
 notes behind them are in the same tree.
 
@@ -84,9 +75,9 @@ If you have measured it, we would genuinely like to know.
 
 ## Seeing what the pack did
 
-Each pack exposes a listing call — `SMRFixPack.ListFixes()` and
-`SMROptInPack.ListFixes()` — which walks every registered fix and writes its
-identifier, status and title through the mod's logging path.
+The pack exposes a listing call — `SMRFixPack.ListFixes()` — which walks every
+registered fix and writes its identifier, status and title through the mod's
+logging path.
 
 !!! warning "We have not yet confirmed where that output lands"
     It goes through the game's own mod-log printing, and we have not verified
@@ -118,15 +109,10 @@ our patch can be narrower.
 
 ## Save data
 
-Both mods write a small, enumerated set of fields into savegames, and all but one
+The mod writes a small, enumerated set of fields into savegames, and all but one
 of them mean nothing to the game once the mod is gone. The exception is
-documented in plain language on the [FAQ](faq.md#how-do-i-get-it-out) — an
-optional drone dial left off its base setting stores an ordinary bonus that
-survives uninstalling.
-
-⚠️ **One thing that will mislead you if nobody says it:** the optional mod's
-persisted fields carry the **fix pack's** prefix, not its own. They were kept
-byte-identical when the two mods were split so that existing savegames did not
-have to be migrated. If you are inspecting a save, do not attribute a field to a
-mod by its prefix alone. The full enumeration lives in the development notes in
-the repositories above.
+deliberate and documented on the [installing
+page](install.md#what-it-puts-in-your-save) — where a repair put back a bonus
+that a broken patch migration dropped, that bonus is an ordinary one of the kind
+the game hands out itself and keeps working after the mod is gone. The full
+enumeration lives in the development notes in the repository above.
