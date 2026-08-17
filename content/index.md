@@ -34,7 +34,7 @@ uninstall](faq.md#how-do-i-get-it-out).
 something verified in the game's own code: the code says one thing, does another,
 and the pack makes it do what it says.
 
-Two honest exceptions, both marked in the fix list: **six fixes are judgment
+Two honest exceptions, both marked in the fix list: **five fixes are judgment
 calls** rather than plain repairs, and **one of those changes how the game feels**
 — dust devil waves come out at the sizes the map settings ask for, which on some
 settings is noticeably more devils than the game has ever actually delivered.

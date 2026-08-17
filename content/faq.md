@@ -171,8 +171,8 @@ which you do not need.
 
 Three honest notes:
 
-- **Six fixes are judgment calls** rather than plain repairs, marked as such in
-  the [fix list](fix-list.md). In three of them the game's code is not wrong at
+- **Five fixes are judgment calls** rather than plain repairs, marked as such in
+  the [fix list](fix-list.md). In two of them the game's code is not wrong at
   all and we made a call anyway.
 - **One of them changes how the game feels** — dust devil wave sizes, which on
   some map settings means noticeably more dust devils than any version of the
