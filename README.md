@@ -18,7 +18,7 @@ for reports carrying a save or a log.
 
 | mod | repo | what it is |
 |---|---|---|
-| **Community Fix Pack** | [`catt144/SMR-CommunityFixPack`](https://github.com/catt144/SMR-CommunityFixPack) | bug fixes only; every one repairs a defect verified in the game's own shipped code |
+| **Relaunched Fix Pack** | [`catt144/SMR-CommunityFixPack`](https://github.com/catt144/SMR-CommunityFixPack) | bug fixes only; every one repairs a defect verified in the game's own shipped code |
 
 ⭐ **Those repos being public is deliberate.** They are the receipts behind every
 claim these pages make, working notes and corrections included. This site is

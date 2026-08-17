@@ -44,7 +44,7 @@ They are the names of the fix files in the pack's public repository, minus the
 The one exception is the save-repair module, `Code/90_SaveSanitizer.lua`, which
 registers `SaveSanitizer`.
 
-- [Community Fix Pack repository](https://github.com/catt144/SMR-CommunityFixPack)
+- [Relaunched Fix Pack repository](https://github.com/catt144/SMR-CommunityFixPack)
 
 That repository is public on purpose. Every fix carries a header explaining
 the defect, citing the game's own code by file and line, and the development

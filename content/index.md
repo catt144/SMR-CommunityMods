@@ -1,6 +1,6 @@
 # Community mods for Surviving Mars: Relaunched
 
-The **Community Fix Pack** repairs defects in the game's own code rather than
+The **Relaunched Fix Pack** repairs defects in the game's own code rather than
 rebalancing the game, and it is built to be added to a save you have already
 played.
 

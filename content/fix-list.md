@@ -10,7 +10,7 @@ A search result drops you at the right **section** rather than at the entry
 itself, so the last step is yours: the entry titles are all visible while they are
 folded — click the one that matches.
 
-This page lists every fix in the **Community Fix Pack**. Each entry says what you
+This page lists every fix in the **Relaunched Fix Pack**. Each entry says what you
 saw, what was wrong underneath, and what happens now.
 
 !!! note "How to read an entry"
