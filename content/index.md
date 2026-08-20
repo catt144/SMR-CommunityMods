@@ -44,8 +44,8 @@ it loads.
 
 Its repairs cover disasters and weather, colonists and domes, drones and
 logistics, buildings and economy, trains, rockets and asteroids, story
-sequences, and the numbers on your screen. Several of them also repair damage
-already sitting in your save when you load it.
+sequences, and the text and numbers on your screen. Several of them also repair
+damage already sitting in your save when you load it.
 
 [Every fix in it →](fix-list.md)
 

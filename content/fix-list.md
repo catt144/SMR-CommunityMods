@@ -839,7 +839,7 @@ saw, what was wrong underneath, and what happens now.
 
 ---
 
-## The numbers on your screen
+## The text and numbers on your screen
 
 ??? success "The Command Center's resource rows showed no numbers"
     **What you saw:** eleven rows of the Command Center resource panel rendering
@@ -890,6 +890,44 @@ saw, what was wrong underneath, and what happens now.
     add — which errors out mid-count.
 
     **After the fix:** hidden milestones are skipped and the popup arrives.
+
+??? success "SpaceY's description never mentioned the extra Drone Hub capacity it gives you"
+    **What you saw:** picking SpaceY, whose description lists what the sponsor
+    gives you — the Dragon Rocket, the Solar Array, extra starting Drones,
+    cheaper advanced resources — and says nothing at all about Drone Hub
+    capacity, even though SpaceY raises it.
+
+    **What was wrong:** SpaceY carries two gameplay bonuses in its data and its
+    description names only one of them. Every other sponsor in the game that
+    carries a bonus describes every bonus it carries — three of them with the
+    exact figure. SpaceY is the only sponsor with a bonus that has no line.
+
+    **After the fix:** the missing line is there while you are choosing a
+    sponsor, alongside the ones that were already written, in the game's own
+    wording and carrying the number the game itself works out.
+
+    **⚠️ Worth knowing:** nothing about what SpaceY *does* changes. The extra
+    capacity was already being granted — this is the description catching up
+    with it, not a new bonus and not a balance change.
+
+??? success "Three pieces of interface text stayed in English in every other language"
+    **What you saw:** playing in a language other than English — the
+    terraforming overview's heading, and the Universal Rocket's *Back to Earth*
+    button together with the text that appears when you hover it — sitting in
+    English inside an otherwise translated interface.
+
+    **What was wrong:** the heading was written into the interface as plain text
+    with no translation attached to it at all, and the button pointed at two
+    translation entries that are in none of the game's language packs. The
+    translations themselves ship with the game, in every language it supports,
+    with nothing pointing at them.
+
+    **After the fix:** all three point at the entries the game already ships, so
+    they arrive in your language with the rest of the interface.
+
+    **⚠️ Worth knowing:** **if you play in English, this fix changes nothing you
+    can see.** The words on screen were already the right English words; what was
+    missing only ever mattered in the other eight languages the game ships.
 
 ---
 
