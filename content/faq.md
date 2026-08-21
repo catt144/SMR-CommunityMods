@@ -70,19 +70,28 @@ official bug reporter — on Steam Deck the game leaves that one out. On Xbox an
 PlayStation there are no logs or console commands to collect, and a plain
 description is still genuinely useful.
 
-**Two places, and which one you want depends on what you have.**
+**Two places, and which one you have depends on where you got the mod.**
 
-- **The mod's own page, in the comments.** This is the main route and the one we
-  read first. It needs no account beyond the one you already use to install mods,
-  and it works on every platform. *(No link yet — nothing is published.)*
-- **The project's issue tracker, if you have a save file or a log to attach.**
-  Comment sections cannot carry files, and a save where the bug reliably happens
-  is worth more than any description of it:
+- **The Steam Workshop page, in the comments.** If you are on Steam this is the
+  easiest route and the one we read first — it needs no account beyond the one
+  you already use:
+  [the Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810).
+- **The project's issue tracker**, which is the route for everyone else and the
+  best one for anybody:
   [github.com/catt144/SMR-CommunityFixPack/issues](https://github.com/catt144/SMR-CommunityFixPack/issues).
-  It needs a free GitHub account.
+  It takes attachments, so it is the only place a save file or a log can actually
+  reach us — and those are worth more than any description. It needs a free
+  GitHub account.
 
-On Xbox and PlayStation there is nothing to attach in the first place, so the mod
-page is the whole route, and a plain description is genuinely useful.
+!!! warning "Paradox Mods pages have no comment section"
+    There is nowhere to leave a note on the mod's Paradox page, so if that is
+    where you installed it — **which includes every Xbox and PlayStation
+    player** — the issue tracker is the route. It works from a browser on any
+    device, including a phone.
+
+    On console there is nothing to attach in the first place: no logs and no
+    console commands. **A plain description is still genuinely useful**, and it
+    is worth opening a tracker entry for.
 
 ---
 
