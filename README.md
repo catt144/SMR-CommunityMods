@@ -4,15 +4,19 @@ The player-facing documentation site for the *Surviving Mars: Relaunched*
 community mods. **This repo is the site and nothing else** — no mod code, no
 development notes. Everything in `content/` is written for players.
 
-⛔ **Nothing is on the public web yet.** The build workflow is manual-trigger only
-and GitHub Pages is not enabled on this repo. The five pages in `content/` are
-**written and ready to read**, and they replaced the original layout specimens on
-2026-08-13 — but nothing on them is published until the owner turns Pages on.
+⭐ **The mod is PUBLISHED as of 2026-08-20** — Relaunched Fix Pack 1.0.0 on
+[Paradox Mods](https://mods.paradoxplaza.com/mods/156049/Any) and on the
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810).
+The store links are now on the landing and installing pages; the placeholder that
+said there were none is gone.
 
-⚠️ **One thing on them is deliberately unfinished, and it is marked in place:**
-there are no store links, because the mod has not been uploaded. Bug reports are
-routed as of 2026-08-13 — mod-page comments first, this project's issue tracker
-for reports carrying a save or a log.
+⚠️ **Publishing the SITE is still a separate, manual act.** The build workflow is
+`workflow_dispatch` only, so nothing here reaches the public web until the owner
+runs it from the Actions tab — deliberately, and it stays that way. Pages source
+was set to **GitHub Actions** on 2026-08-20; the first run is the owner's.
+
+ℹ️ Bug reports are routed as of 2026-08-13 — mod-page comments first, this
+project's issue tracker for reports carrying a save or a log.
 
 ## The mods this site documents
 

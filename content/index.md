@@ -8,6 +8,10 @@ played.
 [Installing](install.md){ .md-button }
 [Questions](faq.md){ .md-button }
 
+**Get it:** [Paradox Mods](https://mods.paradoxplaza.com/mods/156049/Any) ·
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810)
+— the same mod on both; Paradox Mods is also the console route.
+
 ---
 
 ## The two things people ask before installing

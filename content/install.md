@@ -1,8 +1,16 @@
 # Installing
 
-!!! note "No store links yet"
-    The mod has not been published yet, so there is nothing to link to. This
-    page gets the link when it exists.
+## Where to get it
+
+The **Relaunched Fix Pack** is on both stores. They hold the same mod — take
+whichever one your copy of the game uses.
+
+[Paradox Mods](https://mods.paradoxplaza.com/mods/156049/Any){ .md-button .md-button--primary }
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810){ .md-button }
+
+!!! note "Paradox Mods works on console too"
+    Paradox Mods is the route for Xbox and PlayStation as well as PC; the Steam
+    Workshop page is for the Steam version of the game.
 
 ## Installing a mod
 
