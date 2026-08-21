@@ -93,6 +93,12 @@ description is still genuinely useful.
     console commands. **A plain description is still genuinely useful**, and it
     is worth opening a tracker entry for.
 
+    ⛔ **Please don't use the mod browser's "Report" button to tell us about a
+    bug.** It looks like the obvious place, and it isn't one — it flags the mod
+    for Paradox's moderation team, and the reasons it offers are things like
+    spam and copyright infringement. It never reaches us. The star rating has
+    nowhere to type.
+
 ---
 
 ## Installing, saves and removing
