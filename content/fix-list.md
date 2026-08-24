@@ -416,6 +416,29 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** small areas are worked like any other.
 
+??? success "Researching a technology threw an error while a landscaping job was running"
+    **What you saw:** an error naming `ConstructionSite.lua`, at the moment a
+    technology finished researching — often right after a milestone completed, or
+    a rocket landed, or anything else that handed you a lump of research. If you
+    had mods installed, the game may have blamed one of them by name.
+
+    **What was wrong:** a levelling or rock-clearing area is a construction site,
+    but it skips one piece of the bookkeeping every other construction site
+    fills in. Separately, three technologies reduce building costs, and when one
+    of those finishes the game sweeps every construction site on the map to
+    update its numbers. It reached the landscaping area, looked for bookkeeping
+    that was never filled in, and errored.
+
+    **After the fix:** the sweep skips landscaping areas, which have nothing to
+    update — their work is measured in volume of rock, not in resources. Every
+    other construction site is refreshed exactly as before.
+
+    **⚠️ Worth knowing:** this is a base-game bug and needs no mods to happen. It
+    is also **safe to fix after the fact** — if you already have a save where
+    this is happening, installing the pack is enough; the levelling job can stay
+    where it is and you do not need to demolish anything. The technology your
+    milestone paid for was the trigger, not the cause.
+
 ??? success "Starting a landscaping job yanked colonists out of the vehicle they were boarding"
     **What you saw:** colonists pulled back out of a rover or train they were
     stepping into — sometimes more than once — when you started a landscaping job
