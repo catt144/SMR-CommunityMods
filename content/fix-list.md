@@ -551,6 +551,36 @@ saw, what was wrong underneath, and what happens now.
     matching the game's own arithmetic — and the others follow the same verified
     rule in the code.
 
+??? question "The Extractor AI breakthrough held your staffed extractors at 50 Performance — *judgment call*"
+    **What you saw:** after you researched the Extractor AI breakthrough, your
+    Metals and Rare Metals Extractors ran at 50 Performance no matter how you
+    staffed them — a full crew of geologists, the upgrades, none of it moved the
+    number. On a sponsor whose goal is to have extractors working at a high
+    Performance, that goal turned impossible: the number could never rise above 50.
+
+    **What was wrong:** Extractor AI is meant to let those extractors run
+    *without* colonists, at 50 Performance — its own description says exactly
+    that. But the game applied the 50 whether or not anyone was working there: it
+    read the "runs on its own" flag and returned 50 before it ever looked at the
+    crew. So a breakthrough that was supposed to *add* an option — run unstaffed
+    at 50 — quietly took one away, because a staffed extractor could no longer
+    earn more than 50 either.
+
+    **After the fix:** the 50 becomes a floor, not a ceiling. Leave an extractor
+    unstaffed and it still runs at 50, exactly as the breakthrough promises; put a
+    crew on it and it earns their full Performance again, the same as an extractor
+    that never took the breakthrough. A sponsor goal that needs high-Performance
+    extractors is reachable once more.
+
+    **⚠️ Worth knowing:** *judgment call.* The "runs on its own" flag was built
+    for buildings that are never staffed, and Extractor AI reuses it on one that
+    keeps its worker slots — so whether the 50-while-staffed was a deliberate
+    trade-off or an oversight is arguable. We read it against the breakthrough's
+    own words — "work *without* Colonists at 50 Performance" — and treated the
+    staffed cap as the defect. To climb above 50 you still pay for a full crew,
+    exactly as any other extractor does: this removes a hidden penalty, it does
+    not make the breakthrough free.
+
 ---
 
 ## Trains

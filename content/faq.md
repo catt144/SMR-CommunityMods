@@ -25,9 +25,10 @@ nothing.
   the map settings were written for, and on some settings that is noticeably more
   than the game has ever actually delivered. This one is deliberate and it is
   described in the fix list.
-- **Four other judgment calls** — drones retrying a building they once could not
+- **Five other judgment calls** — drones retrying a building they once could not
   reach, Biorobots not catching Dust Sickness, colonists taking shelter in
-  vacuum, and Edit Payload keeping a row you emptied. All five are marked
+  vacuum, Edit Payload keeping a row you emptied, and the Extractor AI
+  breakthrough capping staffed extractors. All six are marked
   *judgment call* in the [fix list](fix-list.md).
 - **Some buildings produce more under an Automation policy.** The Workshops,
   Security Stations and Posts, the Drone Assembler and the *Experiment 1: Big
@@ -148,7 +149,7 @@ game. Preferences and features are not in it.
 
 Three honest notes:
 
-- **Five fixes are judgment calls** rather than plain repairs, marked as such in
+- **Six fixes are judgment calls** rather than plain repairs, marked as such in
   the [fix list](fix-list.md). In two of them the game's code is not wrong at
   all and we made a call anyway.
 - **One of them changes how the game feels** — dust devil wave sizes, which on
@@ -163,10 +164,11 @@ Three honest notes:
 
 ### Which fixes are judgment calls?
 
-Five: drones writing a building off after one blocked approach · Biorobots and
+Six: drones writing a building off after one blocked approach · Biorobots and
 Dust Sickness · colonists sheltering in vacuum · Edit Payload remembering what
-you told it · dust devil wave sizes. Each one is marked *judgment call* in the
-[fix list](fix-list.md), with our reasoning in the entry.
+you told it · dust devil wave sizes · Extractor AI capping staffed extractors.
+Each one is marked *judgment call* in the [fix list](fix-list.md), with our
+reasoning in the entry.
 
 ### Why isn't *X* fixed?
 
