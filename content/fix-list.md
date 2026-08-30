@@ -831,6 +831,20 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** the mystery finishes whether you answered the popup
     promptly or not.
 
+??? success "A Jumbo Cave's Reinforcement could get stuck clearing waste rock forever"
+    **What you saw:** a Jumbo Cave mystery stuck on its Reinforcement step — the
+    construction site sat "clearing" a patch of waste rock that never finished,
+    the Reinforcement never built, and the mystery never completed.
+
+    **What was wrong:** one piece of waste rock on the site sat where the drones
+    could not reach it. The game files an unreachable rock away and stops trying
+    it, so the site never finished clearing, and the mystery step waited on a
+    Reinforcement that could never be built.
+
+    **After the fix:** the unreachable rock is cleared for you, the Reinforcement
+    builds, and the mystery carries on. Safe to add to a save where this is
+    already happening — the stuck rock is cleared automatically.
+
 ??? success "Freeing the wisps paid about a thousandth of the power it promised"
     **What you saw:** the St. Elmo's Fire reward for coexistence arriving as a
     rounding error.
