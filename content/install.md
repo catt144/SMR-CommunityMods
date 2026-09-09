@@ -12,6 +12,11 @@ whichever one your copy of the game uses.
     Paradox Mods is the route for Xbox and PlayStation as well as PC; the Steam
     Workshop page is for the Steam version of the game.
 
+!!! note "Still playing on game version 1.0.7?"
+    The pack on the store pages is built for the current version of the game.
+    There is a separate frozen build for 1.0.7, with its own instructions:
+    [Playing on 1.0.7](legacy-1-0-7.md).
+
 ## Installing a mod
 
 1. Open the mod's page and add it.

@@ -80,6 +80,7 @@ nav:
   - Installing: install.md
   - Is my bug fixed?: fix-list.md
   - Questions & problems: faq.md
+  - Playing on 1.0.7: legacy-1-0-7.md
   - For modders: for-modders.md
 
 # No analytics, no trackers, no external fonts beyond the theme's own.
