@@ -21,21 +21,9 @@ nothing.
 
 **Things we do on purpose, which are the ones most likely to look wrong:**
 
-- **More dust devils on some map settings.** The pack restores the wave sizes
-  the map settings were written for, and on some settings that is noticeably more
-  than the game has ever actually delivered. This one is deliberate and it is
-  described in the fix list.
-- **Five other judgment calls** — drones retrying a building they once could not
-  reach, Biorobots not catching Dust Sickness, colonists taking shelter in
-  vacuum, Edit Payload keeping a row you emptied, and the Extractor AI
-  breakthrough capping staffed extractors. All six are marked
-  *judgment call* in the [fix list](fix-list.md).
-- **Some buildings produce more under an Automation policy.** The Workshops,
-  Security Stations and Posts, the Drone Assembler and the *Experiment 1: Big
-  Drop* site were losing half their staff to those policies and receiving none
-  of the pay-back other buildings get; now they receive it, so their output
-  rises to where the policy was always meant to leave it. Deliberate, and
-  described in the fix list.
+- **Three judgment calls** — Biorobots not catching Dust Sickness, colonists
+  taking shelter in vacuum, and Edit Payload keeping a row you emptied. All
+  three are marked *judgment call* in the [fix list](fix-list.md).
 
 ### How do I get it out?
 
@@ -125,9 +113,9 @@ because the broken code is simply not running any more.
 
 **Some damage needs active repair, and the pack tries.** Every time you load, it
 looks for specific damage already sitting in your save and undoes what it can
-positively identify: leaked upgrade bonuses, phantom farm oxygen, a stuck weather
-flag, tunnels that were destroyed but still routing, track that could not be
-salvaged, a missing turbine bonus, Biorobots still carrying Dust Sickness.
+positively identify: phantom farm oxygen, tunnels that were destroyed but still
+routing, track that could not be salvaged, a missing turbine bonus, Biorobots
+still carrying Dust Sickness.
 
 **Every pass is deliberately conservative.** It does nothing when it is unsure,
 and it does nothing at all the second time it runs. It is a genuine attempt at
@@ -147,28 +135,17 @@ replacement trains at any station for Metals and Electronics.
 The fix pack repairs defects in the game's own code rather than rebalancing the
 game. Preferences and features are not in it.
 
-Three honest notes:
+One honest note:
 
-- **Six fixes are judgment calls** rather than plain repairs, marked as such in
+- **Three fixes are judgment calls** rather than plain repairs, marked as such in
   the [fix list](fix-list.md). In two of them the game's code is not wrong at
   all and we made a call anyway.
-- **One of them changes how the game feels** — dust devil wave sizes, which on
-  some map settings means noticeably more dust devils than any version of the
-  game has actually delivered.
-- **One plain repair moves numbers you will notice.** The Automation policies
-  take half the workers from every building they cover and are meant to pay the
-  output back; some buildings never received that pay-back and lost roughly half
-  their output. With the fix they receive it — so workshop comfort, security
-  coverage, drone production and research under those policies rise to where the
-  policy was always meant to leave them.
 
 ### Which fixes are judgment calls?
 
-Six: drones writing a building off after one blocked approach · Biorobots and
-Dust Sickness · colonists sheltering in vacuum · Edit Payload remembering what
-you told it · dust devil wave sizes · Extractor AI capping staffed extractors.
-Each one is marked *judgment call* in the [fix list](fix-list.md), with our
-reasoning in the entry.
+Three: Biorobots and Dust Sickness · colonists sheltering in vacuum · Edit
+Payload remembering what you told it. Each one is marked *judgment call* in the
+[fix list](fix-list.md), with our reasoning in the entry.
 
 ### Why isn't *X* fixed?
 

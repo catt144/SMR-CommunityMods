@@ -146,6 +146,13 @@ saw, what was wrong underneath, and what happens now.
     saves as well as new ones — the wrong filing was written into the dome, so
     loading an affected save re-does it.
 
+    **⚠️ Worth knowing:** game version 1.1.0 repaired this one itself, in its own
+    way, and for a while the game's repair and ours cancelled each other out —
+    with the pack installed, no Saint blessed anyone. The pack now stands aside
+    on 1.1.0 and instead repairs, on load, a save that was played while the two
+    were fighting. On the current game version this is no longer a bug the pack
+    is holding back.
+
 ??? question "Biorobots caught Dust Sickness — *judgment call*"
     **What you saw:** your synthetic colonists losing Health in every dust storm,
     and — on the rule where the sick may not work — barred from working until the
@@ -171,17 +178,13 @@ saw, what was wrong underneath, and what happens now.
 
 ??? question "Colonists on asteroids stood in vacuum until they died — *judgment call*"
     **What you saw:** asteroid colonists idling outdoors and bleeding Health
-    with nothing telling them to go inside — and a brief power or air
-    interruption turning every resident of a habitat out of their home for as
-    long as it lasted.
+    with nothing telling them to go inside.
 
-    **What was wrong:** two things. A habitat counts as unsuitable housing the
-    instant its life support dips, so its residents are un-homed; and the game
-    has no reflex for a colonist with nowhere to be, so they simply stand there.
+    **What was wrong:** the game has no reflex for a colonist with nowhere to
+    be, so they simply stand there.
 
-    **After the fix:** a habitat with a momentary life-support gap keeps its
-    residents, and a colonist idling in vacuum heads home before their oxygen
-    runs out.
+    **After the fix:** a colonist idling in vacuum heads home before their
+    oxygen runs out.
 
     **⚠️ Worth knowing:** this is a judgment call. We added a behaviour the game
     does not have rather than repairing one it has — an absence, not a mistake.
@@ -526,7 +529,7 @@ saw, what was wrong underneath, and what happens now.
 
 ## Under the hood
 
-These four repair things you cannot see today. They are here because they are
+These three repair things you cannot see today. They are here because they are
 real defects in the game's code, and because other mods, later game updates or a
 future DLC can walk straight into them.
 
