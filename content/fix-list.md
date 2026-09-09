@@ -30,110 +30,6 @@ saw, what was wrong underneath, and what happens now.
 
 ## Disasters & weather
 
-??? success "Meteors struck every few hours instead of every day or two"
-    **What you saw:** meteor strikes arriving roughly every six game hours on a
-    map whose settings promise one every 35 to 115.
-
-    **What was wrong:** the long wait between strikes was written in a way that
-    always evaluated to "no wait", so the only pause left in the cycle was the
-    warning time — about six hours.
-
-    **After the fix:** meteors follow the schedule the map settings describe.
-
-    **⚠️ Worth knowing:** Sensor Towers add warning time, and because the warning
-    time *was* the interval, a colony with several towers was accidentally
-    getting the correct spacing while an early colony without them was pelted.
-    If your established colony felt fine, that is why. After the fix the schedule
-    is the same with towers or without them — towers do what they were designed
-    to do, which is warn you about storms, and nothing more.
-
-??? success "A meteor storm ended and your weather stopped forever"
-    **What you saw:** a long-running colony that never sees rain again. No cold
-    waves, no dust storms, no rain of any kind — and one mystery stuck waiting
-    for weather that never comes.
-
-    **What was wrong:** when a meteor storm finished, the flag that says "a
-    disaster is currently being predicted" was left switched on. Everything that
-    schedules weather checks that flag first, so the whole weather system quietly
-    stopped.
-
-    **After the fix:** the flag is cleared when the storm ends, and weather
-    resumes. **Colonies already stuck in that state are put right the moment you
-    load them.**
-
-
-??? success "One meteor storm jammed and no storm ever came again"
-    **What you saw:** meteor storms simply stopped happening on that save.
-
-    **What was wrong:** a storm that stalls part-way through sat in its
-    wind-down loop forever, and the thread that would schedule the next storm
-    never got past it.
-
-    **After the fix:** a stalled storm is spotted and wound down, so the
-    schedule keeps running.
-
-??? success "A rain type died out permanently after colliding with another disaster"
-    **What you saw:** rains that stopped happening on a save, usually after a
-    stretch of bad weather.
-
-    **What was wrong:** if a rain tried to start while any other disaster was
-    running — or even during another disaster's warning — that rain type was
-    written off for the rest of the game rather than being tried again later.
-
-    **After the fix:** it tries again a few sols later instead. **A save whose
-    rain has already been written off has it started up again when you load.**
-
-??? success "Cave-ins happened in a game started with No Disasters"
-    **What you saw:** an underground cave-in on a map created with the "No
-    Disasters" rule.
-
-    **What was wrong:** the underground marsquake schedule never checked the
-    game's own "No Disasters" rule.
-
-    **After the fix:** it checks. A no-disasters game stays a no-disasters game.
-
-??? question "Dust devil waves were smaller than the map setting asked for — *judgment call*"
-    **What you saw:** on maps set for frequent dust devils, waves that were
-    smaller than the setting promised — sometimes no devils at all where the
-    setting asks for at least one.
-
-    **What was wrong:** the scheduler multiplied the *number* of devils in a wave
-    by a *percentage* that was meant to be a separate roll. The top of the
-    authored range could never happen, and the bottom could round down to
-    nothing.
-
-    **After the fix:** waves come out in the range the map's own settings
-    describe.
-
-    **⚠️ Worth knowing:** this is the one fix in the pack that changes how the
-    game feels, and it changes it upward. On some map settings that means
-    noticeably more dust devils than the game has ever actually delivered, in
-    either the original or the remaster. One setting — the heaviest one — is
-    unchanged, because its own percentage was already at the maximum and the
-    multiplication took nothing off it.
-
-??? success "Dust devils on the surface followed the underground's weather settings"
-    **What you saw:** surface dust devils that stopped for days at a time, or
-    arrived at the wrong intensity, seemingly at random.
-
-    **What was wrong:** the dust devil schedule read its settings from whichever
-    map you happened to be *looking at*. Switch the camera underground and the
-    surface adopted the underground's dust devil setting — including "disabled",
-    which paused the surface schedule a day at a time.
-
-    **After the fix:** the schedule reads the settings of the map it is actually
-    spawning on.
-
-??? success "A surface dust storm broke underground cables and pipes"
-    **What you saw:** cables and pipes snapping in your underground colony
-    during a storm on the surface, where there is no dust.
-
-    **What was wrong:** once an elevator joins a surface and an underground
-    network, they are one network — and the storm's "break something at random"
-    pass picked from the whole of it without checking which map the piece was on.
-
-    **After the fix:** a surface storm breaks surface things.
-
 ??? success "Bombardment missiles arrived in a neat parallel row"
     **What you saw:** an incoming barrage flying in as a rank of missiles on
     identical lines rather than converging from different directions.
@@ -230,16 +126,6 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** they go to work.
 
-??? success "Universities trained geologists nobody needed"
-    **What you saw:** an automatic university turning out geologists while you
-    were short of every other specialist.
-
-    **What was wrong:** once Extractor AI lets your Metals and Rare Metals
-    Extractors run without colonists, those posts still counted as vacancies
-    waiting to be filled.
-
-    **After the fix:** posts that need nobody stop counting as demand.
-
 ??? success "The Gene Forging research did nothing at all"
     **What you saw:** no change in rare trait chances after researching it.
 
@@ -260,26 +146,6 @@ saw, what was wrong underneath, and what happens now.
     saves as well as new ones — the wrong filing was written into the dome, so
     loading an affected save re-does it.
 
-??? success "The Astrogeologist bonus skipped two of your extractors"
-    **What you saw:** a commander profile promising "Extractor production
-    increased by 10%" and two kinds of extractor producing exactly as before.
-
-    **What was wrong:** the profile lists its bonus building by building, and two
-    ordinary buildable extractors were left off the list.
-
-    **After the fix:** all of them get the bonus the profile's own text promises,
-    including on a colony you started before installing the pack.
-
-??? success "Dust Sickness always did the same flat damage"
-    **What you saw:** every sick colonist losing an identical amount of Health
-    every sol.
-
-    **What was wrong:** the code rolls a random amount, throws the roll away, and
-    charges everybody a flat ten Health instead. The spread it meant to use runs
-    from five to fourteen.
-
-    **After the fix:** the roll it makes is the damage it deals.
-
 ??? question "Biorobots caught Dust Sickness — *judgment call*"
     **What you saw:** your synthetic colonists losing Health in every dust storm,
     and — on the rule where the sick may not work — barred from working until the
@@ -294,23 +160,6 @@ saw, what was wrong underneath, and what happens now.
     **⚠️ Worth knowing:** this one is a judgment call rather than a repair. There
     is no coding error here — a dust illness that infects synthetic colonists is a
     thematic judgment, and we made it.
-
-??? success "Tourist Satisfaction drifted down however well you treated them"
-    **What you saw:** holiday income sliding, and tourist satisfaction falling
-    for no visible reason.
-
-    **What was wrong:** a tourist's stat climbing past two thresholds at once
-    collected only one bonus, while falling back through both charged for both.
-
-    **After the fix:** it is symmetrical, and satisfaction stops leaking.
-
-??? success "Better tourist ratings attracted fewer applicants, not more"
-    **What you saw:** a five-star holiday destination drawing fewer new
-    applicants than a one-star one.
-
-    **What was wrong:** the chance was applied upside down.
-
-    **After the fix:** a higher rating attracts more.
 
 ??? success "You were never told when a Founder gained a trait"
     **What you saw:** the notification, never.
@@ -341,23 +190,6 @@ saw, what was wrong underneath, and what happens now.
 
 ## Drones & logistics
 
-??? question "A drone failed to reach a building once and ignored it for the rest of the game — *judgment call*"
-    **What you saw:** buildings drones simply would not service, for the rest of
-    the colony's life, after one blocked approach.
-
-    **What was wrong:** a failed approach was recorded as "unreachable" with a
-    retry time so far in the future that the game's own five-sol "try again"
-    could never come round.
-
-    **After the fix:** the retry fires, and drones try the building again.
-
-    **⚠️ Worth knowing:** this one is a judgment call rather than a plain repair.
-    A comment in the game's own code says the permanent mark is deliberate — it
-    is supposed to be cleared when the map's walkable routes change. In a real
-    colony that clearing does not reliably happen, so a building gets written off
-    for good. We think that effect is harmful enough to override the comment, and
-    we would rather tell you so than present it as an obvious bug.
-
 ??? success "Drone Hubs paralysed themselves every time an Extender flickered"
     **What you saw:** a dusty night of power cuts, and your drones repeatedly
     dropping everything and standing idle.
@@ -381,18 +213,6 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the orders stand, and the drones arrive.
 
-??? success "Drones kept a wrong list of the places they could not reach"
-    **What you saw:** most likely nothing directly. This one is about the state
-    left behind rather than a symptom we can pin on it.
-
-    **What was wrong:** every change to the map's walkable routes — a building
-    finished, terrain reshaped, a route opened — rebuilt each drone's
-    "could not reach" list in a way that clung to buildings you had already
-    salvaged and left its own tally wrong. That tally is what a hub reads when it
-    decides whether there is anything worth doing.
-
-    **After the fix:** the list is rebuilt properly and the tally matches it.
-
 ??? success "Building an artificial lake buried the rover that built it"
     **What you saw:** the RC Constructor that placed a lake, and any drones
     working the site, reading as dead.
@@ -405,39 +225,6 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** the moment the basin exists, anything standing in it is
     sent out using the game's own escape behaviour — so the rover walks out
     instead of being sealed in.
-
-??? success "Small landscaping jobs never got done"
-    **What you saw:** a small clear, paint or levelling area sitting unworked,
-    and the drone sent to it dropping whatever it was doing.
-
-    **What was wrong:** an area only a few hexes across gave the approaching
-    drone fewer destinations than the game unconditionally read back, which
-    raised an error and cancelled the drone's command.
-
-    **After the fix:** small areas are worked like any other.
-
-??? success "Researching a technology threw an error while a landscaping job was running"
-    **What you saw:** an error naming `ConstructionSite.lua`, at the moment a
-    technology finished researching — often right after a milestone completed, or
-    a rocket landed, or anything else that handed you a lump of research. If you
-    had mods installed, the game may have blamed one of them by name.
-
-    **What was wrong:** a levelling or rock-clearing area is a construction site,
-    but it skips one piece of the bookkeeping every other construction site
-    fills in. Separately, three technologies reduce building costs, and when one
-    of those finishes the game sweeps every construction site on the map to
-    update its numbers. It reached the landscaping area, looked for bookkeeping
-    that was never filled in, and errored.
-
-    **After the fix:** the sweep skips landscaping areas, which have nothing to
-    update — their work is measured in volume of rock, not in resources. Every
-    other construction site is refreshed exactly as before.
-
-    **⚠️ Worth knowing:** this is a base-game bug and needs no mods to happen. It
-    is also **safe to fix after the fact** — if you already have a save where
-    this is happening, installing the pack is enough; the levelling job can stay
-    where it is and you do not need to demolish anything. The technology your
-    milestone paid for was the trigger, not the cause.
 
 ??? success "Starting a landscaping job yanked colonists out of the vehicle they were boarding"
     **What you saw:** colonists pulled back out of a rover or train they were
@@ -453,22 +240,6 @@ saw, what was wrong underneath, and what happens now.
 ---
 
 ## Buildings & economy
-
-??? success "Salvaging an upgraded building left its bonuses behind forever"
-    **What you saw:** nothing, which is the problem. Colony-wide and dome-wide
-    upgrade bonuses that outlived the buildings that granted them — and stacked
-    every time you rebuilt.
-
-    **What was wrong:** salvaging removed the building but not the bonuses it had
-    applied.
-
-    **After the fix:** salvaging removes them. **And bonuses already leaked into
-    your save are cleaned up the next time you load it.**
-
-    **⚠️ Worth knowing:** the clean-up pass changes something only when it can
-    positively identify what went wrong, does nothing when unsure, and does
-    nothing at all the second time it runs. It is a genuine attempt at repairing
-    existing damage, not a promise that it will repair *yours*.
 
 ??? success "A salvaged farm kept supplying its dome with oxygen forever"
     **What you saw:** a dome with more oxygen than its buildings could account
@@ -491,27 +262,6 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** a destroyed tunnel stays destroyed, and existing saves are
     corrected the moment you load them.
 
-??? success "You were never warned about running out of Food or maintenance resources"
-    **What you saw:** running out of Food, Machine Parts or Electronics with no
-    "Insufficient Resources" warning beforehand.
-
-    **What was wrong:** the calculation behind that warning could only ever
-    produce a value outside the range that triggers it, so for those resources it
-    could never fire at all.
-
-    **After the fix:** the warning fires.
-
-??? success "Independent Terraforming gave half the discount it advertises"
-    **What you saw:** special projects costing 10% less where the technology's
-    own parameter says 20%.
-
-    **What was wrong:** the effect attached to the tech and the number the tech
-    declares disagree.
-
-    **After the fix:** the discount matches the number — and if you researched it
-    before installing the pack, the discount already stored in your save is
-    corrected when you load it.
-
 ??? success "Large Wind Turbines never got their Frictionless Composites bonus"
     **What you saw:** a colony that researched Frictionless Composites and saw
     its Large Wind Turbines produce exactly as before, while other turbines
@@ -522,78 +272,7 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the bonus is restored when you load an affected save.
 
-??? success "An Automation policy halved some buildings' output instead of just their staff"
-    **What you saw:** with a Factory or Service Automation policy enacted, some
-    of the buildings it covers — the Workshops, the Security Stations and Posts,
-    the Drone Assembler, the *Experiment 1: Big Drop* site — ran at roughly half
-    their usual output, while diners, shops, factories and labs kept full output
-    with half the staff.
-
-    **What was wrong:** an Automation policy takes half the workers from every
-    building it covers, and a second piece of code raises output per worker so
-    that overall performance stays where it was — the game's own comment says
-    the two are meant to cancel out. But the cut and the pay-back use two
-    different ideas of which buildings the policy covers, and the buildings on
-    the wrong side of that line lost half their staff and were paid nothing
-    back.
-
-    **After the fix:** every building an Automation policy takes workers from
-    gets the same pay-back the rest always got — exactly the amount the game's
-    own arithmetic produces, no more. Repeal the policy and the pay-back stands
-    down with it.
-
-    **⚠️ Worth knowing:** this visibly raises what those buildings produce while
-    an Automation policy is active — workshop comfort, security coverage, drone
-    production, research. That is the policy's own trade finally working as
-    written, not a buff. Only one Automation policy can be active at a time, so
-    at most six of the eight affected building types are covered by it at once.
-    We measured one building type live in a colony — its output exactly doubled,
-    matching the game's own arithmetic — and the others follow the same verified
-    rule in the code.
-
-??? question "The Extractor AI breakthrough held your staffed extractors at 50 Performance — *judgment call*"
-    **What you saw:** after you researched the Extractor AI breakthrough, your
-    Metals and Rare Metals Extractors ran at 50 Performance no matter how you
-    staffed them — a full crew of geologists, the upgrades, none of it moved the
-    number. On a sponsor whose goal is to have extractors working at a high
-    Performance, that goal turned impossible: the number could never rise above 50.
-
-    **What was wrong:** Extractor AI is meant to let those extractors run
-    *without* colonists, at 50 Performance — its own description says exactly
-    that. But the game applied the 50 whether or not anyone was working there: it
-    read the "runs on its own" flag and returned 50 before it ever looked at the
-    crew. So a breakthrough that was supposed to *add* an option — run unstaffed
-    at 50 — quietly took one away, because a staffed extractor could no longer
-    earn more than 50 either.
-
-    **After the fix:** the 50 becomes a floor, not a ceiling. Leave an extractor
-    unstaffed and it still runs at 50, exactly as the breakthrough promises; put a
-    crew on it and it earns their full Performance again, the same as an extractor
-    that never took the breakthrough. A sponsor goal that needs high-Performance
-    extractors is reachable once more.
-
-    **⚠️ Worth knowing:** *judgment call.* The "runs on its own" flag was built
-    for buildings that are never staffed, and Extractor AI reuses it on one that
-    keeps its worker slots — so whether the 50-while-staffed was a deliberate
-    trade-off or an oversight is arguable. We read it against the breakthrough's
-    own words — "work *without* Colonists at 50 Performance" — and treated the
-    staffed cap as the defect. To climb above 50 you still pay for a full crew,
-    exactly as any other extractor does: this removes a hidden penalty, it does
-    not make the breakthrough free.
-
----
-
 ## Trains
-
-??? success "A train parked at a platform and blocked the line forever"
-    **What you saw:** a train sitting at a platform that never leaves, with the
-    rest of the line backing up behind it.
-
-    **What was wrong:** if a passenger stopped being aboard mid-journey,
-    unloading hit an internal error and the train waited for someone who could
-    never get off.
-
-    **After the fix:** unloading survives it, and the train leaves.
 
 ??? success "Salvaging one piece of track deleted the whole line and its trains"
     **What you saw:** an entire train line — and every train assigned to it —
@@ -649,16 +328,6 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** they are stored properly and can be redeployed.
 
-??? success "A shortened track kept the train limit of the length it used to be"
-    **What you saw:** a track that would not accept trains, or accepted more than
-    it should, after you salvaged part of it or cut it in two.
-
-    **What was wrong:** the limit was worked out once, when the track was first
-    laid, and never again.
-
-    **After the fix:** it is recomputed whenever the track's length changes, and
-    tracks already saved with a stale limit are corrected on load.
-
 ??? success "A station attached straight to a Train Tunnel never bridged the power grid"
     **What you saw:** a Train Tunnel that did not join your grids, although its
     own description promises it does.
@@ -708,15 +377,6 @@ saw, what was wrong underneath, and what happens now.
 
 ## Rockets & asteroids
 
-??? success "An asteroid lander unloaded its own return fuel and stranded itself"
-    **What you saw:** a lander that could not come home, permanently, on an
-    asteroid with no drones and no fuel production.
-
-    **What was wrong:** landing manually made the lander treat the fuel reserved
-    for the trip home as surplus cargo and unload it.
-
-    **After the fix:** the return fuel stays aboard.
-
 ??? success "Automatic rockets and landers took off with nothing aboard"
     **What you saw:** endless empty round trips between Mars and an asteroid.
 
@@ -726,27 +386,6 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** they wait for cargo. The game's own one-sol departure
     timer still applies, so a rocket that has waited that long and been given
     nothing still goes — empty trips become the exception rather than the cycle.
-
-??? success "An automatic rocket loaded cargo and then unloaded it again"
-    **What you saw:** drones carrying the same resources up and down the ramp all
-    day.
-
-    **What was wrong:** the hourly cargo recalculation forgot whatever was
-    already in the hold, so it kept ordering the hold emptied and refilled.
-
-    **After the fix:** what is already aboard counts.
-
-??? success "An automatic lander filled up with Concrete before Rare Metals"
-    **What you saw:** a lander leaving an asteroid loaded with the cheap things
-    and none of the valuable ones.
-
-    **What was wrong:** it allocated its weight limit in alphabetical order, so
-    Concrete, Metals and Polymers took the hold before Rare Metals and Exotic
-    Minerals were considered — and the departure timer shipped whatever had
-    loaded first.
-
-    **After the fix:** it follows the order the flight policy itself lists,
-    valuables first and Waste Rock last.
 
 ??? question "Edit Payload forgot what you told it, every trip — *judgment call*"
     **What you saw:** a payload row you deliberately emptied filled straight back
@@ -762,33 +401,6 @@ saw, what was wrong underneath, and what happens now.
     **⚠️ Worth knowing:** this is a judgment call. Treating the flight policy's
     list as a *default* rather than a *refill* is arguably how it was designed.
     We think a row you deliberately emptied should stay empty.
-
-??? success "\"No available Asteroid Landers\" while a lander stood on the pad"
-    **What you saw:** the Planetary View refusing to open the lander picker,
-    with a lander plainly sitting there free.
-
-    **What was wrong:** the check that decides whether to open the picker asked a
-    stricter question than the list it was about to show — a lander still
-    unloading, or waiting for maintenance parts, was refused even though the list
-    would have offered it. The same function was also wrong in the other
-    direction, offering rockets the list would not.
-
-    **After the fix:** the two agree.
-
-??? success "The First Asteroid message's three prefabs vanished across a save and load"
-    **What you saw:** opening that corner notification after a reload and
-    receiving nothing — no Micro-G Auto Extractor prefabs, no warning, and no
-    second chance, because it is a once-per-game message.
-
-    **What was wrong:** the reward was attached to the message in a way that did
-    not survive being saved unanswered.
-
-    **After the fix:** loading such a save delivers the prefabs and re-offers the
-    message to read.
-
-    **⚠️ Worth knowing:** if you already opened the dead notification and got
-    nothing, that game is past the point where this can help — the message is
-    gone and there is nothing left to re-offer.
 
 ??? success "RC Transports could be ordered onto trade and refugee rockets"
     **What you saw:** transports accepting an order to interact with rockets they
@@ -893,33 +505,7 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the request is declined quietly and the story carries on.
 
-??? success "Six of Last Transmission's approval conditions could never fire"
-    **What you saw:** faction approval that would not move however well your
-    storage was doing — and one condition watching the wrong resource entirely.
-
-    **What was wrong:** those six conditions were attached to the wrong field to
-    ever be evaluated, and the underlying storage figure they read added two maps
-    together and treated a map with no demand as effectively infinite.
-
-    **After the fix:** the conditions are evaluated, and the figure they read is
-    the one they meant.
-
----
-
 ## The text and numbers on your screen
-
-??? success "The Command Center's resource rows showed no numbers"
-    **What you saw:** eleven rows of the Command Center resource panel rendering
-    as blank space.
-
-    **What was wrong:** each of those rows asks the game for one specific
-    number, and eleven of the eleven answers had gone missing — the remaster
-    replaced them with a single general-purpose one and converted every other
-    part of the game to it, but not this panel. A missing answer prints as
-    nothing at all.
-
-    **After the fix:** the eleven missing answers are supplied, and the rows show
-    their numbers.
 
 ??? success "The Domes Overview stopped marking domes in trouble"
     **What you saw:** no red highlight on a dome whose colonists' stats had
@@ -938,66 +524,6 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the caption counts what the bar counts.
 
-??? success "A colonist's Morale tooltip did not add up"
-    **What you saw:** the effects listed in the tooltip not matching the Morale
-    figure above them.
-
-    **What was wrong:** the tooltip listed a bonus for high Comfort that the game
-    deliberately stopped applying.
-
-    **After the fix:** it lists what is applied. The penalty for *low* Comfort is
-    real, and is still listed.
-
-??? success "Completing the last milestone crashed the game"
-    **What you saw:** the end-of-game milestone popup never arriving, in games
-    created with No Terraforming or No Politics.
-
-    **What was wrong:** milestones hidden by those rules were still added into
-    the score total, and a milestone that has not been completed has no score to
-    add — which errors out mid-count.
-
-    **After the fix:** hidden milestones are skipped and the popup arrives.
-
-??? success "SpaceY's description never mentioned the extra Drone Hub capacity it gives you"
-    **What you saw:** picking SpaceY, whose description lists what the sponsor
-    gives you — the Dragon Rocket, the Solar Array, extra starting Drones,
-    cheaper advanced resources — and says nothing at all about Drone Hub
-    capacity, even though SpaceY raises it.
-
-    **What was wrong:** SpaceY carries two gameplay bonuses in its data and its
-    description names only one of them. Every other sponsor in the game that
-    carries a bonus describes every bonus it carries — three of them with the
-    exact figure. SpaceY is the only sponsor with a bonus that has no line.
-
-    **After the fix:** the missing line is there while you are choosing a
-    sponsor, alongside the ones that were already written, in the game's own
-    wording and carrying the number the game itself works out.
-
-    **⚠️ Worth knowing:** nothing about what SpaceY *does* changes. The extra
-    capacity was already being granted — this is the description catching up
-    with it, not a new bonus and not a balance change.
-
-??? success "Three pieces of interface text stayed in English in every other language"
-    **What you saw:** playing in a language other than English — the
-    terraforming overview's heading, and the Universal Rocket's *Back to Earth*
-    button together with the text that appears when you hover it — sitting in
-    English inside an otherwise translated interface.
-
-    **What was wrong:** the heading was written into the interface as plain text
-    with no translation attached to it at all, and the button pointed at two
-    translation entries that are in none of the game's language packs. The
-    translations themselves ship with the game, in every language it supports,
-    with nothing pointing at them.
-
-    **After the fix:** all three point at the entries the game already ships, so
-    they arrive in your language with the rest of the interface.
-
-    **⚠️ Worth knowing:** **if you play in English, this fix changes nothing you
-    can see.** The words on screen were already the right English words; what was
-    missing only ever mattered in the other eight languages the game ships.
-
----
-
 ## Under the hood
 
 These four repair things you cannot see today. They are here because they are
@@ -1011,12 +537,6 @@ future DLC can walk straight into them.
     forever. Every rocket the game currently ships uses plain Fuel, so this has
     never happened to anyone; one new rocket type in a patch or a DLC is all it
     would take.
-
-??? success "Rate modifiers on batteries and tanks never reached the grid"
-    A modifier that changes a battery's or tank's charge or discharge *rate* was
-    accepted and displayed, and then never passed to the part of the grid that
-    uses it. Capacity and efficiency were passed correctly. Nothing in the
-    shipped game sets those rate modifiers — a mod or an update easily could.
 
 ??? success "Two story-scripting defects that the shipped numbers happen to hide"
     One helper returns every object where it was asked for a percentage of them.
