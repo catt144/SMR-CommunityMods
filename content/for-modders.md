@@ -11,8 +11,10 @@ the game runs. No game file is modified and no asset is overwritten.
 
 Each fix inspects the code it is about to patch before it patches it. If the
 shape it expects is not there, that fix reports itself inactive and does nothing
-rather than running against code it no longer recognises. The pack is built
-against game version **1.0.7.396349**.
+rather than running against code it no longer recognises. The pack on the store
+pages is built against game version **1.1.0.403908**; the frozen build for
+players who stayed on 1.0.7 ([Playing on 1.0.7](legacy-1-0-7.md)) is the one
+built against **1.0.7.396349**.
 
 !!! note "The honest limit of that check"
     It notices the *shape* of the code changing — renamed, removed, restructured.
@@ -30,7 +32,7 @@ marks it disabled, and never applies it:
 
 ```lua
 SMRFixPack_Disabled = SMRFixPack_Disabled or {}
-SMRFixPack_Disabled["DustDevilSpawnGate"] = true
+SMRFixPack_Disabled["LakeEntombment"] = true
 ```
 
 The pack picks up an existing table rather than replacing it, so it does not
@@ -40,7 +42,7 @@ before our code runs.
 ### Where the identifiers come from
 
 They are the names of the fix files in the pack's public repository, minus the
-`Fix_` prefix — `Code/Fix_DustDevilSpawnGate.lua` registers `DustDevilSpawnGate`.
+`Fix_` prefix — `Code/Fix_LakeEntombment.lua` registers `LakeEntombment`.
 The one exception is the save-repair module, `Code/90_SaveSanitizer.lua`, which
 registers `SaveSanitizer`.
 

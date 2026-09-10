@@ -50,9 +50,3 @@ sequences, and the text and numbers on your screen. Several of them also repair
 damage already sitting in your save when you load it.
 
 [Every fix in it →](fix-list.md)
-
----
-
-!!! note "Nothing here is published yet"
-    The mod is not on a store as this page is written, so there is no store
-    link on it. When there is, it goes on the [installing page](install.md).

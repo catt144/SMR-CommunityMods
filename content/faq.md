@@ -115,7 +115,8 @@ because the broken code is simply not running any more.
 looks for specific damage already sitting in your save and undoes what it can
 positively identify: phantom farm oxygen, tunnels that were destroyed but still
 routing, track that could not be salvaged, a missing turbine bonus, Biorobots
-still carrying Dust Sickness.
+still carrying Dust Sickness, and a small extractor bonus an earlier version of
+this pack itself left behind.
 
 **Every pass is deliberately conservative.** It does nothing when it is unsure,
 and it does nothing at all the second time it runs. It is a genuine attempt at
@@ -173,7 +174,9 @@ itself off if the game no longer looks the way that fix was written for. So an
 official patch that changes the shape of the code a fix was written for stands
 that fix down instead of fighting it.
 
-The pack is built against game version **1.0.7.396349**.
+The pack on the store pages is built against game version **1.1.0.403908**. If
+you stayed on 1.0.7, the frozen build on the [Playing on 1.0.7](legacy-1-0-7.md)
+page is the one built against **1.0.7.396349**.
 
 !!! note "The honest limit of that"
     That check notices the code changing *shape* — a function renamed, removed or
