@@ -63,6 +63,22 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** they wait by the rocket instead of setting off for
     somewhere unreachable, and they do not disembark into ground with no way out.
 
+??? success "New arrivals moved into a dome that was switched off, quarantined or without air"
+    **What you saw:** a passenger rocket landing and part of its load walking
+    into a dome you had switched off or quarantined — one with no life support
+    at all — while a working dome stood within walking distance, and the game
+    warning of suffocation.
+
+    **What was wrong:** once the working domes in reach had no free homes left,
+    the game fell back to the nearest dome the arrivals could walk to, and that
+    fallback never checked whether the dome was switched on, open to newcomers,
+    or supplied with air and water. Quarantine did not stop them going in.
+
+    **After the fix:** the fallback is the nearest dome that is working, open
+    and supplied, so the overflow goes there, even if some of them have to wait
+    for a home. If no such dome can be reached, the game decides as it always
+    did.
+
 ??? success "Colonists stayed homeless after you built a Shuttle Hub"
     **What you saw:** homeless colonists — or colonists stuck in the wrong dome —
     who stayed put even after you built the Shuttle Hub that would have carried
@@ -274,6 +290,28 @@ saw, what was wrong underneath, and what happens now.
     to existing saves only ever restored it to one of the three turbine types.
 
     **After the fix:** the bonus is restored when you load an affected save.
+
+??? success "The Rare Metals Extractor's hammer, and six other machines, worked without their sounds and effects"
+    **What you saw:** a Rare Metals Extractor hammering in silence, no pump beat
+    from a MOXIE or a Water Extractor, Shuttle Hub shuttles landing and taking
+    off without their touchdown and lift-off sounds, an RC Driller and an RC
+    Dozer at work without their drill and shovel sounds, and no dust at The
+    Excavator's buckets.
+
+    **What was wrong:** those sounds and effects are timed to marks in each
+    machine's animation, and the game ships no marks for any of them, so nothing
+    ever set them off. The hammer and the MOXIE also looked their marks up in a
+    way that could never find them, and the Water Extractor started listening
+    before its pump was moving.
+
+    **After the fix:** the marks are there and the lookups work, so the effects
+    play in time with the animation. Existing saves pick them up when they load,
+    or at the vehicle's next job — no switching buildings off and on.
+
+    **⚠️ Worth knowing:** this is sound and visuals only; nothing about
+    production changes. The drill-style Rare Metals Extractor and the white
+    MOXIE have no such effects by design — use **Change Skin** on the extractor
+    to switch it to the hammer and hear the strikes.
 
 ## Trains
 
