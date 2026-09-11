@@ -313,6 +313,18 @@ saw, what was wrong underneath, and what happens now.
     MOXIE have no such effects by design — use **Change Skin** on the extractor
     to switch it to the hammer and hear the strikes.
 
+??? success "An Advanced Orbital Probe could downgrade an already deep-scanned sector"
+    **What you saw:** firing an Advanced Orbital Probe before researching
+    Adapted Probes turned a neighbouring sector that was already deep-scanned
+    back into a merely "Scanned" one, inviting a pointless repeat deep scan.
+
+    **What was wrong:** the probe scans every sector in its pattern the same
+    way, without checking whether a sector already has a better scan than the
+    one it is about to give it.
+
+    **After the fix:** a sector that has already been deep-scanned stays
+    deep-scanned; scanning it again wastes no time.
+
 ## Trains
 
 ??? success "Salvaging one piece of track deleted the whole line and its trains"
@@ -467,6 +479,23 @@ saw, what was wrong underneath, and what happens now.
     so **we cannot tell you this cures it** — only that it removes the one thing
     that makes those deposits different from every other deposit in the game. If
     you have hit this freeze, we would genuinely like to know whether this helps.
+
+??? success "An Earth trade rocket could sit on the landing pad forever"
+    **What you saw:** an Earth-sent Trade rocket — most reported on the Wildfire
+    mystery's cure rocket — parked on the pad with its cargo loaded and refusing
+    to leave. The panel shows fuel to unload, or fuel still needed, and nothing
+    ever changes.
+
+    **What was wrong:** the rocket's fuel request is sized once, the moment it
+    lands. If anything changes how much fuel it needs while it is still sitting
+    there — finishing Advanced Martian Engines research is the reported trigger —
+    that request is never resized. Too much fuel arrives and nothing is asked to
+    unload it; too little arrives and no drone is asked to bring more. Either way
+    the rocket can never become ready to launch.
+
+    **After the fix:** the fuel request is resized whenever the fuel cost
+    changes, so the rocket becomes ready and leaves. A rocket already stuck like
+    this in your save is corrected the moment you load it.
 
 ---
 
