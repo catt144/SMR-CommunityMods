@@ -79,15 +79,17 @@ saw, what was wrong underneath, and what happens now.
     for a home. If no such dome can be reached, the game decides as it always
     did.
 
-??? success "Colonists stayed homeless after you built a Shuttle Hub"
-    **What you saw:** homeless colonists — or colonists stuck in the wrong dome —
-    who stayed put even after you built the Shuttle Hub that would have carried
-    them.
+??? success "A stale answer to whether colonists could travel between domes"
+    **What you saw:** the game's own answer to whether colonists could travel
+    between two domes could be out of date after you built or removed a Shuttle
+    Hub.
 
-    **What was wrong:** the answer to "can anyone get from here to there" was
-    cached, and nothing ever told the cache that shuttles now existed.
+    **What was wrong:** that answer was cached, and nothing ever told the cache
+    that shuttle availability had changed.
 
-    **After the fix:** building a hub is noticed, and the colonists move.
+    **After the fix:** the cache notices the change. On the current version of
+    the game, migration picks its destination by a different route, so this is a
+    repair to a stale value rather than a cure for colonists refusing to move.
 
 ??? success "Colonists queued for shuttles from a hub you had switched off"
     **What you saw:** colonists waiting for a ride that was never coming, from a
@@ -104,22 +106,14 @@ saw, what was wrong underneath, and what happens now.
     **What you saw:** free beds in a dome, homeless colonists outside it, and
     nothing happening.
 
-    **What was wrong:** housing reserved for a colonist who never arrived was
-    never released. Those reservations are invisible in the interface and had no
-    expiry at all.
+    **What was wrong:** housing reserved for a colonist who never arrived could
+    be held indefinitely, and those reservations are invisible in the interface.
 
-    **After the fix:** a reservation that is going nowhere is released again.
-
-??? success "A dome read as full while its power was out"
-    **What you saw:** births and new arrivals refused by a dome that plainly had
-    room, usually during a power or oxygen dip.
-
-    **What was wrong:** the "free living space" figure that births and
-    immigration are gated on counted only residences that were running at that
-    instant, while the code that actually moves colonists in counted every
-    residence you had switched on. The two disagreed.
-
-    **After the fix:** they agree.
+    **After the fix:** a reservation whose journey can no longer complete is
+    released again. The current version of the game expires ordinary waits for a
+    shuttle by itself; what this still covers is the cases its own timeout skips
+    — a ride that is committed and never completes, and colonists who set off on
+    foot instead.
 
 ??? success "A bed that fell vacant sat empty while colonists were homeless"
     **What you saw:** a colonist dying, retiring or moving out, and their home
