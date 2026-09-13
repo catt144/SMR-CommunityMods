@@ -39,6 +39,22 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** each missile uses the angle picked for it.
 
+??? success "A building stayed switched off after a dust storm, saying \"Clogged after a Dust Storm.\""
+    **What you saw:** an extractor or factory stopped after a dust storm, said
+    "Clogged after a Dust Storm.", and never started again — destroy and rebuild
+    was the only way out. Two players reported it.
+
+    **What was wrong:** the dust-storm event switches the building off before it
+    asks you what to do, and if that question is ever lost — a save and reload
+    while it is on screen, for instance — nothing switches the building back on.
+    The game already has the timer that would have done it; this event does not
+    use it.
+
+    **After the fix:** the building is switched back on, on load and once a day.
+    A building that is already stuck in your save recovers the next time you load
+    it. A building still waiting on your answer, or waiting because you chose to
+    fix it after the storm, is left alone.
+
 ---
 
 ## Colonists & domes
@@ -99,21 +115,20 @@ saw, what was wrong underneath, and what happens now.
     "shuttle transport is available" for the whole colony, even though a hub
     that is off will never launch anything.
 
-    **After the fix:** a hub you switch off stops counting. Suspensions the game
-    imposes on itself — a dust storm, for instance — still count as before.
+    **After the fix:** a hub you switch off stops counting. Only hubs you have
+    left switched on count.
 
-??? success "A dome sat half empty and still refused to house anyone"
+??? success "Beds stayed reserved for colonists who were never going to take them"
     **What you saw:** free beds in a dome, homeless colonists outside it, and
     nothing happening.
 
-    **What was wrong:** housing reserved for a colonist who never arrived could
-    be held indefinitely, and those reservations are invisible in the interface.
+    **What was wrong:** a bed could stay reserved for a colonist who was never
+    going to arrive — one still waiting for a ride that never came, or one who
+    set off on foot — and those reservations are invisible in the interface.
 
-    **After the fix:** a reservation whose journey can no longer complete is
-    released again. The current version of the game expires ordinary waits for a
-    shuttle by itself; what this still covers is the cases its own timeout skips
-    — a ride that is committed and never completes, and colonists who set off on
-    foot instead.
+    **After the fix:** reservations held by a colonist who can no longer use the
+    bed are released, and stale ones expire. A bed held for a colonist away on an
+    expedition is kept for their return.
 
 ??? success "A bed that fell vacant sat empty while colonists were homeless"
     **What you saw:** a colonist dying, retiring or moving out, and their home
@@ -145,8 +160,9 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** both add together, the way the numbers say.
 
 ??? success "The Saint's dome blessing never reached anybody"
-    **What you saw:** nothing, which is the problem — the trait's colony-wide
-    effect had never applied to a single colonist.
+    **What you saw:** nothing, which is the problem — the blessing meant for the
+    Religious colonists in the Saint's dome had never applied to a single one of
+    them.
 
     **What was wrong:** the code that files a colonist under their trait and the
     code that applies the trait's dome-wide bonus used two different names for
@@ -172,7 +188,8 @@ saw, what was wrong underneath, and what happens now.
     illness excludes children and nobody else.
 
     **After the fix:** Biorobots do not catch it, and Biorobots already suffering
-    from it are cured when you load the save.
+    from it are cured when you load the save. The current game has retired these
+    dust-sickness events; the fix stays for saves that still carry the illness.
 
     **⚠️ Worth knowing:** this one is a judgment call rather than a repair. There
     is no coding error here — a dust illness that infects synthetic colonists is a
@@ -193,11 +210,28 @@ saw, what was wrong underneath, and what happens now.
     **What was wrong:** the game has no reflex for a colonist with nowhere to
     be, so they simply stand there.
 
-    **After the fix:** a colonist idling in vacuum heads home before their
-    oxygen runs out.
+    **After the fix:** a colonist whose home is up and running, idling out in
+    vacuum, is sent home once half their oxygen time is gone.
 
     **⚠️ Worth knowing:** this is a judgment call. We added a behaviour the game
     does not have rather than repairing one it has — an absence, not a mistake.
+
+??? question "A faction turned on you over unemployment in a dome of three — *judgment call*"
+    **What you saw:** a faction turning on you over "unemployment" in a dome of a
+    handful of colonists that was still being built, with nobody unemployed in
+    the colony.
+
+    **What was wrong:** nothing, in code terms. Four of the five factions count
+    any dome, however small, so one idle colonist in a dome of three is "more
+    than 10% unemployment". The Justice Movement's identical dislike waits until
+    a dome has ten colonists.
+
+    **After the fix:** all five use the same ten-colonist rule, for homelessness
+    too.
+
+    **⚠️ Worth knowing:** this one is a judgment call. Four factions do exactly
+    what their own rule says; we took the fifth faction's ten-colonist threshold
+    as the one all five were meant to share.
 
 ---
 
@@ -212,57 +246,47 @@ saw, what was wrong underneath, and what happens now.
     already walking towards a job was kicked back to Idle. A brownout, a
     malfunction, a repair, or you toggling it yourself all did it.
 
-    **After the fix:** the flapping is bundled into a single short pass, so a
-    flickering extender costs the fleet one interruption instead of one per
-    flicker in each direction.
+    **After the fix:** changes within two seconds of each other are handled as
+    one, so a flickering Extender costs the fleet one interruption instead of one
+    per flicker.
 
 ??? success "Drones could not finish a delivery to a landed automatic rocket"
     **What you saw:** deliveries to a landed automatic rocket that never
     completed, no matter what priority you set.
 
-    **What was wrong:** the rocket cancelled the orders of every drone walking
-    towards it, once per game hour — so any trip that took longer than an hour
-    could never finish.
+    **What was wrong:** once every game hour the rocket re-issued its work
+    requests, cancelling the orders of every drone already walking towards it.
 
-    **After the fix:** the orders stand, and the drones arrive.
+    **After the fix:** requests that have not changed are left alone, so the
+    drones arrive.
 
 ??? success "Building an artificial lake buried the rover that built it"
     **What you saw:** the RC Constructor that placed a lake, and any drones
     working the site, reading as dead.
 
-    **What was wrong:** the pass that clears units off a construction site
-    deliberately exempts the rover doing the building — and it runs *before* the
-    basin is dug, so anything standing there (including units that had been moved
-    and wandered back) was sealed under the new terrain and ran out of power.
+    **What was wrong:** the pass that clears units off a construction site skips
+    the constructor doing the clearing, and it runs *before* the basin is dug, so
+    anything still standing there (including units that had been moved and
+    wandered back) was sealed under the new terrain and ran out of power.
 
     **After the fix:** the moment the basin exists, anything standing in it is
-    sent out using the game's own escape behaviour — so the rover walks out
-    instead of being sealed in.
+    sent to solid ground nearby, so the rover drives out instead of being sealed
+    in.
 
-??? success "Starting a landscaping job yanked colonists out of the vehicle they were boarding"
-    **What you saw:** colonists pulled back out of a rover or train they were
-    stepping into — sometimes more than once — when you started a landscaping job
+??? success "Starting a landscaping job yanked drones out of the RC Commander they were boarding"
+    **What you saw:** drones pulled back out of an RC Commander they were
+    climbing into — sometimes more than once — when you started a landscaping job
     nearby.
 
     **What was wrong:** the pass that clears units off a new landscaping area
     builds an exclusion for units that are mid-boarding, and then does not use
     it.
 
-    **After the fix:** the exclusion is used, and boarding is left alone.
+    **After the fix:** the exclusion is used, and boarding drones are left alone.
 
 ---
 
 ## Buildings & economy
-
-??? success "A salvaged farm kept supplying its dome with oxygen forever"
-    **What you saw:** a dome with more oxygen than its buildings could account
-    for, growing every time you rebuilt a farm.
-
-    **What was wrong:** salvaging a farm did not remove the oxygen it had been
-    contributing, and each rebuild added another invisible supply on top.
-
-    **After the fix:** the supply goes with the farm, and phantom oxygen already
-    in your save is cleaned out when you load it.
 
 ??? success "A destroyed tunnel still worked as a shortcut"
     **What you saw:** rovers and colonists routing through a tunnel that was
@@ -318,6 +342,23 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** a sector that has already been deep-scanned stays
     deep-scanned; scanning it again wastes no time.
+
+??? success "The Building Codes law skipped buildings deployed from prefabs"
+    **What you saw:** with Building Codes enacted, a building deployed from a
+    prefab kept ordinary maintenance — under Strict it never got the lower
+    maintenance the law promises.
+
+    **What was wrong:** both versions of the law skip prefab-deployed buildings,
+    and neither description mentions it.
+
+    **After the fix:** prefab-deployed buildings get the same maintenance change
+    as any other, at whatever value the law is set to. This applies to buildings
+    completed after this update.
+
+    **⚠️ Worth knowing:** a Paradox developer answered the reporter's thread —
+    excluding prefabs is wrong, it is fixed in their next patch, and they asked
+    us to carry the fix meanwhile. When their patch lands this fix stands itself
+    down on its own.
 
 ## Trains
 
@@ -395,30 +436,32 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** an occupied connector is left where it is.
 
-??? success "Waiting on the platform was charged again as time on the train"
-    **What you saw:** a Comfort penalty on passengers, and travel-time figures on
-    trains and tracks, larger than the journey actually was.
+??? success "Waiting on the platform was counted again as time on the train"
+    **What you saw:** the Travel time figure on trains and tracks reading larger
+    than the journeys actually were.
 
     **What was wrong:** the moment a colonist reached the platform was never
     re-stamped when they boarded, so their wait was counted a second time as part
     of the ride.
 
-    **After the fix:** waiting counts as waiting and riding counts as riding.
+    **After the fix:** the ride is timed from boarding, so the platform wait is
+    counted once, at the station.
 
 ??? success "A repair the game meant to run on old track had never run"
     **What you saw:** most likely nothing, and possibly a track network that
     would not connect on an old save.
 
-    **What was wrong:** one of the game's own migration passes for saves from an
-    earlier version was written in a way that made it do nothing at all.
+    **What was wrong:** one of the game's own repair passes for saves from an
+    earlier version was written so that it did nothing. The current game has
+    corrected that, but a save that already recorded the repair as done will
+    never run it.
 
-    **After the fix:** the pass is run properly, once, when you load.
+    **After the fix:** the pass runs properly, once, when you load. A track it
+    cannot sort keeps its old order, and the rest carry on.
 
     **⚠️ Worth knowing:** we cannot tell you this fixes a symptom you have. It
     puts your save into the state the game's own migration intended, and on our
-    test save it corrected several tracks and stayed corrected. It runs over
-    every track you have; if one of them refuses to be walked, that track is left
-    exactly as the game restored it and the rest carry on.
+    test save it corrected several tracks and stayed corrected.
 
 ---
 
@@ -504,8 +547,8 @@ saw, what was wrong underneath, and what happens now.
     after you answer the epilogue popup. Leave the popup sitting there for more
     than a sol — minimised, ignored — and the announcement had already happened.
 
-    **After the fix:** the mystery finishes whether you answered the popup
-    promptly or not.
+    **After the fix:** the departure is re-announced every hour for ten sols, so
+    answering the popup any time in that window lets the mystery finish.
 
 ??? success "A Jumbo Cave's Reinforcement could get stuck clearing waste rock forever"
     **What you saw:** a Jumbo Cave mystery stuck on its Reinforcement step — the
@@ -558,17 +601,6 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** a finished site stops accepting work.
 
-??? success "A story step asked for a cave-in on a map that does not exist, and the story stopped"
-    **What you saw:** an underground anomaly or Buried Wonder sequence stopping
-    where it stood, in a game created with the "No Underground and Asteroids"
-    rule.
-
-    **What was wrong:** eight story steps ask for a cave-in on the underground
-    map *by name* rather than on the map they are running on. With no such map,
-    the request errored and the sequence never continued.
-
-    **After the fix:** the request is declined quietly and the story carries on.
-
 ## The text and numbers on your screen
 
 ??? success "The Domes Overview stopped marking domes in trouble"
@@ -590,7 +622,7 @@ saw, what was wrong underneath, and what happens now.
 
 ## Under the hood
 
-These three repair things you cannot see today. They are here because they are
+These two repair things you cannot see today. They are here because they are
 real defects in the game's code, and because other mods, later game updates or a
 future DLC can walk straight into them.
 
@@ -607,11 +639,6 @@ future DLC can walk straight into them.
     The other is a swap of two timing values written so that both ends up holding
     the larger one — harmless only because the values the game ships with are
     already in the right order. Both run in ordinary play, in a shipped mystery.
-
-??? success "Pre-set building layouts ignored your research"
-    A layout-construction preset placed buildings without checking that you had
-    researched them, unless the building happened to be purchasable as a resupply
-    prefab.
 
 ---
 
