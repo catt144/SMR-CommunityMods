@@ -21,9 +21,10 @@ nothing.
 
 **Things we do on purpose, which are the ones most likely to look wrong:**
 
-- **Three judgment calls** — Biorobots not catching Dust Sickness, colonists
-  taking shelter in vacuum, and Edit Payload keeping a row you emptied. All
-  three are marked *judgment call* in the [fix list](fix-list.md).
+- **Four judgment calls** — Biorobots not catching Dust Sickness, colonists
+  taking shelter in vacuum, Edit Payload keeping a row you emptied, and all five
+  factions using the same ten-colonist rule before they dislike a dome. All four
+  are marked *judgment call* in the [fix list](fix-list.md).
 
 ### How do I get it out?
 
@@ -113,10 +114,10 @@ because the broken code is simply not running any more.
 
 **Some damage needs active repair, and the pack tries.** Every time you load, it
 looks for specific damage already sitting in your save and undoes what it can
-positively identify: phantom farm oxygen, tunnels that were destroyed but still
-routing, track that could not be salvaged, a missing turbine bonus, Biorobots
-still carrying Dust Sickness, and a small extractor bonus an earlier version of
-this pack itself left behind.
+positively identify: tunnels that were destroyed but still routing, track that
+could not be salvaged, a missing turbine bonus, Biorobots still carrying Dust
+Sickness, and a small extractor bonus an earlier version of this pack itself
+left behind.
 
 **Every pass is deliberately conservative.** It does nothing when it is unsure,
 and it does nothing at all the second time it runs. It is a genuine attempt at
@@ -138,15 +139,16 @@ game. Preferences and features are not in it.
 
 One honest note:
 
-- **Three fixes are judgment calls** rather than plain repairs, marked as such in
-  the [fix list](fix-list.md). In two of them the game's code is not wrong at
+- **Four fixes are judgment calls** rather than plain repairs, marked as such in
+  the [fix list](fix-list.md). In three of them the game's code is not wrong at
   all and we made a call anyway.
 
 ### Which fixes are judgment calls?
 
-Three: Biorobots and Dust Sickness · colonists sheltering in vacuum · Edit
-Payload remembering what you told it. Each one is marked *judgment call* in the
-[fix list](fix-list.md), with our reasoning in the entry.
+Four: Biorobots and Dust Sickness · colonists sheltering in vacuum · Edit
+Payload remembering what you told it · one ten-colonist rule for all five
+factions. Each one is marked *judgment call* in the [fix list](fix-list.md),
+with our reasoning in the entry.
 
 ### Why isn't *X* fixed?
 
@@ -164,8 +166,7 @@ Three usual reasons.
 ### How do I turn one fix off?
 
 Not from inside the game, on any platform. See
-[For modders](for-modders.md) for the one route that exists, its limits, and the
-part of it we cannot tell you how to do.
+[For modders](for-modders.md) for the one route that exists and its limits.
 
 ### What happens when the game updates?
 
