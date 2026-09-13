@@ -39,7 +39,7 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** each missile uses the angle picked for it.
 
-??? success "A building stayed switched off after a dust storm, saying \"Clogged after a Dust Storm.\""
+??? success "A building clogged by a dust storm never started again"
     **What you saw:** an extractor or factory stopped after a dust storm, said
     "Clogged after a Dust Storm.", and never started again — destroy and rebuild
     was the only way out. Two players reported it.
