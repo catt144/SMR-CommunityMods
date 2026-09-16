@@ -21,10 +21,11 @@ nothing.
 
 **Things we do on purpose, which are the ones most likely to look wrong:**
 
-- **Four judgment calls** — Biorobots not catching Dust Sickness, colonists
-  taking shelter in vacuum, Edit Payload keeping a row you emptied, and all five
-  factions using the same ten-colonist rule before they dislike a dome. All four
-  are marked *judgment call* in the [fix list](fix-list.md).
+- **Five judgment calls** — Biorobots not catching Dust Sickness, colonists
+  taking shelter in vacuum, Edit Payload keeping a row you emptied, all five
+  factions using the same ten-colonist rule before they dislike a dome, and
+  habitat residents left out of automatic expedition crews. All five are marked
+  *judgment call* in the [fix list](fix-list.md).
 
 ### How do I get it out?
 
@@ -139,16 +140,17 @@ game. Preferences and features are not in it.
 
 One honest note:
 
-- **Four fixes are judgment calls** rather than plain repairs, marked as such in
-  the [fix list](fix-list.md). In three of them the game's code is not wrong at
+- **Five fixes are judgment calls** rather than plain repairs, marked as such in
+  the [fix list](fix-list.md). In four of them the game's code is not wrong at
   all and we made a call anyway.
 
 ### Which fixes are judgment calls?
 
-Four: Biorobots and Dust Sickness · colonists sheltering in vacuum · Edit
+Five: Biorobots and Dust Sickness · colonists sheltering in vacuum · Edit
 Payload remembering what you told it · one ten-colonist rule for all five
-factions. Each one is marked *judgment call* in the [fix list](fix-list.md),
-with our reasoning in the entry.
+factions · habitat residents and automatic expedition crews. Each one is
+marked *judgment call* in the [fix list](fix-list.md), with our reasoning in
+the entry.
 
 ### Why isn't *X* fixed?
 

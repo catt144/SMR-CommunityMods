@@ -233,6 +233,29 @@ saw, what was wrong underneath, and what happens now.
     what their own rule says; we took the fifth faction's ten-colonist threshold
     as the one all five were meant to share.
 
+??? question "Expeditions took colonists from their Naturalist Habitat and never brought them home — *judgment call*"
+    **What you saw:** colonists who lived in a Naturalist Habitat went off on an
+    anomaly expedition you never picked them for, and when the rocket came back
+    they were moved into a dome instead of going home. The habitat quietly lost
+    its residents, one expedition at a time.
+
+    **What was wrong:** the automatic crew draft picks from the whole colony, and
+    habitat residents — kept out of dome jobs by the habitat's own rules — are
+    often unemployed, which puts them first in line. On the way back, the game
+    could not find a habitat sitting away from where the rocket landed, so it
+    chose them a new home.
+
+    **After the fix:** the automatic expedition draft leaves Naturalist and
+    Micro-G habitat residents at home and fills the crew from everyone else. You
+    can still send them yourself: move them into a dome first, or pick them by
+    hand for an asteroid lander.
+
+    **⚠️ Worth knowing:** this is a judgment call. The draft does exactly what its
+    code says. We took the habitat's own rules — its residents do not work or
+    shop in domes, and the game already keeps them out of dome jobs — as meant to
+    keep them out of the automatic crew as well. It changes future expeditions
+    only: a resident already away when you update comes back the old way.
+
 ---
 
 ## Drones & logistics
@@ -359,6 +382,23 @@ saw, what was wrong underneath, and what happens now.
     excluding prefabs is wrong, it is fixed in their next patch, and they asked
     us to carry the fix meanwhile. When their patch lands this fix stands itself
     down on its own.
+
+??? success "An Outside Ranch left food where drones could not reach it after Open Domes"
+    **What you saw:** once the Open Domes law passed, an Outside Ranch stacked
+    part of its output in the middle of the building. Drones circled it and never
+    picked it up. The ranch worked normally before the law.
+
+    **What was wrong:** the law switches open-air buildings to their open-air
+    model. The ranch's open-air model has only six of the nine spots its
+    stockpiles belong on, so three of them were put at the centre of the
+    building, where drones cannot get to them.
+
+    **After the fix:** the Outside Ranch keeps the model with all nine spots. A
+    ranch already affected in your save puts its stranded piles back where drones
+    can reach them the next time you load it. No food is created or lost.
+
+    **⚠️ Worth knowing:** under Open Domes an Outside Ranch keeps its closed look.
+    The atmosphere, consumption and everything else the law does are unchanged.
 
 ## Trains
 
@@ -533,6 +573,23 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** the fuel request is resized whenever the fuel cost
     changes, so the rocket becomes ready and leaves. A rocket already stuck like
     this in your save is corrected the moment you load it.
+
+??? success "An expedition that needed an RC Commander refused an RC Seeker"
+    **What you saw:** an anomaly expedition asking for an RC Commander would not
+    load your RC Seeker and said there were not enough rovers, although the
+    Seeker is a Commander model. A colony whose only rover of that kind was a
+    Seeker could never send the expedition.
+
+    **What was wrong:** the expedition looks for rovers by their exact model, so
+    a rover built on another model never counted as that model. The same refusal
+    applied to every rover model built on another one.
+
+    **After the fix:** a rover model fills a request for the rover it is built
+    on, and the cargo panel shows the rover actually loaded (for example
+    *Seeker 1/1*). It works one way only: an expedition asking for a Seeker still
+    will not take a plain Commander, and a colony that owns the exact rover keeps
+    the game's own choice. When the only suitable rover is busy, the panel now
+    says so instead of showing no warning.
 
 ---
 
