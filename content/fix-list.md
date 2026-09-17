@@ -233,28 +233,47 @@ saw, what was wrong underneath, and what happens now.
     what their own rule says; we took the fifth faction's ten-colonist threshold
     as the one all five were meant to share.
 
-??? question "Expeditions took colonists from their Naturalist Habitat and never brought them home — *judgment call*"
+??? success "Expeditions took colonists from their Naturalist Habitat and never brought them home"
     **What you saw:** colonists who lived in a Naturalist Habitat went off on an
     anomaly expedition you never picked them for, and when the rocket came back
     they were moved into a dome instead of going home. The habitat quietly lost
     its residents, one expedition at a time.
 
-    **What was wrong:** the automatic crew draft picks from the whole colony, and
-    habitat residents — kept out of dome jobs by the habitat's own rules — are
-    often unemployed, which puts them first in line. On the way back, the game
-    could not find a habitat sitting away from where the rocket landed, so it
-    chose them a new home.
+    **What was wrong:** on the way home the game looks for somewhere the returning
+    colonist can walk to from the landing site. A habitat sitting further away
+    than that walk was never considered, even though it was still their home, so
+    the game chose them a new one.
 
-    **After the fix:** the automatic expedition draft leaves Naturalist and
-    Micro-G habitat residents at home and fills the crew from everyone else. You
-    can still send them yourself: move them into a dome first, or pick them by
-    hand for an asteroid lander.
+    **After the fix:** habitat residents can join expeditions like anyone and come
+    back to their own habitat. If the habitat is out of walking range of the
+    landing, they are set down at its door, the same way the rocket picked them
+    up. If that home can no longer be used, they go to the nearest safe dome.
 
-    **⚠️ Worth knowing:** this is a judgment call. The draft does exactly what its
-    code says. We took the habitat's own rules — its residents do not work or
-    shop in domes, and the game already keeps them out of dome jobs — as meant to
-    keep them out of the automatic crew as well. It changes future expeditions
-    only: a resident already away when you update comes back the old way.
+    **⚠️ Worth knowing:** an earlier version of this pack kept habitat residents
+    out of automatic expedition crews instead, as a judgment call. That
+    restriction is gone — this repairs the return itself, so there is no longer a
+    reason to hold them back. One case has not been watched in a running game: a
+    crew that comes home by train rather than walking or being set down.
+
+??? success "An expedition crew with no home left was sent to a dome that could not keep them alive"
+    **What you saw:** an expedition coming back to find its home demolished or
+    shut down, and the colonists walking into a dome that was switched off,
+    quarantined or without air — while a working dome stood within reach.
+
+    **What was wrong:** the return picks a replacement home before it checks
+    whether that dome is working, so the nearest dome won even when it was dead.
+    It is the same gap as the one new arrivals used to fall into.
+
+    **After the fix:** a returning colonist with nowhere to go now heads for the
+    nearest dome that is working and has air, even if its homes are all taken,
+    rather than the nearest dome of any kind. If nothing safe can be reached, the
+    game decides as it always did.
+
+    **⚠️ Worth knowing:** this one has not been watched happening in a running
+    game — it needs a colony where the nearest dome is dead and a working one is
+    still in reach, which is hard to set up on purpose. It reuses the same
+    working-dome test as the new-arrivals fix further up this section, which has
+    been watched working.
 
 ---
 
