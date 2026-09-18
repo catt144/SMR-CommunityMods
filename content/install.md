@@ -91,5 +91,5 @@ The honest answer for a bug-fix mod is that you check by the bug not happening.
 The Mod Manager shows you that it is installed and enabled; after that, there is
 nothing on screen to look at, because a repaired bug looks like an ordinary game.
 
-If you want more than that, the [For modders](for-modders.md) page describes what
-the mod can report about itself, and what we have not yet confirmed about it.
+If you want more than that, the [For modders](for-modders.md) page describes how
+the mod patches the game and how another mod can switch a single fix off.
