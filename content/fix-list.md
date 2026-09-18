@@ -351,6 +351,22 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the bonus is restored when you load an affected save.
 
+??? success "Dry Farming did not cut the water of the Feeding the Future farms"
+    **What you saw:** after researching the Dry Farming breakthrough, ordinary
+    farms used half the water, but Small Farms, Underground Farms, Small
+    Underground Farms and Automated Farms used as much as before.
+
+    **What was wrong:** the breakthrough says it cuts the water of crops, but it
+    names the base game's three plant farms one by one. The Feeding the Future
+    farms were never added to that list.
+
+    **After the fix:** those four farms get the same cut. A save that has
+    already researched Dry Farming gets it the next time you load it.
+
+    **⚠️ Worth knowing:** Fungal Farms and Insect Farms still get no cut. The
+    base game leaves its Fungal Farm out on purpose, and the Insect Farm is
+    treated the same way.
+
 ??? success "The Rare Metals Extractor's hammer, and six other machines, worked without their sounds and effects"
     **What you saw:** a Rare Metals Extractor hammering in silence, no pump beat
     from a MOXIE or a Water Extractor, Shuttle Hub shuttles landing and taking
