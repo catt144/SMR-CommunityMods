@@ -630,6 +630,24 @@ saw, what was wrong underneath, and what happens now.
 
 ## Story & mysteries
 
+??? success "The Wildfire mystery could not finish: infected colonists never went for the cure"
+    **What you saw:** once the Wildfire cure was found, the infected colonists
+    stayed infected and the mystery never ended. Players got past it by closing
+    their hospitals or draining Sanity.
+
+    **What was wrong:** the cure only works when an infected colonist visits a
+    medical building. The 1.1.0 game now pays a dome's medical care to its
+    colonists at home, so an infected colonist under a Medical Center never
+    fell ill enough to be sent, and never visited.
+
+    **After the fix:** once the cure is found, an infected colonist's daily
+    outing is a visit to a medical building, and the visit cures them. They
+    give up one ordinary outing, once. It needs no DLC; the stall happens in the
+    base game.
+
+    **⚠️ Worth knowing:** a colony with no medical building at all still has
+    nowhere to send them, as before.
+
 ??? success "The Philosopher's Stone mystery hung one step from the end"
     **What you saw:** the mystery stuck at its finale, forever, with nothing left
     to click.
