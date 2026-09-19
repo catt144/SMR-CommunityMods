@@ -4,6 +4,10 @@ Every question here was actually asked — during testing, in a bug report, or b
 someone deciding whether to install. Use ++ctrl+k++ if you are looking for
 something specific.
 
+!!! tip "Found a bug?"
+    **[Report a problem](report.md)** — no account needed, and you can attach a
+    save or a log.
+
 ## Something is broken and you think it might be us
 
 Fair. Three answers, in the order you probably want them.
@@ -44,43 +48,29 @@ about: see [For modders](for-modders.md).
 
 ### Where do I tell you?
 
-Please do — a report we can reproduce is worth more to this project than
-anything else you can give it. What helps most:
+**[Report a problem](report.md)** is the quickest way, on any platform and with no
+account. It files your report on the project's issue page for you, and it is the
+one place a save or a log can be attached, privately.
+
+The comments on the
+[Steam Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810)
+work too, and so does the
+[issue page](https://github.com/catt144/SMR-CommunityMods/issues) itself if you
+have a GitHub account, though GitHub cannot take a save. Paradox Mods pages have no
+comments, so if you play on Xbox or PlayStation, use the report page.
+
+What helps most in a report:
 
 - **what happened**, in plain words;
 - **roughly when it started** — a new colony, after a specific building, after an
   update;
 - **whether it survives a save and reload**;
 - **your platform**, and which mods you had enabled;
-- **a save file where it reliably happens**, which is worth a thousand words.
+- **a save file where it reliably happens**, if you have one.
 
-On PC the game's logs are usually in your
-`%AppData%\Surviving Mars Relaunched\logs` folder, and ++ctrl+f1++ opens the
-official bug reporter — on Steam Deck the game leaves that one out. On Xbox and
-PlayStation there are no logs or console commands to collect, and a plain
-description is still genuinely useful.
-
-**Three places, and which one you have depends on where you got the mod.**
-
-- **[Report a problem](report.md) on this site.** The easiest route for everyone,
-  and the only one that works the same on every platform. You do not need an
-  account: it files your report on the project's public issue page for you, and it
-  is the one place a save file can be attached privately.
-- **The Steam Workshop page, in the comments.** If you are on Steam this is quick
-  and needs no account beyond the one you already use:
-  [the Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810).
-- **The issue page itself**, if you already have a free GitHub account:
-  [github.com/catt144/SMR-CommunityMods/issues](https://github.com/catt144/SMR-CommunityMods/issues).
-  GitHub refuses save files, so for a save use the report page above.
-
-!!! warning "Paradox Mods pages have no comment section"
-    There is nowhere to leave a note on the mod's Paradox page, so if that is
-    where you installed it — **which includes every Xbox and PlayStation
-    player** — use [Report a problem](report.md). It works from a browser on any
-    device, including a phone.
-
-    On console there is nothing to attach in the first place: no logs and no
-    console commands. **A plain description is still genuinely useful.**
+On PC the game's logs are in `%AppData%\Surviving Mars Relaunched\logs`. On
+Xbox and PlayStation there are no files to collect, and a plain description is
+genuinely useful.
 
 ---
 

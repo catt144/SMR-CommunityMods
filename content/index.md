@@ -5,6 +5,7 @@ rebalancing the game, and it is built to be added to a save you have already
 played.
 
 [Is my bug fixed?](fix-list.md){ .md-button .md-button--primary }
+[Report a problem](report.md){ .md-button .md-button--primary }
 [Installing](install.md){ .md-button }
 [Questions](faq.md){ .md-button }
 
