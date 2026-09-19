@@ -1,0 +1,27 @@
+# Report drop Worker — see src/index.js.
+#
+# Deploy needs these that are not in this file:
+#   - the R2 bucket named below, created first, private, with a 30-day
+#     lifecycle rule that deletes objects (no public access, no custom domain);
+#   - two secrets:
+#         npx wrangler secret put DISCORD_WEBHOOK
+#         npx wrangler secret put GITHUB_TOKEN
+#     GITHUB_TOKEN is a fine-grained token limited to GITHUB_REPO below, with the
+#     single permission "Issues: Read and write". It expires; renew it before.
+#   - these labels on GITHUB_REPO: from-form, fix-pack, opt-in, site, unsure
+#     (see MODS in src/index.js).
+#
+# ALLOWED_ORIGINS is who may send: the published site, nothing else.
+name = "smr-save-drop"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true      # the public address the site form calls
+preview_urls = false    # no extra per-version addresses
+
+[vars]
+ALLOWED_ORIGINS = "https://catt144.github.io"
+GITHUB_REPO = "catt144/SMR-CommunityMods"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "smr-uploads"

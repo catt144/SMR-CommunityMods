@@ -60,28 +60,27 @@ official bug reporter — on Steam Deck the game leaves that one out. On Xbox an
 PlayStation there are no logs or console commands to collect, and a plain
 description is still genuinely useful.
 
-**Two places, and which one you have depends on where you got the mod.**
+**Three places, and which one you have depends on where you got the mod.**
 
-- **The Steam Workshop page, in the comments.** If you are on Steam this is the
-  easiest route and the one we read first — it needs no account beyond the one
-  you already use:
+- **[Report a problem](report.md) on this site.** The easiest route for everyone,
+  and the only one that works the same on every platform. You do not need an
+  account: it files your report on the project's public issue page for you, and it
+  is the one place a save file can be attached privately.
+- **The Steam Workshop page, in the comments.** If you are on Steam this is quick
+  and needs no account beyond the one you already use:
   [the Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810).
-- **The project's issue tracker**, which is the route for everyone else and the
-  best one for anybody:
-  [github.com/catt144/SMR-CommunityFixPack/issues](https://github.com/catt144/SMR-CommunityFixPack/issues).
-  It takes attachments, so it is the only place a save file or a log can actually
-  reach us — and those are worth more than any description. It needs a free
-  GitHub account.
+- **The issue page itself**, if you already have a free GitHub account:
+  [github.com/catt144/SMR-CommunityMods/issues](https://github.com/catt144/SMR-CommunityMods/issues).
+  GitHub refuses save files, so for a save use the report page above.
 
 !!! warning "Paradox Mods pages have no comment section"
     There is nowhere to leave a note on the mod's Paradox page, so if that is
     where you installed it — **which includes every Xbox and PlayStation
-    player** — the issue tracker is the route. It works from a browser on any
+    player** — use [Report a problem](report.md). It works from a browser on any
     device, including a phone.
 
     On console there is nothing to attach in the first place: no logs and no
-    console commands. **A plain description is still genuinely useful**, and it
-    is worth opening a tracker entry for.
+    console commands. **A plain description is still genuinely useful.**
 
 ---
 

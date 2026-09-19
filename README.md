@@ -43,6 +43,10 @@ content/                            every page, written for players
                     think it might be us"
   for-modders.md    switching off an individual fix, and what we cannot
                     tell you about load order
+  report.md         "Report a problem" — the report form (files an issue, takes a save)
+  javascripts/report.js   the form's script
+worker/                             the Cloudflare Worker behind that form;
+                                    NOT part of the site build (see worker/wrangler.toml)
 .github/workflows/publish-site.yml  manual-trigger Pages build
 ```
 

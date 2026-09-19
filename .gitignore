@@ -7,3 +7,8 @@ Desktop.ini
 
 # Agent tooling — never part of a docs-only repo
 .claude/
+
+# Worker
+worker/node_modules/
+worker/.wrangler/
+worker/.dev.vars

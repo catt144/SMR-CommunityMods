@@ -1,0 +1,13 @@
+{
+  "name": "smr-save-drop",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Private upload point for player report files (Cloudflare Worker + R2).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

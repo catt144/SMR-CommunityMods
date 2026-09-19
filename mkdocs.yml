@@ -82,5 +82,10 @@ nav:
   - Questions & problems: faq.md
   - Playing on 1.0.7: legacy-1-0-7.md
   - For modders: for-modders.md
+  - Report a problem: report.md
+  - Source and the reasoning behind each fix (GitHub): https://github.com/catt144/SMR-CommunityFixPack
+
+extra_javascript:
+  - javascripts/report.js   # the upload form on report.md
 
 # No analytics, no trackers, no external fonts beyond the theme's own.
