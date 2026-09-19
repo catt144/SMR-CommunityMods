@@ -6,8 +6,8 @@ played.
 
 [Is my bug fixed?](fix-list.md){ .md-button .md-button--primary }
 [Bug reports & problems](report.md){ .md-button .md-button--primary }
-[Installing](install.md){ .md-button }
-[FAQ](faq.md){ .md-button }
+[Installing](install.md){ .md-button .md-button--primary }
+[FAQ](faq.md){ .md-button .md-button--primary }
 
 **Get it:** [Paradox Mods](https://mods.paradoxplaza.com/mods/156049/Any) ·
 [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810)
