@@ -44,6 +44,31 @@ The general advice applies to any mod and is not specific to this one: **if a sa
 matters to you, back it up before adding any mod to it for the first time.** On a
 console, where you cannot copy files about, make an extra named save first.
 
+### If your save is already broken
+
+The pack helps, but it cannot undo everything.
+
+- **Ongoing behaviour is fixed the moment you load.** Drones, colonists,
+  schedulers and rockets simply stop running the broken code.
+- **Some damage is repaired on load.** The pack looks for specific damage it can
+  positively identify: tunnels destroyed but still routing, track that could not
+  be salvaged, a missing turbine bonus, Biorobots still carrying Dust Sickness, and
+  a small extractor bonus an earlier version of this pack left behind. When it is
+  unsure it does nothing, and it never runs a repair twice.
+- **What is gone stays gone.** Dead colonists, destroyed buildings and expeditions
+  lost to the lander bugs do not come back. Trains lost to the station bug cannot
+  be restored, but you can build new ones at any station for Metals and
+  Electronics.
+
+## Removing it
+
+1. Turn it off in the **Mod Manager**, or remove it from Paradox Mods.
+2. **Restart the game fully.** Until you do, it is still running.
+
+The bugs it was holding back come back. Repairs it already made to your save stay
+made: a bonus it removed does not return, and a track it re-numbered stays
+re-numbered.
+
 ## What it puts in your save
 
 The fix pack's bookkeeping, by name rather than as a summary:

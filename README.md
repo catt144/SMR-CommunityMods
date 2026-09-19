@@ -39,11 +39,10 @@ content/                            every page, written for players
   index.md          the three questions people ask before installing
   install.md        installing, the restart rule, what goes in your save
   fix-list.md       every fix in the pack, folded, searchable
-  faq.md            questions — opens with "something is broken and you
-                    think it might be us"
+  faq.md            FAQ — short answers, each linking to the page with the detail
   for-modders.md    switching off an individual fix, and what we cannot
                     tell you about load order
-  report.md         "Report a problem" — the report form (files an issue, takes a save)
+  report.md         "Bug reports & problems" — the report form (files an issue, takes a save)
   javascripts/report.js   the form's script
 worker/                             the Cloudflare Worker behind that form;
                                     NOT part of the site build (see worker/wrangler.toml)

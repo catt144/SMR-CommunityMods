@@ -54,6 +54,7 @@
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          kind: $("report-kind").value,
           mod: $("report-mod").value,
           platform: $("report-platform").value,
           description: $("report-description").value,
@@ -98,7 +99,8 @@
         say("Sending reports is not switched on yet. Please leave a comment on the Steam Workshop page instead.");
         return;
       }
-      if (!$("report-mod").value) return say("Choose which mod you are having trouble with.");
+      if (!$("report-kind").value) return say("Choose what you are reporting.");
+      if (!$("report-mod").value) return say("Choose which mod this is about.");
       if ($("report-description").value.trim().length < 10) return say("Please describe what happened, in a sentence or two.");
 
       var file = $("report-file").files[0];

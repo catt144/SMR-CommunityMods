@@ -22,6 +22,12 @@ const MODS = {
   site: { name: "Website", label: "site" },
   unsure: { name: "Not sure", label: "unsure" },
 };
+// "What are you reporting?" Optional so a page published before this field
+// existed keeps working; a missing or unknown value files as "Not said".
+const KINDS = {
+  "mod-problem": { name: "Problem with our mod", label: "mod-problem" },
+  "game-bug": { name: "Game bug to fix", label: "game-bug" },
+};
 const PLATFORMS = ["PC (Steam)", "PC (Paradox launcher)", "Steam Deck / Linux", "Xbox", "PlayStation", "Not sure"];
 
 const DESC_MIN = 10;
@@ -156,6 +162,7 @@ async function handleReport(request, env, ctx) {
     return reply(env, request, 400, { error: "That description is too long. Please shorten it." });
   }
 
+  const kind = KINDS[data.kind] || null;
   const platform = PLATFORMS.includes(data.platform) ? data.platform : "Not said";
   const modList = typeof data.modList === "string" ? data.modList.trim().slice(0, MODLIST_MAX) : "";
 
@@ -171,10 +178,11 @@ async function handleReport(request, env, ctx) {
     fileCode = data.fileCode;
   }
 
-  const title = titleFrom(mod.name, description);
+  const title = titleFrom(kind ? `${mod.name} · ${kind.name}` : mod.name, description);
   const body = [
     "*Filed from the site's report form.*",
     "",
+    `**Reporting:** ${kind ? kind.name : "Not said"}`,
     `**Mod:** ${mod.name}`,
     `**Platform:** ${platform}`,
     "",
@@ -199,7 +207,7 @@ async function handleReport(request, env, ctx) {
         "User-Agent": "smr-report-drop",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, body, labels: ["from-form", mod.label] }),
+      body: JSON.stringify({ title, body, labels: ["from-form", mod.label].concat(kind ? [kind.label] : []) }),
     });
     if (res.ok) issue = await res.json();
   } catch {

@@ -8,7 +8,8 @@
 #         npx wrangler secret put GITHUB_TOKEN
 #     GITHUB_TOKEN is a fine-grained token limited to GITHUB_REPO below, with the
 #     single permission "Issues: Read and write". It expires; renew it before.
-#   - these labels on GITHUB_REPO: from-form, fix-pack, opt-in, site, unsure
+#   - these labels on GITHUB_REPO: from-form, fix-pack, opt-in, site, unsure,
+#     mod-problem, game-bug
 #     (see MODS in src/index.js).
 #
 # ALLOWED_ORIGINS is who may send: the published site, nothing else.

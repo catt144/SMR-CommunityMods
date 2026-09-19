@@ -1,230 +1,94 @@
-# Questions
+# FAQ
 
-Every question here was actually asked — during testing, in a bug report, or by
-someone deciding whether to install. Use ++ctrl+k++ if you are looking for
-something specific.
+Short answers, each with a link to the page that has the detail. Use ++ctrl+k++ to
+search the whole site.
 
 !!! tip "Found a bug?"
-    **[Report a problem](report.md)** — no account needed, and you can attach a
-    save or a log.
+    Go to **[Bug reports & problems](report.md)**. No account needed, and you can
+    attach a save or a log.
 
-## Something is broken and you think it might be us
+## Installing and your saves
 
-Fair. Three answers, in the order you probably want them.
+### Can I add it to a save I have already played?
 
-### Is it this mod?
-
-**The one test that settles it:** switch off every mod in the **Mod Manager**,
-then **fully restart the game** — all the way out and back in, not just to the
-main menu. Load the save and try again. If the problem is still there, it is not
-coming from a mod, ours included.
-
-That restart matters. A mod that has been switched off in the Mod Manager is
-still loaded until the game restarts, so testing without the restart tests
-nothing.
-
-**Things we do on purpose, which are the ones most likely to look wrong:**
-
-- **Four judgment calls** — Biorobots not catching Dust Sickness, colonists
-  taking shelter in vacuum, Edit Payload keeping a row you emptied, and all five
-  factions using the same ten-colonist rule before they dislike a dome. All four
-  are marked *judgment call* in the [fix list](fix-list.md).
-
-### How do I get it out?
-
-1. **Turn it off in the Mod Manager, or remove it from Paradox Mods.**
-2. **Restart the game fully.** Until you do, it is still running.
-
-The bugs it was holding back come back. Repairs it already made to your save stay
-made — a bonus it removed does not come back, a track it re-numbered stays
-re-numbered.
-
-**You cannot switch off one individual fix from inside the game**, on any
-platform. The fix pack has no options page at all, and the developer console
-cannot un-apply a fix, because the fixes
-are installed long before the game reaches a point where you could type anything.
-There *is* one route, and it is a modder's one, with a limit we are straight
-about: see [For modders](for-modders.md).
-
-### Where do I tell you?
-
-**[Report a problem](report.md)** is the quickest way, on any platform and with no
-account. It files your report on the project's issue page for you, and it is the
-one place a save or a log can be attached, privately.
-
-The comments on the
-[Steam Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=3787202810)
-work too, and so does the
-[issue page](https://github.com/catt144/SMR-CommunityMods/issues) itself if you
-have a GitHub account, though GitHub cannot take a save. Paradox Mods pages have no
-comments, so if you play on Xbox or PlayStation, use the report page.
-
-What helps most in a report:
-
-- **what happened**, in plain words;
-- **roughly when it started** — a new colony, after a specific building, after an
-  update;
-- **whether it survives a save and reload**;
-- **your platform**, and which mods you had enabled;
-- **a save file where it reliably happens**, if you have one.
-
-On PC the game's logs are in `%AppData%\Surviving Mars Relaunched\logs`. On
-Xbox and PlayStation there are no files to collect, and a plain description is
-genuinely useful.
-
----
-
-## Installing, saves and removing
-
-### Can I add this to a save I have already played?
-
-Yes, including a long one. The fix pack writes almost nothing into your savegame,
-and what it writes means nothing to the game without it — with one deliberate
-exception, which is [written out on the installing
-page](install.md#what-it-puts-in-your-save) along with everything else it stores.
-It is built to be safe to add or remove at any time.
-
-The general advice applies to any mod and it is not specific to this one: if a
-save matters to you, back it up before adding *any* mod to it for the first time.
-On a console, where you cannot copy files about, the equivalent is to make an
-extra named save first.
-
-### Can I remove it later?
-
-Yes — see [How do I get it out?](#how-do-i-get-it-out) above.
+Yes, including a long one. That is what it is built for. The pack writes almost
+nothing into your save; the full list is on the
+[installing page](install.md#what-it-puts-in-your-save).
 
 ### Will it fix a save that is already broken?
 
-Sometimes, and here is the honest shape of it.
+Partly. Ongoing behaviour is fixed as soon as you load, and some damage is repaired
+on load, but what is gone stays gone. The detail is under
+[If your save is already broken](install.md#if-your-save-is-already-broken).
 
-**Most fixes help immediately.** Anything about ongoing behaviour — drones,
-colonists, schedulers, rockets — starts working correctly the moment you load,
-because the broken code is simply not running any more.
+### How do I remove it?
 
-**Some damage needs active repair, and the pack tries.** Every time you load, it
-looks for specific damage already sitting in your save and undoes what it can
-positively identify: tunnels that were destroyed but still routing, track that
-could not be salvaged, a missing turbine bonus, Biorobots still carrying Dust
-Sickness, and a small extractor bonus an earlier version of this pack itself
-left behind.
+Turn it off in the Mod Manager and restart the game fully. What that undoes, and
+what it does not, is under [Removing it](install.md#removing-it).
 
-**Every pass is deliberately conservative.** It does nothing when it is unsure,
-and it does nothing at all the second time it runs. It is a genuine attempt at
-repairing an already-damaged save, not a promise that it will repair *yours*.
+### Does load order matter?
 
-**History that is gone stays gone.** Colonists who died stay dead, destroyed
-buildings stay destroyed, expeditions lost to the lander bugs are lost. Trains
-voided by the station bug cannot be restored exactly — but you can build
-replacement trains at any station for Metals and Electronics.
+We have not measured it and will not guess. What the pack does to coexist with
+other mods is under [Load order](install.md#load-order). If you hit a specific
+conflict, [tell us](report.md).
 
----
+### Anything different on console?
 
-## What it changes, and what it does not
+While any mod is enabled, Xbox, PlayStation and the Microsoft Store do not unlock
+achievements or trophies. That is the game's rule for every mod; Steam is not
+affected.
 
-### Does this change game balance?
+## What it changes
 
-The fix pack repairs defects in the game's own code rather than rebalancing the
-game. Preferences and features are not in it.
+### Does it change game balance?
 
-One honest note:
-
-- **Four fixes are judgment calls** rather than plain repairs, marked as such in
-  the [fix list](fix-list.md). In three of them the game's code is not wrong at
-  all and we made a call anyway.
+No. It repairs defects in the game's own code; preferences and features are not in
+it.
 
 ### Which fixes are judgment calls?
 
-Four: Biorobots and Dust Sickness · colonists sheltering in vacuum · Edit
-Payload remembering what you told it · one ten-colonist rule for all five
-factions. Each one is marked *judgment call* in the [fix list](fix-list.md),
-with our reasoning in the entry.
+Four: Biorobots and Dust Sickness, colonists sheltering in vacuum, Edit Payload
+remembering what you told it, and one ten-colonist rule for all five factions.
+Each is marked *judgment call* on the [fix list](fix-list.md), with the reasoning.
 
 ### Why isn't *X* fixed?
 
-Three usual reasons.
+Usually one of three reasons:
 
-- **We could not demonstrate it.** If we could not point at the defect in the
-  game's own code, or could not reproduce what was reported, it does not ship. A
-  list of things we merely suspect would be worth nothing to you.
-- **It is not a defect, it is a design we disagree with.** Those are not bug
-  fixes, and they do not ship in the pack.
-- **The repair would be bigger than the bug.** Some fixes would mean replacing so
-  much of the game's own code that the mod would break on the next official
-  patch, which is a worse deal than the bug.
+- **We could not show it.** If we cannot point at the defect in the game's code, or
+  reproduce what was reported, it does not ship.
+- **It is a design, not a defect.** Designs we disagree with are not bug fixes.
+- **The repair would be bigger than the bug.** Replacing that much of the game's
+  code would break on the next official patch.
 
-### How do I turn one fix off?
+If you think we missed one, [report it](report.md) as a game bug you would like
+fixed.
 
-Not from inside the game, on any platform. See
-[For modders](for-modders.md) for the one route that exists and its limits.
+### Can I turn one fix off?
+
+Not from inside the game, on any platform. There is one route, and it takes a
+second mod: see [For modders](for-modders.md).
 
 ### What happens when the game updates?
 
-Each fix inspects the game's own code before it patches anything, and switches
-itself off if the game no longer looks the way that fix was written for. So an
-official patch that changes the shape of the code a fix was written for stands
-that fix down instead of fighting it.
+Each fix checks the game's code before it patches anything, and stands down if
+that code has been renamed, removed or restructured. It cannot notice a function
+whose insides were quietly edited, so we read every patch and update the pack.
 
-The pack on the store pages is built against game version **1.1.0.403908**. If
-you stayed on 1.0.7, the frozen build on the [Playing on 1.0.7](legacy-1-0-7.md)
-page is the one built against **1.0.7.396349**.
+The store version is built for game version **1.1.0.403908**. For 1.0.7, see
+[Playing on 1.0.7](legacy-1-0-7.md).
 
-!!! note "The honest limit of that"
-    That check notices the code changing *shape* — a function renamed, removed or
-    restructured. It cannot notice a function of the same name whose insides were
-    quietly edited. If an official patch repairs a bug by rewriting the body of
-    the same function, our repair may keep running alongside theirs — which is
-    why we watch patches and update rather than promising the mod retires itself.
-
-### Load order — does it matter?
-
-**We have not measured this, and we are not going to guess at it.**
-
-What we can say is what the pack does: it patches the smallest thing that fixes
-each bug, calls through to whatever another mod has already put in place rather
-than replacing whole systems where it can avoid it, and checks the game's code
-before changing anything. That is the effort we make to coexist; it is not a
-guarantee and it is not a load-order instruction.
-
-If you have a specific conflict, tell us what the other mod is and what you see —
-that is a far better use of your time than shuffling the list.
-
-### Console and gamepad players — anything different?
-
-Two things.
-
-- **While any mod is enabled, the game does not unlock achievements or trophies
-  on Xbox, PlayStation or the Microsoft Store.** That is the game's own rule and
-  it applies to every mod, not just ours. Steam and other PC versions are not
-  affected.
-- **Switching off an individual *fix*** takes a second mod written for the
-  purpose, so it is a thing a modder does rather than something you can do from
-  inside the game, on any platform, console or PC.
-
----
-
-## Specific things people report
+## Things people report
 
 ### I dismissed a "Building Not Working" warning and it came back
 
-**Dismissal genuinely works — it is designed to be temporary, and that is not our
-doing.** The game silences that warning for a fixed quiet window after you
-dismiss it, and then lets it back if the problem is still there. That is a
-defensible design: it refuses to let you permanently silence a warning about
-something that is still wrong, because a warning dismissed forever is how you
-lose a colony to a problem you forgot about.
+That is the game's design, not a bug. Dismissing the warning silences it for a
+fixed quiet window, and then it returns if the problem is still there, so a
+warning you dismissed cannot be forgotten forever.
 
-There really was a defect here once — the setting that makes dismissal work at
-all was missing from the game's own data, and the developers have since put it
-back. What you see now is the intended behaviour, which is why there is no fix
-for it in the pack.
-
-**Why it still drives you up the wall:** the design has no answer for a building
-that can *never* recover — one entombed by a landscaping lake, say. You have seen
-the warning, you can do nothing about it, and it will resurface every four game
-hours for the rest of the game, because the game cannot tell "unacknowledged
-problem" apart from "problem the player has understood and accepted". Four game
-hours is a couple of minutes at normal speed and a few seconds at high speed,
-which is why it feels relentless when you are running fast. There is a second
-wrinkle: the quiet window silences the whole warning *category*, so during it a
-freshly broken building is kept quiet too — arguably the opposite of what you
-want.
+It is at its worst for a building that can never recover, such as one entombed by
+a landscaping lake: the warning returns every four game hours for the rest of the
+game, which is a few seconds at high speed. The quiet window also silences the
+whole warning category, so a newly broken building stays quiet during it too.
+There was once a real defect here, which the developers have fixed, so there is no
+fix for it in the pack.
