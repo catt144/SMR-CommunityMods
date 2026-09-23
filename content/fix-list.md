@@ -44,16 +44,16 @@ saw, what was wrong underneath, and what happens now.
     "Clogged after a Dust Storm.", and never started again — destroy and rebuild
     was the only way out. Two players reported it.
 
-    **What was wrong:** the dust-storm event switches the building off before it
-    asks you what to do, and if that question is ever lost — a save and reload
-    while it is on screen, for instance — nothing switches the building back on.
-    The game already has the timer that would have done it; this event does not
-    use it.
+    **What was wrong:** the dust-storm event switched the building off before it
+    asked you what to do, and if that question was ever lost — a save and reload
+    while it was on screen, for instance — nothing switched the building back on.
 
-    **After the fix:** the building is switched back on, on load and once a day.
-    A building that is already stuck in your save recovers the next time you load
-    it. A building still waiting on your answer, or waiting because you chose to
-    fix it after the storm, is left alone.
+    **After the fix:** the game now runs the timer that switches the building
+    back on, so it no longer strands one. What the pack still does is rescue the
+    buildings the old code already stranded: a save written before this game
+    update is checked once, as it loads, and a building left switched off by that
+    bug is switched back on. Saves written since are left alone, so a building
+    that is legitimately waiting on your answer keeps waiting.
 
 ---
 
@@ -142,23 +142,6 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** a home that falls vacant is offered to the dome's homeless
     straight away.
 
-??? success "Night-shift colonists never came back to work after midnight"
-    **What you saw:** night-shift buildings quietly running understaffed.
-
-    **What was wrong:** a colonist who was busy when their shift started —
-    eating, resting, seeing a doctor — skipped the rest of that shift instead of
-    going to work when they finished.
-
-    **After the fix:** they go to work.
-
-??? success "The Gene Forging research did nothing at all"
-    **What you saw:** no change in rare trait chances after researching it.
-
-    **What was wrong:** the tech defines its bonus, and no part of the game ever
-    read it — only its sibling Gene Selection was wired up.
-
-    **After the fix:** both add together, the way the numbers say.
-
 ??? success "The Saint's dome blessing never reached anybody"
     **What you saw:** nothing, which is the problem — the blessing meant for the
     Religious colonists in the Saint's dome had never applied to a single one of
@@ -194,14 +177,6 @@ saw, what was wrong underneath, and what happens now.
     **⚠️ Worth knowing:** this one is a judgment call rather than a repair. There
     is no coding error here — a dust illness that infects synthetic colonists is a
     thematic judgment, and we made it.
-
-??? success "You were never told when a Founder gained a trait"
-    **What you saw:** the notification, never.
-
-    **What was wrong:** its own eligibility check could never come out true, so
-    it had never fired once.
-
-    **After the fix:** it fires.
 
 ??? question "Colonists on asteroids stood in vacuum until they died — *judgment call*"
     **What you saw:** asteroid colonists idling outdoors and bleeding Health
@@ -330,17 +305,6 @@ saw, what was wrong underneath, and what happens now.
 
 ## Buildings & economy
 
-??? success "A destroyed tunnel still worked as a shortcut"
-    **What you saw:** rovers and colonists routing through a tunnel that was
-    standing in ruins.
-
-    **What was wrong:** loading a save handed every tunnel its pathfinding
-    shortcut back without checking whether it was still standing. Destroying one
-    in the same session worked correctly — it was the reload that undid it.
-
-    **After the fix:** a destroyed tunnel stays destroyed, and existing saves are
-    corrected the moment you load them.
-
 ??? success "Large Wind Turbines never got their Frictionless Composites bonus"
     **What you saw:** a colony that researched Frictionless Composites and saw
     its Large Wind Turbines produce exactly as before, while other turbines
@@ -401,40 +365,6 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** a sector that has already been deep-scanned stays
     deep-scanned; scanning it again wastes no time.
 
-??? success "The Building Codes law skipped buildings deployed from prefabs"
-    **What you saw:** with Building Codes enacted, a building deployed from a
-    prefab kept ordinary maintenance — under Strict it never got the lower
-    maintenance the law promises.
-
-    **What was wrong:** both versions of the law skip prefab-deployed buildings,
-    and neither description mentions it.
-
-    **After the fix:** prefab-deployed buildings get the same maintenance change
-    as any other, at whatever value the law is set to. This applies to buildings
-    completed after this update.
-
-    **⚠️ Worth knowing:** a Paradox developer answered the reporter's thread —
-    excluding prefabs is wrong, it is fixed in their next patch, and they asked
-    us to carry the fix meanwhile. When their patch lands this fix stands itself
-    down on its own.
-
-??? success "An Outside Ranch left food where drones could not reach it after Open Domes"
-    **What you saw:** once the Open Domes law passed, an Outside Ranch stacked
-    part of its output in the middle of the building. Drones circled it and never
-    picked it up. The ranch worked normally before the law.
-
-    **What was wrong:** the law switches open-air buildings to their open-air
-    model. The ranch's open-air model has only six of the nine spots its
-    stockpiles belong on, so three of them were put at the centre of the
-    building, where drones cannot get to them.
-
-    **After the fix:** the Outside Ranch keeps the model with all nine spots. A
-    ranch already affected in your save puts its stranded piles back where drones
-    can reach them the next time you load it. No food is created or lost.
-
-    **⚠️ Worth knowing:** under Open Domes an Outside Ranch keeps its closed look.
-    The atmosphere, consumption and everything else the law does are unchanged.
-
 ## Trains
 
 ??? success "Salvaging one piece of track deleted the whole line and its trains"
@@ -448,16 +378,6 @@ saw, what was wrong underneath, and what happens now.
     clears out the wreckage of the old behaviour — orphaned track pieces and
     invisible leftovers that could not be removed by hand.
 
-??? success "Meteor-damaged track could not be salvaged at all"
-    **What you saw:** clicking Salvage on damaged track and nothing happening —
-    from the button, from Ctrl+click, from anywhere.
-
-    **What was wrong:** damaged pieces were missing a piece of internal
-    bookkeeping that made every salvage attempt on that track fail silently.
-
-    **After the fix:** they can be salvaged, and track already damaged in your
-    save is repaired when you load it.
-
 ??? success "Salvaging track refunded a stub's worth of Metals however long the line was"
     **What you saw:** a long line handing back the same few Metals as the
     shortest possible piece — and salvaging *part* of a track returning nothing
@@ -468,28 +388,6 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the refund follows what the track actually cost, and
     partial salvage leaves the resources as a stockpile where they stood.
-
-??? success "Trains dumped cargo at stations you had told not to store it"
-    **What you saw:** Waste Rock (or anything else) appearing at a station whose
-    switch for that resource was off — and then another train hauling it back
-    out, forever.
-
-    **What was wrong:** unloading ignored the station's resource switches
-    completely.
-
-    **After the fix:** unloading respects them — as long as somewhere else on
-    that train's route will take the resource. If no station on the route accepts
-    it the train still unloads rather than carrying it about for the rest of the
-    game, and a train on its way to be stored always empties itself.
-
-??? success "Demolishing a station permanently deleted its trains"
-    **What you saw:** your colony's train count silently shrinking, until no
-    station could send out a train at all.
-
-    **What was wrong:** trains docked at a demolished station — or mid-trip from
-    it — were destroyed rather than returned to the colony's pool.
-
-    **After the fix:** they are stored properly and can be redeployed.
 
 ??? success "A station attached straight to a Train Tunnel never bridged the power grid"
     **What you saw:** a Train Tunnel that did not join your grids, although its
@@ -510,17 +408,6 @@ saw, what was wrong underneath, and what happens now.
     stop it.
 
     **After the fix:** an occupied connector is left where it is.
-
-??? success "Waiting on the platform was counted again as time on the train"
-    **What you saw:** the Travel time figure on trains and tracks reading larger
-    than the journeys actually were.
-
-    **What was wrong:** the moment a colonist reached the platform was never
-    re-stamped when they boarded, so their wait was counted a second time as part
-    of the ride.
-
-    **After the fix:** the ride is timed from boarding, so the platform wait is
-    counted once, at the station.
 
 ??? success "A repair the game meant to run on old track had never run"
     **What you saw:** most likely nothing, and possibly a track network that
@@ -592,23 +479,6 @@ saw, what was wrong underneath, and what happens now.
     that makes those deposits different from every other deposit in the game. If
     you have hit this freeze, we would genuinely like to know whether this helps.
 
-??? success "An Earth trade rocket could sit on the landing pad forever"
-    **What you saw:** an Earth-sent Trade rocket — most reported on the Wildfire
-    mystery's cure rocket — parked on the pad with its cargo loaded and refusing
-    to leave. The panel shows fuel to unload, or fuel still needed, and nothing
-    ever changes.
-
-    **What was wrong:** the rocket's fuel request is sized once, the moment it
-    lands. If anything changes how much fuel it needs while it is still sitting
-    there — finishing Advanced Martian Engines research is the reported trigger —
-    that request is never resized. Too much fuel arrives and nothing is asked to
-    unload it; too little arrives and no drone is asked to bring more. Either way
-    the rocket can never become ready to launch.
-
-    **After the fix:** the fuel request is resized whenever the fuel cost
-    changes, so the rocket becomes ready and leaves. A rocket already stuck like
-    this in your save is corrected the moment you load it.
-
 ??? success "An expedition that needed an RC Commander refused an RC Seeker"
     **What you saw:** an anomaly expedition asking for an RC Commander would not
     load your RC Seeker and said there were not enough rovers, although the
@@ -674,62 +544,6 @@ saw, what was wrong underneath, and what happens now.
     builds, and the mystery carries on. Safe to add to a save where this is
     already happening — the stuck rock is cleared automatically.
 
-??? success "Freeing the wisps paid about a thousandth of the power it promised"
-    **What you saw:** the St. Elmo's Fire reward for coexistence arriving as a
-    rounding error.
-
-    **What was wrong:** the reward was computed in the wrong unit.
-
-    **After the fix:** it pays what the mystery describes.
-
-??? success "Destroying trapped wisps paid twice what the message promised"
-    **What you saw:** the other St. Elmo's Fire ending handing out double
-    research — the notification says one amount per wisp and the payout was two.
-
-    **What was wrong:** the reward was granted twice over, once per wisp and once
-    for the batch.
-
-    **After the fix:** it pays the amount the message names.
-
-??? success "A meteor could destroy the St. Elmo's Fire sinkhole"
-    **What you saw:** the mystery's set-piece simply gone after a large meteor
-    strike.
-
-    **What was wrong:** every other mystery set-piece in the game is flagged
-    indestructible. This one is not, and nothing else stood between it and the
-    meteor.
-
-    **After the fix:** it is treated like its siblings.
-
-??? success "A finished Mirror Sphere site still offered its actions"
-    **What you saw:** action buttons on a Mirror Sphere excavation that was
-    already complete and had already launched.
-
-    **What was wrong:** the guard against working a finished site compares
-    progress against 100, and progress on that site does not run to 100 — so the
-    guard could essentially never fire.
-
-    **After the fix:** a finished site stops accepting work.
-
-## The text and numbers on your screen
-
-??? success "The Domes Overview stopped marking domes in trouble"
-    **What you saw:** no red highlight on a dome whose colonists' stats had
-    fallen, so nothing stood out at a glance.
-
-    **What was wrong:** the highlight was never applied.
-
-    **After the fix:** low stats are marked again.
-
-??? success "A graph said a resource was barely consumed while its bar was full height"
-    **What you saw:** Machine Parts and Electronics reading as almost nothing in
-    the Command Center graph caption, next to a tall bar.
-
-    **What was wrong:** the caption's "Consumed" figure left out maintenance,
-    which for those resources is most of it.
-
-    **After the fix:** the caption counts what the bar counts.
-
 ## Under the hood
 
 These two repair things you cannot see today. They are here because they are
@@ -749,6 +563,19 @@ future DLC can walk straight into them.
     The other is a swap of two timing values written so that both ends up holding
     the larger one — harmless only because the values the game ships with are
     already in the right order. Both run in ordinary play, in a shipped mystery.
+
+---
+
+## One known issue after this update
+
+**An Outside Ranch that still looks closed.** If your Outside Ranch still looks
+closed after terraforming has opened your domes, salvage it and rebuild it once;
+it will come back open. This can only happen in a colony that ran an earlier
+version of the pack with Open Domes already in force: that version deliberately
+held the ranch on the closed building, and now that the game handles the ranch
+itself, nothing reopens the ones already held. It is appearance only — the ranch
+has all nine of its stockpile spots either way, so nothing you produced is
+stranded. A ranch built from now on is unaffected.
 
 ---
 

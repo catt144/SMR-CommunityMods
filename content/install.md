@@ -51,14 +51,15 @@ The pack helps, but it cannot undo everything.
 - **Ongoing behaviour is fixed the moment you load.** Drones, colonists,
   schedulers and rockets simply stop running the broken code.
 - **Some damage is repaired on load.** The pack looks for specific damage it can
-  positively identify: tunnels destroyed but still routing, track that could not
-  be salvaged, a missing turbine bonus, Biorobots still carrying Dust Sickness, and
-  a small extractor bonus an earlier version of this pack left behind. When it is
-  unsure it does nothing, and it never runs a repair twice.
+  positively identify: leftover wreckage from the old track-salvage bug, a
+  missing turbine bonus, Biorobots still carrying Dust Sickness, a building the
+  dust-storm clog left switched off, and a small extractor bonus an earlier
+  version of this pack left behind. When it is unsure it does nothing, and it
+  never runs a repair twice.
 - **What is gone stays gone.** Dead colonists, destroyed buildings and expeditions
-  lost to the lander bugs do not come back. Trains lost to the station bug cannot
-  be restored, but you can build new ones at any station for Metals and
-  Electronics.
+  lost to the lander bugs do not come back. Trains lost to the old
+  station-demolition bug cannot be restored, but you can build new ones at any
+  station for Metals and Electronics.
 
 ## Removing it
 

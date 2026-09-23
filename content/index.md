@@ -46,8 +46,8 @@ Bug fixes only. Nothing to configure, nothing to switch on — it works the mome
 it loads.
 
 Its repairs cover disasters and weather, colonists and domes, drones and
-logistics, buildings and economy, trains, rockets and asteroids, story
-sequences, and the text and numbers on your screen. Several of them also repair
-damage already sitting in your save when you load it.
+logistics, buildings and economy, trains, rockets and asteroids, and story
+sequences. Several of them also repair damage already sitting in your save when
+you load it.
 
 [Every fix in it →](fix-list.md)
