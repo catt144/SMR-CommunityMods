@@ -69,6 +69,57 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** the passage is used.
 
+??? success "Colonists on a passage hub were sent a rescue shuttle instead of walking into the dome beside it"
+    **What you saw:** a colonist standing on a passage hub, or crossing a passage
+    attached to one, next to a large dome, booked a shuttle rescue home instead of
+    walking the passage into the dome.
+
+    **What was wrong:** the game judged whether the colonist could reach the dome
+    by measuring to the dome's centre. A large dome puts its centre out of range,
+    even from its own hub.
+
+    **After the fix:** a colonist on a hub, or crossing one of its passages, is
+    judged able to reach the domes that hub connects to, and walks. Every other
+    judgment about who can reach where is still the game's own.
+
+??? success "A colonist who had made it home walked back outside to wait for a rescue shuttle"
+    **What you saw:** a colonist reaching home through a passage, then walking
+    back out onto the surface to wait for a shuttle, and sometimes suffocating
+    there.
+
+    **What was wrong:** a shuttle rescue booked while the colonist was crossing a
+    passage kept its pickup point out on the passage. A colonist who then reached
+    home on foot still walked out to that pickup.
+
+    **After the fix:** a rescue back to the colonist's own dome is cancelled when
+    the colonist is already inside that dome.
+
+??? success "Salvaging one passage of a busy hub left colonists outside at the hub end"
+    **What you saw:** colonists crossing a hub passage you salvaged ending up
+    outside at the hub, without the shelter the hub gives.
+
+    **What was wrong:** when the hub still had another exit, salvage disconnected
+    the passage straight away instead of waiting for the colonists already inside
+    it.
+
+    **After the fix:** colonists already crossing arrive before the passage
+    disconnects, and no new colonist enters a passage being salvaged while the
+    hub has another exit. Salvaging a hub's last exit works as it always did.
+
+??? success "A colonist who had left a passage hub was still treated as sheltered"
+    **What you saw:** usually nothing. A colonist who had walked off a passage hub
+    could still be treated as if it stood on the hub, sheltered from outside
+    conditions.
+
+    **What was wrong:** the marker that shelters a colonist on a hub was cleared
+    only when the colonist left through a passage into a dome. Leaving the hub any
+    other way left the marker behind.
+
+    **After the fix:** the marker is cleared once the colonist has actually left
+    the hub, and outside conditions apply again. A colonist partway through a
+    passage keeps its shelter. A save that already carries a stale marker heals
+    the next time that colonist moves.
+
 ??? success "Rocket loads of new arrivals died on their way to a dome"
     **What you saw:** colonists disembarking and dying on the surface, or
     landing somewhere they could not walk out of.
@@ -93,7 +144,8 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** the fallback is the nearest dome that is working, open
     and supplied, so the overflow goes there, even if some of them have to wait
     for a home. If no such dome can be reached, the game decides as it always
-    did.
+    did. The bed reserved for them in the dome they were turned away from is
+    released, so it does not sit empty.
 
 ??? success "A stale answer to whether colonists could travel between domes"
     **What you saw:** the game's own answer to whether colonists could travel
@@ -117,6 +169,19 @@ saw, what was wrong underneath, and what happens now.
 
     **After the fix:** a hub you switch off stops counting. Only hubs you have
     left switched on count.
+
+??? success "A colonist rescued back to its own dome was shown as moving to a new dome"
+    **What you saw:** a colonist being taken home by a shuttle rescue, with its
+    info panel reading "Moving to a new Dome" followed by the dome it already
+    lived in.
+
+    **What was wrong:** rescue rides and real moves share one line of text, so a
+    ride home read as a move.
+
+    **After the fix:** the line reads "Returning to Dome" with the same dome
+    link. Real moves to a new dome keep their original text.
+
+    **⚠️ Worth knowing:** the new line is in English in every language for now.
 
 ??? success "Beds stayed reserved for colonists who were never going to take them"
     **What you saw:** free beds in a dome, homeless colonists outside it, and
