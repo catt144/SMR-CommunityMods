@@ -89,18 +89,29 @@ broken patch migration dropped, that bonus is an ordinary one of the kind the ga
 hands out itself, and it goes on working without us — which is the entire point of
 restoring it.
 
-!!! note "The fix pack has no options page, and that is correct"
-    There is nothing to configure, so you will not find it in Mod Options —
-    nothing is missing, and nothing is broken. There is no way to switch off an
-    individual *fix* from inside the game; see [For modders](for-modders.md) for
-    the one route that exists.
+!!! note "Mod Options has one setting for the pack"
+    Under Options > Mod Options > Relaunched Fix Pack there is one switch, **Load
+    this pack first**, on by default (see [Load order](#load-order)). There is
+    nothing else to configure, and no way to switch off an individual *fix* from
+    inside the game; see [For modders](for-modders.md) for the one route that
+    exists.
 
 ## Load order
 
-We have not measured how this game decides load order, and we are not going to
-guess at it. What the pack does instead is patch the smallest thing that fixes
-each bug, call through to whatever another mod has already put in place, and
-check the game's code before changing anything.
+When it starts, the pack moves itself to the front of your mod load order, so its
+repairs are applied before other mods change the same parts of the game. Your
+other mods keep their order. A message tells you when it has done this: the new
+order takes effect the next time the game starts, and on PC the message offers to
+restart for you. If you installed from Paradox Mods, you will see the message
+again after each update of the pack.
+
+To keep your own order instead, turn off **Load this pack first** under Options >
+Mod Options > Relaunched Fix Pack. The pack then stops moving itself; it does not
+undo a move it has already made.
+
+Either way, every fix is written to work wherever the pack sits: it patches the
+smallest thing that fixes each bug, calls through to whatever another mod has
+already put in place, and checks the game's code before changing anything.
 
 If you hit a specific conflict, tell us what the other mod is and what you see.
 

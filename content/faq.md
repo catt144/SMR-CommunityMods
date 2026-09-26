@@ -28,9 +28,10 @@ what it does not, is under [Removing it](install.md#removing-it).
 
 ### Does load order matter?
 
-We have not measured it and will not guess. What the pack does to coexist with
-other mods is under [Load order](install.md#load-order). If you hit a specific
-conflict, [tell us](report.md).
+The pack moves itself to the front of your mod load order, so its repairs are
+applied first, and you can turn that off in Mod Options. Every fix is written to
+work wherever the pack sits; the details are under [Load order](install.md#load-order).
+If you hit a specific conflict, [tell us](report.md).
 
 ### Anything different on console?
 

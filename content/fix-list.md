@@ -430,6 +430,23 @@ saw, what was wrong underneath, and what happens now.
     **After the fix:** a sector that has already been deep-scanned stays
     deep-scanned; scanning it again wastes no time.
 
+??? success "Cables and buildings in one area would not get power, and the dead area kept growing"
+    **What you saw:** anything you built in one part of the colony got no power.
+    Cables broke into separate pieces, and removing and rebuilding them only made
+    the area bigger. Saving and loading did not help.
+
+    **What was wrong:** the game keeps a saved record of where power connections
+    are, and in that area it still held connections for things that were gone.
+    Anything built beside one of them failed to join the power grid, and removing
+    it left its own connections behind as well.
+
+    **After the fix:** when you load a colony, power connections that belong to
+    nothing are cleared, and cables and buildings that were left without a grid
+    are connected again. A colony without the problem is not changed.
+
+    **⚠️ Worth knowing:** the cleanup runs when a colony loads. If an area goes
+    dead again during play, save and load to clear it.
+
 ## Trains
 
 ??? success "Salvaging one piece of track deleted the whole line and its trains"

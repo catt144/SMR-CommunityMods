@@ -15,7 +15,7 @@ Each fix inspects the code it is about to patch and stands itself down if the
 shape it expects is not there. That check reads the shape — renamed, removed,
 restructured — not a body quietly rewritten under the same name.
 
-The pack on the store pages is built against game version **1.1.0.403908**; the
+The pack on the store pages is built against game version **1.1.1.405907**; the
 frozen build for players who stayed on 1.0.7
 ([Playing on 1.0.7](legacy-1-0-7.md)) is built against **1.0.7.396349**.
 
@@ -37,6 +37,12 @@ module `Code/90_SaveSanitizer.lua` registers `SaveSanitizer`.
 "Before the pack loads" means your mod has to load first. A veto set before we
 load is complete: the fix is registered, marked disabled and never applied.
 Setting the id afterwards does not un-install a fix that is already installed.
+
+By default the pack moves itself to the front of the player's load order, which
+puts it ahead of your mod. For a veto to take effect, the player turns off **Load
+this pack first** (Options > Mod Options > Relaunched Fix Pack) and orders your
+mod ahead of the pack; the load order is the order mods were enabled in. The move
+itself has the id `LoadFirst`, and the same veto stops it.
 
 ## The source
 
