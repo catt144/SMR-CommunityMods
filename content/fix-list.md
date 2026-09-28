@@ -521,6 +521,26 @@ saw, what was wrong underneath, and what happens now.
     timer still applies, so a rocket that has waited that long and been given
     nothing still goes — empty trips become the exception rather than the cycle.
 
+??? success "An automatic rocket to Earth sat on the pad forever, taking on colonist after colonist"
+    **What you saw:** with a deportation law on, or tourists or Earthsick
+    colonists waiting to go home, an automatic rocket bound for Earth never took
+    off. It sat on the launch pad drafting dozen after dozen of leaving colonists,
+    and only a manual launch got it moving.
+
+    **What was wrong:** the rocket waits until no leaving colonist is still on
+    the way, but every game hour it drafts more of them from the whole colony, so
+    that wait never ends. A landed rocket with no destination set drafted and held
+    leaving colonists too.
+
+    **After the fix:** once everything else is ready, the rocket takes aboard the
+    leaving colonists it can take right away and launches. A landed rocket with
+    no destination no longer collects leaving colonists, and hands back any it was
+    holding.
+
+    **⚠️ Worth knowing:** colonists still walking or riding over when the rocket
+    goes stay on Mars, as they do after a manual launch, and catch the next
+    rocket. No limit is placed on how many colonists a rocket takes.
+
 ??? question "Edit Payload forgot what you told it, every trip — *judgment call*"
     **What you saw:** a payload row you deliberately emptied filled straight back
     in from the flight policy's list, every single time you opened the dialog —
