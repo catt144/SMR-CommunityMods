@@ -36,8 +36,8 @@ If you hit a specific conflict, [tell us](report.md).
 ### Anything different on console?
 
 While any mod is enabled, Xbox, PlayStation and the Microsoft Store do not unlock
-achievements or trophies. That is the game's rule for every mod; Steam is not
-affected.
+achievements or trophies. That is the game's rule for every mod; Steam and other PC
+versions are not affected.
 
 ## What it changes
 
@@ -58,7 +58,9 @@ Usually one of three reasons:
 
 - **We could not show it.** If we cannot point at the defect in the game's code, or
   reproduce what was reported, it does not ship.
-- **It is a design, not a defect.** Designs we disagree with are not bug fixes.
+- **It is a design, not a defect.** Designs we disagree with are not bug fixes;
+  designed behaviour we change on purpose lives in the
+  [Opt-In Modules](opt-in/index.md) mod, off by default.
 - **The repair would be bigger than the bug.** Replacing that much of the game's
   code would break on the next official patch.
 
@@ -92,4 +94,5 @@ a landscaping lake: the warning returns every four game hours for the rest of th
 game, which is a few seconds at high speed. The quiet window also silences the
 whole warning category, so a newly broken building stays quiet during it too.
 There was once a real defect here, which the developers have fixed, so there is no
-fix for it in the pack.
+fix for it in the pack. The Opt-In Modules mod has an optional module that changes
+this, off by default: [Acknowledged warnings](opt-in/modules.md#acknowledged-warnings).

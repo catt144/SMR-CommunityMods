@@ -12,6 +12,12 @@ issue page, so you do not need an account, and you can attach a save or a log.
     The restart matters: a mod you switch off keeps running until the game
     restarts.
 
+    If you use the [Opt-In Modules](opt-in/index.md) mod and have built a Train Hub
+    or an Elevator Depot, **do not remove that mod to test.** Back up your save
+    first. If you must test without it, follow its
+    [removal steps](opt-in/index.md#before-you-uninstall) first; otherwise, test by
+    switching only the other mods off.
+
     A few fixes are deliberate judgment calls and can look wrong. They are marked
     *judgment call* on the [fix list](fix-list.md).
 

@@ -51,3 +51,14 @@ sequences. Several of them also repair damage already sitting in your save when
 you load it.
 
 [Every fix in it →](fix-list.md)
+
+---
+
+## The other mod: Opt-In Modules
+
+**Relaunched Fix Pack: Opt-In Modules** is a separate mod of optional modules
+that change how the game plays, every one of them off, or at its base setting, until
+you turn it on in Mod Options. It works with or without the fix pack, and the fix pack works without it.
+It is not on the stores yet.
+
+[Opt-In Modules](opt-in/index.md){ .md-button }

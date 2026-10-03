@@ -63,6 +63,11 @@ The pack helps, but it cannot undo everything.
 
 ## Removing it
 
+!!! note "These steps are for the Relaunched Fix Pack"
+    The Opt-In Modules mod has its own removal steps, which matter if you have
+    built a Train Hub or an Elevator Depot: see
+    [Before you uninstall](opt-in/index.md#before-you-uninstall).
+
 1. Turn it off in the **Mod Manager**, or remove it from Paradox Mods.
 2. **Restart the game fully.** Until you do, it is still running.
 
@@ -94,7 +99,8 @@ restoring it.
     this pack first**, on by default (see [Load order](#load-order)). There is
     nothing else to configure, and no way to switch off an individual *fix* from
     inside the game; see [For modders](for-modders.md) for the one route that
-    exists.
+    exists. The Opt-In Modules mod has its own Mod Options page, described on
+    [its own pages](opt-in/index.md).
 
 ## Load order
 

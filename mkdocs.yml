@@ -30,7 +30,7 @@
 #   this — it installs its own copy.
 
 site_name: Community Mods for Surviving Mars
-site_description: "Bug fixes for Surviving Mars: Relaunched."
+site_description: "Bug fixes and opt-in modules for Surviving Mars: Relaunched."
 docs_dir: content
 
 theme:
@@ -83,7 +83,11 @@ nav:
   - FAQ: faq.md
   - Playing on 1.0.7: legacy-1-0-7.md
   - For modders: for-modders.md
+  - Opt-In Modules:
+      - What it is, installing, removing: opt-in/index.md
+      - The modules: opt-in/modules.md
   - Source and the reasoning behind each fix (GitHub): https://github.com/catt144/SMR-CommunityFixPack
+  - Opt-In Modules source (GitHub): https://github.com/catt144/SMR-CommunityOptInPack
 
 extra_javascript:
   - javascripts/report.js   # the upload form on report.md

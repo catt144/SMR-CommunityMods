@@ -60,3 +60,27 @@ page](install.md#what-it-puts-in-your-save) — where a repair put back a bonus
 that a broken patch migration dropped, that bonus is an ordinary one of the kind
 the game hands out itself and keeps working after the mod is gone. The full
 enumeration lives in the development notes in the repository above.
+
+## The Opt-In Modules mod
+
+The [Opt-In Modules](opt-in/index.md) mod patches the game the same way, at
+runtime, with nothing on disk. It has its own veto table, `SMROptInPack_Disabled`,
+keyed by module id:
+
+```lua
+SMROptInPack_Disabled = rawget(_G, "SMROptInPack_Disabled") or {}
+SMROptInPack_Disabled["TrainHub"] = true
+```
+
+As with the fix pack, the id is the key, and the veto has to be in place before
+the mod's code loads: a module vetoed then is registered as disabled and never
+applied, and its switch on the Mod Options page does nothing. The current module
+ids are `AcknowledgedWarnings`, `MultipleSuns`, `DroneStatDials`,
+`ServiceInterestTags`, `StationRows`, `TrainHub` and `ElevatorDepot`.
+
+- [Opt-In Modules repository](https://github.com/catt144/SMR-CommunityOptInPack)
+
+!!! warning "Do not attribute a save field to a mod by its prefix"
+    Several of the Opt-In Modules mod's older save fields carry the fix pack's
+    `SMRFixPack_` prefix, for historical reasons. A field with that prefix may
+    belong to either mod.

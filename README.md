@@ -23,6 +23,7 @@ project's issue tracker for reports carrying a save or a log.
 | mod | repo | what it is |
 |---|---|---|
 | **Relaunched Fix Pack** | [`catt144/SMR-CommunityFixPack`](https://github.com/catt144/SMR-CommunityFixPack) | bug fixes only; every one repairs a defect verified in the game's own shipped code |
+| **Relaunched Fix Pack: Opt-In Modules** | [`catt144/SMR-CommunityOptInPack`](https://github.com/catt144/SMR-CommunityOptInPack) | opt-in behaviour and content modules, every one off or at base until the player turns it on; not yet published |
 
 ⭐ **Those repos being public is deliberate.** They are the receipts behind every
 claim these pages make, working notes and corrections included. This site is
@@ -43,6 +44,8 @@ content/                            every page, written for players
   for-modders.md    switching off an individual fix, and what we cannot
                     tell you about load order
   report.md         "Bug reports & problems" — the report form (files an issue, takes a save)
+  opt-in/           the Opt-In Modules mod: index.md (what it is, installing,
+                    removing) and modules.md (one section per module)
   javascripts/report.js   the form's script
 worker/                             the Cloudflare Worker behind that form;
                                     NOT part of the site build (see worker/wrangler.toml)
