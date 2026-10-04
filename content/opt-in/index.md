@@ -42,6 +42,15 @@ save that the game no longer knows, and the game reports errors when that save
 loads. With them demolished first, your stations go back to the game's own import
 and export requests.
 
+Demolish every Train Hub and both halves of every Elevator Depot while the mod
+is installed, then save, remove the mod and fully restart the game. References
+to the custom building classes can remain in the save after demolition and may
+produce missing-class warnings when loaded without the mod. This is not a
+guarantee of clean removal; no train-building recovery is provided.
+
+Bought Train Hub upgrades remain recorded in your save after all hubs are
+demolished, and their ordinary game bonuses may remain after the mod is removed.
+
 !!! note "Turning a module off is not the same as removing the mod"
     Turning a module off puts the game's own behaviour back; what the module
     already did stays done, and buildings already placed keep working. Removing the
@@ -64,3 +73,8 @@ is needed, and you can attach a save or a log privately.
 ## Game version
 
 Built and tested on game version **1.1.1**.
+
+## Thanks
+
+Thanks to ChoGGi for prior Surviving Mars modding work, and LukeH for Martian
+Express patch research.

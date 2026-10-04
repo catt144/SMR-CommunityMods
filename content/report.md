@@ -4,19 +4,19 @@ Tell us what went wrong. Your report is filed for you on this project's public
 issue page, so you do not need an account, and you can attach a save or a log.
 
 ??? tip "Before you report: is it a mod at all?"
-    Switch off every mod in the **Mod Manager**, then **fully restart the game**,
-    all the way out and back in. Load the save and try again. If the problem is
-    still there, no mod is causing it, ours included. It may still be a game bug
+    First, if you use the [Opt-In Modules](opt-in/index.md) mod and have built a
+    Train Hub or an Elevator Depot, **do not switch that mod off to test.** Back up
+    your save first. If you must test without it, follow its
+    [removal steps](opt-in/index.md#before-you-uninstall) first; otherwise,
+    leave it on and switch only the other mods off.
+
+    Otherwise, switch off every mod in the **Mod Manager**, then **fully restart the
+    game**, all the way out and back in. Load the save and try again. If the problem
+    is still there, no mod is causing it, ours included. It may still be a game bug
     worth reporting: choose "A game bug you would like fixed" below.
 
     The restart matters: a mod you switch off keeps running until the game
     restarts.
-
-    If you use the [Opt-In Modules](opt-in/index.md) mod and have built a Train Hub
-    or an Elevator Depot, **do not remove that mod to test.** Back up your save
-    first. If you must test without it, follow its
-    [removal steps](opt-in/index.md#before-you-uninstall) first; otherwise, test by
-    switching only the other mods off.
 
     A few fixes are deliberate judgment calls and can look wrong. They are marked
     *judgment call* on the [fix list](fix-list.md).

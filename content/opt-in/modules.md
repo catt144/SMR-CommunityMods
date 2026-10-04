@@ -92,6 +92,9 @@ without a Train Hub.
 
 **When you turn it off.** Stations go back to the game's own requests.
 
+**In your save.** Your row settings stay in the save. Without the mod they do
+nothing, and stations go back to the game's own requests.
+
 ## Train Hub
 
 **What it does.** Adds the Train Hub: a junction where three train lines cross and
@@ -110,7 +113,8 @@ working.
     The Train Hub exists only while the mod is installed. Removing the mod with a
     hub still standing leaves a building in your save that the game no longer
     knows, and the game reports errors when that save loads. Follow
-    [Before you uninstall](index.md#before-you-uninstall).
+    [Before you uninstall](index.md#before-you-uninstall), which also says what
+    can stay in your save after demolition, including bought hub upgrades.
 
 ## Elevator Depot
 
@@ -133,4 +137,5 @@ working.
     The Elevator Depot exists only while the mod is installed. Removing the mod with
     either half still standing leaves a building in your save that the game no
     longer knows, and the game reports errors when that save loads. Follow
-    [Before you uninstall](index.md#before-you-uninstall).
+    [Before you uninstall](index.md#before-you-uninstall), which also says what
+    can stay in your save after demolition.
